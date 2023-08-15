@@ -11,14 +11,18 @@ For the documentation of parents, and families in general, please activate the F
 
 ## Diagram
 
-![Alt text](<GV_Profile_Person-Birth and Death.drawio.png>)
+![Alt text](<Diagrams/GV_Profile_Person-Birth and Death.drawio.png>)
 
 ## Examples
 
 ### Example 1
 
-A
+Archimedes of Syracuse was born around 287 BC (between 292 and 282) in Syracuse and died in 212 BC in the same city of Syracuse.
+
+```RDF file of the Example```
 
 ### Example 2
 
-B
+Louis Pasteur was born on December 27, 1822 in Dole (Jura, France) in the building located at 43 rue Pasteur. He died on September 1895 in Marnes-la-Coquette (Paris, France).
+
+```RDF file of the Example```
