@@ -12,6 +12,10 @@ This profile describes the physical interaction between two individuals that lea
 
 Relationships of parenthood that are not biological should not be documented with this profile.
 
+## What can be described in this profile
+
+- The place relative to the person
+
 ## Diagram
 
 ![Alt text](<Diagrams/GV_Profile_Person-Union (family).drawio (1).png>)

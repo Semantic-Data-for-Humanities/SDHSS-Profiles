@@ -15,6 +15,10 @@ Should the intended relative location be strictly physical, and not epistemic or
 
 To capture an official domicile, legal seat of an actor, etc. the Person: Legal Location should be used.
 
+## What can be described in this profile
+
+- The place relative to the person
+
 ## Diagram
 
 ![Alt text](<Diagrams/GV_Profile_Person-Epistemic Location.drawio.png>)

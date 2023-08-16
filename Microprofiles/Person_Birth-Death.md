@@ -9,6 +9,10 @@
 This profile describes the Birth and Death events of persons, allowing the documentation of the date and Geographical Place of those events.
 For the documentation of parents, and families in general, please activate the Family profile.
 
+## What can be described in this profile
+
+- The place relative to the person
+
 ## Diagram
 
 ![Alt text](<Diagrams/GV_Profile_Person-Birth and Death.drawio.png>)

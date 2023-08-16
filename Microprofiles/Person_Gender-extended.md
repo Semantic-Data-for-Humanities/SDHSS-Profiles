@@ -11,6 +11,10 @@ This profile describes the fluctuating perception of the gender(s) of individual
 
 For a simpler, classificatory and not temporally bounded description of genders, please activate the `Person - Gender light` profile.
 
+## What can be described in this profile
+
+- The place relative to the person
+
 ## Diagram
 
 ![Alt text](<Diagrams/GV_Profile_Person-Gender Extended.drawio.png>)

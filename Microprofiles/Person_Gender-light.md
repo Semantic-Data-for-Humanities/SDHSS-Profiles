@@ -8,6 +8,10 @@ This profile describes the classification of individuals based on their gender (
 
 For a more detailed, flexible and fluid description of gender, please activate the `Person - Gender extended` profile.
 
+## What can be described in this profile
+
+- The place relative to the person
+
 ## Diagram
 
 ![Alt text](<Diagrams/GV_Profile_Person-Gender Light.drawio.png>)
