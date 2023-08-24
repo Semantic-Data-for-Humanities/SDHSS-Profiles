@@ -31,16 +31,16 @@ Similarly, this Person: Relative Location profile does not capture the official 
 
 ### Example 1
 
-Place
+Fictional: Place
 Presence of Ceasar close to Alesia?
 
 ### Example 2
 
-Construction
+Fictional: Construction
 Visit of a person in a building?
 
 ### Example 3
 
-Object - on boat (titanic)
+Fictional: Object - on boat (titanic)
 Type: on
 Reason: Travel?

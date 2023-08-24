@@ -27,8 +27,8 @@ A more precise profile of Social or Professional Position exists for holding a t
 
 ### Example 1
 
-Work: President
+Fictional: Work: President
 
 ### Example 2
 
-Social role
+Fictional: Social role

@@ -1,4 +1,4 @@
-# Person - Social or Professional COndition
+# Person - Social or Professional Condition
 
 ## Questions to answer
 
@@ -7,6 +7,8 @@
 ## Description
 
 This profile describes the social perception of an individual—i.e. classified by a group, the whole society, or a portion of it—as having a social, professional, or political quality in the generic sense of a social type, in opposition to a specific, legally defined function.
+
+A more specified profile to describe religious affiliation can be activated.
 
 ## What can be described in this profile
 
@@ -21,8 +23,8 @@ This profile describes the social perception of an individual—i.e. classified 
 
 ### Example 1
 
-Professor in general (in opposition of being professor in chemestry in X)
+Fictional: Professor in general (in opposition of being professor in chemestry in X)
 
 ### Example 2
 
-Social
+Fictional: Social

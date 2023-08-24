@@ -22,8 +22,8 @@ This profile describes the physical interactions of persons in time and space, i
 
 ### Example 1
 
-Encounter between two people (vs. their social relationship), in time and space
+Fictional: Encounter between two people (vs. their social relationship), in time and space
 
 ### Example 2
 
-Encounter between mulétiple people, and when it's a new interaction because of the lack of unity in time and space.
+Fictional: Encounter between mulétiple people, and when it's a new interaction because of the lack of unity in time and space.
