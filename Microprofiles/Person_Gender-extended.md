@@ -13,7 +13,8 @@ For a simpler, classificatory and not temporally bounded description of genders,
 
 ## What can be described in this profile
 
-- The place relative to the person
+- The Gender percieved of the person, documented with controlled vocabularies
+- The time-span of that gender perception
 
 ## Diagram
 

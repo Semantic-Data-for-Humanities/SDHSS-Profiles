@@ -10,7 +10,7 @@ For a more detailed, flexible and fluid description of gender, please activate t
 
 ## What can be described in this profile
 
-- The place relative to the person
+- The Gender of the person, documented with controlled vocabularies
 
 ## Diagram
 

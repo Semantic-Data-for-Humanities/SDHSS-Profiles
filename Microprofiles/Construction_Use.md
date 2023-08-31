@@ -24,7 +24,7 @@ This profile is in opposition to the intended use of a construction.
 
 ### Example 1
 
-Fictional: A building that was built as a temple, has been used as a temple from its construction in 123 AD, until it was used as a granary in 450 AD until it's distruction in 750.
+Fictional: A building that was built as a temple, has been used as a temple from its construction in 123 AD until 450 AD, where it was used as a granary until it's destruction in 750.
 
 ### Example 2
 
