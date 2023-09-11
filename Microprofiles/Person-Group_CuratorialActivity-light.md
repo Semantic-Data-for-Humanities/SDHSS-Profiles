@@ -14,7 +14,7 @@ The documenteation of persons and groups that contributed to the Curatorial Acti
 
 ## Diagram
 
-![Alt text](<Diagrams/GV_Profile_Object-Actor's Curatorial Activity Light.drawio.png>)
+![Alt text](<Diagrams/GV_Profile_Person-Curation Activity light.drawio.png>)
 
 ## Examples
 

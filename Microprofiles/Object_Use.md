@@ -4,6 +4,7 @@
 
 - Do we need the intentional collective to specify the use for one culture in opposition to the use by another culture?
 - Not sure what the type of use is
+- Do we need a Use Type directly linked to the object with `crm:P101 had as general use (was use of)`?
 
 ## Description
 

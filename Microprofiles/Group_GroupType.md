@@ -8,7 +8,8 @@
 
 ## Description
 
-This profile describes the type of group, in the sense of a characterization and classification of a group.
+This profile describes the type of groups, in the sense of a characterization and classification of a group, without any temporal bounds or context.
+The profile `Group - Classification` describes in more details and within a speccific social context this classification.
 
 ## What can be described in this profile
 
@@ -22,7 +23,7 @@ This profile describes the type of group, in the sense of a characterization and
 
 ### Example 1
 
-The ancient roman senate can be classified as a political institution. using the wikidata vocabulary term: <http://www.wikidata.org/entity/Q18810687>
+The ancient roman senate can be classified as a political institution, using the wikidata vocabulary term: <http://www.wikidata.org/entity/Q18810687>
 
 ### Example 2
 

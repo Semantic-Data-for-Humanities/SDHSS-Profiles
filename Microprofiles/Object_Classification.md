@@ -2,10 +2,6 @@
 
 ## Questions to answer
 
-- Should the class `sdh:P21 is connotated by` be linked to `crm:E55 Type` or should it be a subclass, such as `sdh:PX Connotation Type`?
-- I am not sure what the content is, in comparison to the type
-- How to link a connotation to the representation of an actor?
-
 ## Description
 
 This profile describes the classification of objects as it can be percieved by individuals or groups (formal or informal), in a specific context and during a certain time-span, which allows the documentation of evolving or contradictory classifications.
@@ -30,4 +26,4 @@ Fictional: Archaeologists have classified the vase A as a "cooking pot", althoug
 
 ### Example 2
 
-An other example needed?
+Example of a conflict of classification

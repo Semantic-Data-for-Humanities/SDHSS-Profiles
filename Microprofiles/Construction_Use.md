@@ -3,6 +3,7 @@
 ## Questions to answer
 
 - Not sure what the type of use is
+- Do we need a Use Type directly linked to the object with `crm:P101 had as general use (was use of)`?
 
 ## Description
 

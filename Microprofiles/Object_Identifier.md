@@ -1,4 +1,4 @@
-# Person and Group - Identifiers
+# Object - Identifier
 
 ## Questions to answer
 
@@ -6,11 +6,7 @@
 
 ## Description
 
-This profile describes the identifiers of persons and groups, including URIs.
-
-## Diagram
-
-![Alt text](Diagrams/GV_Profile_Person-Identifier.drawio.png)
+This profile describes the identifiers of objects, including URIs.
 
 ## What can be described in this profile
 
@@ -20,12 +16,16 @@ This profile describes the identifiers of persons and groups, including URIs.
 - The URI that is the same as (don't fully understand this part)
 - The Time-span of this identification
 
+## Diagram
+
+![Alt text](Diagrams/GV_Profile_Object-Identifier.drawio.png)
+
 ## Examples
 
 ### Example 1
 
-Arch
+The
 
 ### Example 2
 
-Louis
+Fictional:

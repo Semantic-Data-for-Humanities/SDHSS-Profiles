@@ -1,4 +1,4 @@
-# Musal Collection
+# Object - Type
 
 ## Questions to answer
 
@@ -6,7 +6,7 @@
 
 ## Description
 
-This
+This profile describes
 
 ## What can be described in this profile
 
@@ -14,14 +14,14 @@ This
 
 ## Diagram
 
-![Alt text](Diagrams/GV_Profile_Object-Classification.drawio.png)
+![Alt text](Diagrams/GV_Profile_Object-Type.drawio.png)
 
 ## Examples
 
 ### Example 1
 
-Fictional
+The
 
 ### Example 2
 
-An other example needed?
+Fictional:

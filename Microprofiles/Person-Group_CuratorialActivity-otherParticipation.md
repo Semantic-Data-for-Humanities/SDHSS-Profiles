@@ -17,7 +17,7 @@ The documentation of the participation of persons and groups who took part in th
 
 ## Diagram
 
-![Alt text](<Diagrams/GV_Profile_Person-Actor's Creation Other Participation.drawio.png>)
+![Alt text](<Diagrams/GV_Profile_Person-Curation Activity Other participation.drawio.png>)
 
 ## Examples
 
