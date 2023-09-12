@@ -12,8 +12,9 @@ Prosopography is the study of a person's social and family connections, career, 
 ## Profiles
 
 It contains thee following profiles:
-[Person - Birth and Death events](../Microprofiles/Person_Birth-Death.md)
-[Person - Family](../Microprofiles/Person_Family.md)
-[Group - Formation and Dissolution Events](../Microprofiles/Group_Formation-Dissolution.md)
-[Person and Group - Identifiers](../Microprofiles/Person-Group_Identifiers.md)
-[Person - Gender light](../Microprofiles/Person_Gender-light.md)
+
+- [Person - Birth and Death events](../Microprofiles/Person_Birth-Death.md)
+- [Person - Family](../Microprofiles/Person_Family.md)
+- [Group - Formation and Dissolution Events](../Microprofiles/Group_Formation-Dissolution.md)
+- [Person and Group - Identifiers](../Microprofiles/Person-Group_Identifiers.md)
+- [Person - Gender light](../Microprofiles/Person_Gender-light.md)
