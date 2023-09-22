@@ -4,6 +4,8 @@
 
 - A
 
+Si nécessaire, ajouter une issue: <https://github.com/Semantic-Data-for-Humanities/SDHSS-Profiles/issues/new>
+
 ## Description
 
 This profile describes the creation event of an information object and the detailled participation of persons and groups in this creation, including their roles, and the person or group who mandated this person or group for the creation.
