@@ -33,17 +33,14 @@ sdh-shacl:crm_E21_PersonShape a sh:NodeShape ;
     sh:property [
         sh:path sdh-short:P2 ;
         rdfs:label 'has birth date';
-        sh:or (
-            [ sh:datatype xsd:date ]
-            [ sh:datatype xsd:gYear ]
-            [ sh:in ('unknown')]
-            );
-            sh:maxCount 1;
+        sh:datatype xsd:date;
+        sh:maxCount 1;
         ]
 .
 
 
 sdh-shacl:crm_E67_BirthShape a sh:NodeShape ;
+
     sh:targetClass crm:E67_Birth ;
 
     sh:property [
@@ -62,21 +59,16 @@ sdh-shacl:crm_E67_BirthShape a sh:NodeShape ;
 
     sh:property [
         sh:path sdh-short:P1 ;
-        rdfs:label ' ongoing throughout';
-        sh:or (
-            [ sh:datatype xsd:date ]
-            [ sh:datatype xsd:gYear ]
-            [ sh:in ('unknown')]
-            );
-            sh:maxCount 1;
-        ]
+        rdfs:label 'ongoing throughout';
+        sh:datatype xsd:date;
+        sh:maxCount 1;
+        ];
 
     sh:property [
         sh:path crm:P98_brought_into_life;
         rdfs:label 'brought into life';
         sh:class crm:E21_Person ;
-            sh:minCount 1;
-            sh:maxCount 1 ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
         ]
 .
-
