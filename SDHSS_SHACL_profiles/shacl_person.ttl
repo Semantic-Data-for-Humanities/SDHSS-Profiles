@@ -1,13 +1,13 @@
-@prefix sdh: <http://sdhss.org/profiles/shacl/> .
+@prefix sdh-shacl: <http://sdhss.org/profiles/shacl/> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> . 
-@prefix ontome: <https://ontome.net/ontology/> .
+@prefix sdh-short: <https://sdhss.org/ontology/shortcuts/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix crm: <http://www.cidoc-crm.org/cidoc-crm/>.
 
   
-sdh:crm_E21_PersonShape a sh:NodeShape ;
+sdh-shacl:crm_E21_PersonShape a sh:NodeShape ;
     sh:targetClass crm:E21_Person ;
 
     sh:property [
@@ -25,7 +25,13 @@ sdh:crm_E21_PersonShape a sh:NodeShape ;
         ];   
 
     sh:property [
-        sh:path ontome:p3087 ;
+        sh:path [ sh:inversePath crm:P98_brought_into_life ] ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+    ] ;    
+
+    sh:property [
+        sh:path sdh-short:P2 ;
         rdfs:label 'has birth date';
         sh:or (
             [ sh:datatype xsd:date ]
@@ -35,3 +41,42 @@ sdh:crm_E21_PersonShape a sh:NodeShape ;
             sh:maxCount 1;
         ]
 .
+
+
+sdh-shacl:crm_E67_BirthShape a sh:NodeShape ;
+    sh:targetClass crm:E67_Birth ;
+
+    sh:property [
+        sh:path rdfs:label ;
+        sh:datatype xsd:string;
+        sh:minCount 1;
+        sh:maxCount 1;
+        ];
+
+    sh:property [
+        sh:path rdfs:comment ;
+        sh:datatype rdf:HTML;
+        sh:minCount 1;
+        sh:maxCount 1;
+        ];   
+
+    sh:property [
+        sh:path sdh-short:P1 ;
+        rdfs:label ' ongoing throughout';
+        sh:or (
+            [ sh:datatype xsd:date ]
+            [ sh:datatype xsd:gYear ]
+            [ sh:in ('unknown')]
+            );
+            sh:maxCount 1;
+        ]
+
+    sh:property [
+        sh:path crm:P98_brought_into_life;
+        rdfs:label 'brought into life';
+        sh:class crm:E21_Person ;
+            sh:minCount 1;
+            sh:maxCount 1 ;
+        ]
+.
+
