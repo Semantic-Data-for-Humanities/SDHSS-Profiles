@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <!-- load web component -->
+    <script src="https://cdn.jsdelivr.net/npm/@ulb-darmstadt/shacl-form/dist/form-default.js" type="module"></script>
+  </head>
+  <body>
+
+    <!--
+      SHACL shapes can be defined on the attribute 'data-shapes'
+      or can be loaded by setting attribute 'data-shapes-url'
+    -->
+    <shacl-form id="ds" data-shapes=""></shacl-form>
+
+    <!-- inserts the text content as attribute data-shapes -->  
+    <script>
+      fetch('shacl_person.ttl')
+  .then(response => response.text())
+  .then((data) => {
+    console.log(data);
+    document.getElementById("ds").setAttribute("data-shapes", data)
+  })
+    </script>
+
+
+
+    <script>
+      const form = document.querySelector("shacl-form")
+      form.addEventListener('change', event => {
+        // check if form data validates according to the SHACL shapes
+        if (event.detail?.valid) {
+          // get data graph as RDF triples and
+          // log them to the browser console
+          const triples = form.serialize() 
+          console.log('entered form data', triples)
+          // store the data somewhere, e.g. in a triple store
+        }
+      })
+    </script>
+  </body>
+</html>

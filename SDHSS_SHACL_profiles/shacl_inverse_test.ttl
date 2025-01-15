@@ -1,0 +1,31 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+@prefix ex: <http://example.org/>.
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix ontome: 	<https://ontome.net/ontology/>.
+
+
+ex:PersonShape a sh:NodeShape ;
+    sh:targetClass crm:E21_Person ;
+
+    sh:property [
+        sh:path rdfs:label ;
+        sh:datatype xsd:string;
+        sh:minCount 1;
+        sh:maxCount 1;
+        ];
+
+    sh:property [
+        sh:path ontome:p3087 ;
+        rdfs:label 'has birth date';
+        sh:or (
+            [ rdfs:label 'has birth date';
+            sh:datatype xsd:date ]
+            [ sh:datatype xsd:gYear ]
+            [ sh:in ('unknown')]
+            );
+            sh:maxCount 1;
+            ];
+.

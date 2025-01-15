@@ -1,0 +1,53 @@
+<html>
+  <head>
+    <!-- load web component -->
+    <script src="https://cdn.jsdelivr.net/npm/@ulb-darmstadt/shacl-form/dist/form-default.js" type="module"></script>
+  </head>
+  <body>
+
+    <script>
+    fetch('./foo.txt')
+       .then(response => response.text())
+       .then((data) => {
+        console.log(data)
+      })
+    </script>
+  
+    <!--
+      SHACL shapes can be defined on the attribute 'data-shapes'
+      or can be loaded by setting attribute 'data-shapes-url'
+    -->
+    <shacl-form data-shapes="
+    @prefix ex: <http://example.com/ns#> .
+    @prefix sh: <http://www.w3.org/ns/shacl#> .
+    @prefix xsd: <http://www.w3.org/2001/XMLSchema#> . 
+    @prefix ontome: <https://ontome.net/ontology/> .
+    @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+    
+    ex:OrderShape a sh:NodeShape ;
+      sh:targetClass ex:Order ;
+    sh:property [
+      sh:path ex:suppliedBy ;
+      sh:inverse ex:supplies ;
+      sh:minCount 1 ;
+      sh:maxCount 1 ;
+      sh:datatype xsd:string ;
+      sh:description "The supplier of the order".
+    ].
+    "></shacl-form>
+
+    <script>
+      const form = document.querySelector("shacl-form")
+      form.addEventListener('change', event => {
+        // check if form data validates according to the SHACL shapes
+        if (event.detail?.valid) {
+          // get data graph as RDF triples and
+          // log them to the browser console
+          const triples = form.serialize() 
+          console.log('entered form data', triples)
+          // store the data somewhere, e.g. in a triple store
+        }
+      })
+    </script>
+  </body>
+</html>
