@@ -16,7 +16,7 @@ sdh-shacl:crm_E21_Shape a sh:NodeShape ;
     sh:property [
         sh:path rdfs:label ;
         sh:datatype xsd:string;
-        sd:order 1;
+        sh:order 1;
         sh:minCount 1;
         sh:maxCount 1;
         ];
@@ -24,7 +24,7 @@ sdh-shacl:crm_E21_Shape a sh:NodeShape ;
     sh:property [
         sh:path rdfs:comment ;
         sh:datatype rdf:HTML;
-        sd:order 2;
+        sh:order 2;
         sh:minCount 1;
         ];   
 
@@ -55,7 +55,7 @@ sdh-shacl:crm_E67_Shape a sh:NodeShape ;
     sh:property [
         sh:path rdfs:label ;
         sh:datatype xsd:string;
-        sd:order 1;
+        sh:order 1;
         
         sh:maxCount 1;
         ];
@@ -63,7 +63,7 @@ sdh-shacl:crm_E67_Shape a sh:NodeShape ;
     sh:property [
         sh:path rdfs:comment ;
         sh:datatype rdf:HTML;
-        sd:order 2;
+        sh:order 2;
         
         ];   
 
@@ -97,7 +97,7 @@ sdh-shacl:crm_E69_Shape a sh:NodeShape ;
     sh:property [
         sh:path rdfs:label ;
         sh:datatype xsd:string;
-        sd:order 1;
+        sh:order 1;
         
         sh:maxCount 1;
         ];
@@ -105,7 +105,7 @@ sdh-shacl:crm_E69_Shape a sh:NodeShape ;
     sh:property [
         sh:path rdfs:comment ;
         sh:datatype rdf:HTML;
-        sd:order 2;
+        sh:order 2;
         
         ];   
 
@@ -139,7 +139,7 @@ sdh-shacl:sdh_C13_Shape a sh:NodeShape ;
     sh:property [
         sh:path rdfs:label ;
         sh:datatype xsd:string;
-        sd:order 1;
+        sh:order 1;
         sh:minCount 1;
         sh:maxCount 1;
         ];
@@ -147,7 +147,7 @@ sdh-shacl:sdh_C13_Shape a sh:NodeShape ;
     sh:property [
         sh:path rdfs:comment ;
         sh:datatype rdf:HTML;
-        sd:order 2;
+        sh:order 2;
         sh:minCount 1;
         ];   
 
@@ -178,7 +178,7 @@ sdh-shacl:sdh_C17_Shape a sh:NodeShape ;
     sh:property [
         sh:path rdfs:label ;
         sh:datatype xsd:string;
-        sd:order 1;
+        sh:order 1;
         sh:minCount 1;
         sh:maxCount 1;
         ];
@@ -186,7 +186,7 @@ sdh-shacl:sdh_C17_Shape a sh:NodeShape ;
     sh:property [
         sh:path rdfs:comment ;
         sh:datatype rdf:HTML;
-        sd:order 2;
+        sh:order 2;
         sh:minCount 1;
         ];   
 
