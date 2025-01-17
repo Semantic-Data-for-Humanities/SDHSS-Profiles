@@ -5,6 +5,7 @@
 @prefix sdh-shacl: <https://sdhss.org/shacl/profiles/>. 
 @prefix sh: <http://www.w3.org/ns/shacl#> .  
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: 	<http://www.w3.org/2000/01/rdf-schema#> .  
 @prefix crm: <http://www.cidoc-crm.org/cidoc-crm/>.
 @prefix sdh: <https://sdhss.org/ontology/core/>. 
@@ -31,20 +32,20 @@ sdh-shacl:crm_E21_Shape a sh:NodeShape ;
     
         sh:property [
             rdfs:label 'Inverse of: brought into life' ;
+            sh:maxCount 1 ;
             sh:path [ 
                 sh:inversePath crm:P98;
                 sh:class crm:E67;
                 ] ;
-            sh:maxCount 1 ;
             ];
             
         sh:property [
             rdfs:label 'Inverse of: was death of' ;
+            sh:maxCount 1 ;
             sh:path [ 
                 sh:inversePath crm:P100;
                 sh:class crm:E69;
                 ] ;
-            sh:maxCount 1 ;
             ];
             . 
 
@@ -154,20 +155,20 @@ sdh-shacl:sdh_C13_Shape a sh:NodeShape ;
     
         sh:property [
             rdfs:label 'Inverse of: took place at' ;
+            
             sh:path [ 
                 sh:inversePath sdh:P6;
                 sh:class crm:E67;
                 ] ;
-            
             ];
             
         sh:property [
             rdfs:label 'Inverse of: took place at' ;
+            
             sh:path [ 
                 sh:inversePath sdh:P6;
                 sh:class crm:E69;
                 ] ;
-            
             ];
             . 
 
@@ -193,19 +194,19 @@ sdh-shacl:sdh_C17_Shape a sh:NodeShape ;
     
         sh:property [
             rdfs:label 'Inverse of: took place on or within' ;
+            
             sh:path [ 
                 sh:inversePath crm:P8;
                 sh:class crm:E67;
                 ] ;
-            
             ];
             
         sh:property [
             rdfs:label 'Inverse of: took place on or within' ;
+            
             sh:path [ 
                 sh:inversePath crm:P8;
                 sh:class crm:E69;
                 ] ;
-            
             ];
             .
