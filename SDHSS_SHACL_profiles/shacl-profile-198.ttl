@@ -1,0 +1,131 @@
+### SHACL OntoME Profile 198 
+
+
+
+@prefix sdh-shacl: <https://sdhss.org/shacl/profiles/>. 
+@prefix sh: <http://www.w3.org/ns/shacl#> .  
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: 	<http://www.w3.org/2000/01/rdf-schema#> .  
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/>.
+@prefix sdh: <https://sdhss.org/ontology/core/>. 
+
+sdh-shacl:crm_E21_Shape a sh:NodeShape ;
+    sh:targetClass crm:E21 ;
+    rdfs:label 'Person' ;
+    
+        sh:property [
+            rdfs:label 'Inverse of: brought into life' ;
+            sh:path [ 
+                sh:inversePath crm:P98;
+                sh:class crm:E67;
+                ] ;
+            sh:maxCount 1 ;
+            ];
+            
+        sh:property [
+            rdfs:label 'Inverse of: was death of' ;
+            sh:path [ 
+                sh:inversePath crm:P100;
+                sh:class crm:E69;
+                ] ;
+            sh:maxCount 1 ;
+            ];
+            . 
+
+sdh-shacl:crm_E67_Shape a sh:NodeShape ;
+    sh:targetClass crm:E67 ;
+    rdfs:label 'Birth' ;
+    
+        sh:property [
+            sh:path crm:P8 ;
+            rdfs:label 'took place on or within';
+            sh:class sdh:C17 ;
+            
+            ];
+            
+        sh:property [
+            sh:path crm:P98 ;
+            rdfs:label 'brought into life';
+            sh:class crm:E21 ;
+            
+            ];
+            
+        sh:property [
+            sh:path sdh:P6 ;
+            rdfs:label 'took place at';
+            sh:class sdh:C13 ;
+            
+            ];
+            . 
+
+sdh-shacl:crm_E69_Shape a sh:NodeShape ;
+    sh:targetClass crm:E69 ;
+    rdfs:label 'Death' ;
+    
+        sh:property [
+            sh:path crm:P8 ;
+            rdfs:label 'took place on or within';
+            sh:class sdh:C17 ;
+            
+            ];
+            
+        sh:property [
+            sh:path crm:P100 ;
+            rdfs:label 'was death of';
+            sh:class crm:E21 ;
+            
+            ];
+            
+        sh:property [
+            sh:path sdh:P6 ;
+            rdfs:label 'took place at';
+            sh:class sdh:C13 ;
+            
+            ];
+            . 
+
+sdh-shacl:sdh_C13_Shape a sh:NodeShape ;
+    sh:targetClass sdh:C13 ;
+    rdfs:label 'Geographical Place' ;
+    
+        sh:property [
+            rdfs:label 'Inverse of: took place at' ;
+            sh:path [ 
+                sh:inversePath sdh:P6;
+                sh:class crm:E67;
+                ] ;
+            
+            ];
+            
+        sh:property [
+            rdfs:label 'Inverse of: took place at' ;
+            sh:path [ 
+                sh:inversePath sdh:P6;
+                sh:class crm:E69;
+                ] ;
+            
+            ];
+            . 
+
+sdh-shacl:sdh_C17_Shape a sh:NodeShape ;
+    sh:targetClass sdh:C17 ;
+    rdfs:label 'Construction' ;
+    
+        sh:property [
+            rdfs:label 'Inverse of: took place on or within' ;
+            sh:path [ 
+                sh:inversePath crm:P8;
+                sh:class crm:E67;
+                ] ;
+            
+            ];
+            
+        sh:property [
+            rdfs:label 'Inverse of: took place on or within' ;
+            sh:path [ 
+                sh:inversePath crm:P8;
+                sh:class crm:E69;
+                ] ;
+            
+            ];
+            .
