@@ -12,6 +12,22 @@
 sdh-shacl:crm_E21_Shape a sh:NodeShape ;
     sh:targetClass crm:E21 ;
     rdfs:label 'Person' ;
+
+    sh:property [
+        sh:path rdfs:label ;
+        sh:datatype xsd:string;
+        sd:order 1;
+        sh:minCount 1;
+        sh:maxCount 1;
+        ];
+
+    sh:property [
+        sh:path rdfs:comment ;
+        sh:datatype rdf:HTML;
+        sd:order 2;
+        sh:minCount 1;
+        ];   
+
     
         sh:property [
             rdfs:label 'Inverse of: brought into life' ;
@@ -35,6 +51,22 @@ sdh-shacl:crm_E21_Shape a sh:NodeShape ;
 sdh-shacl:crm_E67_Shape a sh:NodeShape ;
     sh:targetClass crm:E67 ;
     rdfs:label 'Birth' ;
+
+    sh:property [
+        sh:path rdfs:label ;
+        sh:datatype xsd:string;
+        sd:order 1;
+        
+        sh:maxCount 1;
+        ];
+
+    sh:property [
+        sh:path rdfs:comment ;
+        sh:datatype rdf:HTML;
+        sd:order 2;
+        
+        ];   
+
     
         sh:property [
             sh:path crm:P8 ;
@@ -61,6 +93,22 @@ sdh-shacl:crm_E67_Shape a sh:NodeShape ;
 sdh-shacl:crm_E69_Shape a sh:NodeShape ;
     sh:targetClass crm:E69 ;
     rdfs:label 'Death' ;
+
+    sh:property [
+        sh:path rdfs:label ;
+        sh:datatype xsd:string;
+        sd:order 1;
+        
+        sh:maxCount 1;
+        ];
+
+    sh:property [
+        sh:path rdfs:comment ;
+        sh:datatype rdf:HTML;
+        sd:order 2;
+        
+        ];   
+
     
         sh:property [
             sh:path crm:P8 ;
@@ -87,6 +135,22 @@ sdh-shacl:crm_E69_Shape a sh:NodeShape ;
 sdh-shacl:sdh_C13_Shape a sh:NodeShape ;
     sh:targetClass sdh:C13 ;
     rdfs:label 'Geographical Place' ;
+
+    sh:property [
+        sh:path rdfs:label ;
+        sh:datatype xsd:string;
+        sd:order 1;
+        sh:minCount 1;
+        sh:maxCount 1;
+        ];
+
+    sh:property [
+        sh:path rdfs:comment ;
+        sh:datatype rdf:HTML;
+        sd:order 2;
+        sh:minCount 1;
+        ];   
+
     
         sh:property [
             rdfs:label 'Inverse of: took place at' ;
@@ -110,6 +174,22 @@ sdh-shacl:sdh_C13_Shape a sh:NodeShape ;
 sdh-shacl:sdh_C17_Shape a sh:NodeShape ;
     sh:targetClass sdh:C17 ;
     rdfs:label 'Construction' ;
+
+    sh:property [
+        sh:path rdfs:label ;
+        sh:datatype xsd:string;
+        sd:order 1;
+        sh:minCount 1;
+        sh:maxCount 1;
+        ];
+
+    sh:property [
+        sh:path rdfs:comment ;
+        sh:datatype rdf:HTML;
+        sd:order 2;
+        sh:minCount 1;
+        ];   
+
     
         sh:property [
             rdfs:label 'Inverse of: took place on or within' ;
