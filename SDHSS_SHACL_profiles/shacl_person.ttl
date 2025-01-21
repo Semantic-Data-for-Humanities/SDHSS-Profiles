@@ -9,6 +9,7 @@
   
 sdh-shacl:crm_E21_PersonShape a sh:NodeShape ;
     sh:targetClass crm:E21_Person ;
+    rdfs:label 'Person' ;
 
     sh:property [
         sh:path rdfs:label ;

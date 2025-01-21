@@ -1,0 +1,9 @@
+
+        ### test
+    sdh-shacl:{2}_{3}_Shape_inv_{0}_{1}
+        a sh:PropertyShape ;
+        sh:path [ 
+            sh:inversePath {0}:{1};
+            sh:class {2}:{3};
+            ]
+#        sh:deactivated true .
