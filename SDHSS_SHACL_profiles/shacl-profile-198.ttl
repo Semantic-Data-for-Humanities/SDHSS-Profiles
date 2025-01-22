@@ -8,8 +8,8 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: 	<http://www.w3.org/2000/01/rdf-schema#> .  
 @prefix sdh-short: <https://sdhss.org/ontology/shortcuts/P1>
-@prefix sdh: <https://sdhss.org/ontology/core/>.
-@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/>. 
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/>.
+@prefix sdh: <https://sdhss.org/ontology/core/>. 
 
 sdh-shacl:crm_E21_Shape a sh:NodeShape ;
     sh:targetClass crm:E21 ;
@@ -29,17 +29,23 @@ sdh-shacl:crm_E21_Shape a sh:NodeShape ;
         sh:order 2;
         sh:minCount 1;
         ];   
-
+    
+    sh:property [
+        sh:path sdh-short:P2 ;
+        rdfs:label 'has birth date';
+        sh:datatype xsd:string;
+        sh:order 3;
+        ];
         
-
+        
     
     sh:property [
         rdfs:label "Inverse of: brought into life" ;
         sh:maxCount 1 ;
         sh:path [ 
             sh:inversePath crm:P98;
-            ### Ne marche pas pour expliciter
-            # sh:class/targetClass crm:E67;
+            ### None of both is not valid in SHACL
+            # sh:class — sh:targetClass crm:E67;
             ] ;
         ];
             
@@ -48,8 +54,8 @@ sdh-shacl:crm_E21_Shape a sh:NodeShape ;
         sh:maxCount 1 ;
         sh:path [ 
             sh:inversePath crm:P100;
-            ### Ne marche pas pour expliciter
-            # sh:class/targetClass crm:E69;
+            ### None of both is not valid in SHACL
+            # sh:class — sh:targetClass crm:E69;
             ] ;
         ];
             . 
@@ -72,32 +78,31 @@ sdh-shacl:crm_E67_Shape a sh:NodeShape ;
         sh:order 2;
         
         ];   
-
+    
     
         sh:property [
-        sh:path sdh-short:C1 ;
+        sh:path sdh-short:P1 ;
         rdfs:label 'Standard Date-Time';
         sh:datatype xsd:string;
         sh:order 3;
         ];
             
-
-    
-    sh:property [
+        
+sh:property [
         sh:path crm:P8 ;
         rdfs:label "took place on or within";
         sh:class sdh:C17 ;
         
         ];
-        
-    sh:property [
+            
+sh:property [
         sh:path crm:P98 ;
         rdfs:label "brought into life";
         sh:class crm:E21 ;
         
         ];
-        
-    sh:property [
+            
+sh:property [
         sh:path sdh:P6 ;
         rdfs:label "took place at";
         sh:class sdh:C13 ;
@@ -123,32 +128,31 @@ sdh-shacl:crm_E69_Shape a sh:NodeShape ;
         sh:order 2;
         
         ];   
-
+    
     
         sh:property [
-        sh:path sdh-short:C1 ;
+        sh:path sdh-short:P1 ;
         rdfs:label 'Standard Date-Time';
         sh:datatype xsd:string;
         sh:order 3;
         ];
             
-
-    
-    sh:property [
+        
+sh:property [
         sh:path crm:P8 ;
         rdfs:label "took place on or within";
         sh:class sdh:C17 ;
         
         ];
-        
-    sh:property [
+            
+sh:property [
         sh:path crm:P100 ;
         rdfs:label "was death of";
         sh:class crm:E21 ;
         
         ];
-        
-    sh:property [
+            
+sh:property [
         sh:path sdh:P6 ;
         rdfs:label "took place at";
         sh:class sdh:C13 ;
@@ -174,9 +178,8 @@ sdh-shacl:sdh_C13_Shape a sh:NodeShape ;
         sh:order 2;
         sh:minCount 1;
         ];   
-
+    
         
-
     . 
 
 sdh-shacl:sdh_C17_Shape a sh:NodeShape ;
@@ -197,7 +200,6 @@ sdh-shacl:sdh_C17_Shape a sh:NodeShape ;
         sh:order 2;
         sh:minCount 1;
         ];   
-
+    
         
-
     .
