@@ -1,15 +1,12 @@
 ### SHACL OntoME Profile 198 
-
-
-
 @prefix sdh-shacl: <https://sdhss.org/shacl/profiles/>. 
 @prefix sh: <http://www.w3.org/ns/shacl#> .  
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: 	<http://www.w3.org/2000/01/rdf-schema#> .  
-@prefix sdh-short: <https://sdhss.org/ontology/shortcuts/P1>
-@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/>.
-@prefix sdh: <https://sdhss.org/ontology/core/>. 
+@prefix sdh-short: <https://sdhss.org/ontology/shortcuts/P1> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix sdh: <https://sdhss.org/ontology/core/> . 
 
 sdh-shacl:crm_E21_Shape a sh:NodeShape ;
     sh:targetClass crm:E21 ;
@@ -32,7 +29,7 @@ sdh-shacl:crm_E21_Shape a sh:NodeShape ;
     
     sh:property [
         sh:path sdh-short:P2 ;
-        rdfs:label 'has birth date';
+        rdfs:label "has birth date";
         sh:datatype xsd:string;
         sh:order 3;
         ];
@@ -82,7 +79,7 @@ sdh-shacl:crm_E67_Shape a sh:NodeShape ;
     
         sh:property [
         sh:path sdh-short:P1 ;
-        rdfs:label 'Standard Date-Time';
+        rdfs:label "Standard Date-Time";
         sh:datatype xsd:string;
         sh:order 3;
         ];
@@ -132,7 +129,7 @@ sdh-shacl:crm_E69_Shape a sh:NodeShape ;
     
         sh:property [
         sh:path sdh-short:P1 ;
-        rdfs:label 'Standard Date-Time';
+        rdfs:label "Standard Date-Time";
         sh:datatype xsd:string;
         sh:order 3;
         ];
