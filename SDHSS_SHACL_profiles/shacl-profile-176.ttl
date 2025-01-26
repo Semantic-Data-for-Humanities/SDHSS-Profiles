@@ -13,10 +13,11 @@
 
 sdh-shacl:crm_E21_Shape a sh:NodeShape ;
     sh:targetClass crm:E21 ;
-    rdfs:label "Person" ;
+    sh:name "Person" ;
 
     sh:property [
         sh:path rdfs:label ;
+        sh:name "Label";
         sh:datatype xsd:string;
         sh:order 1;
         sh:minCount 1;
@@ -25,31 +26,39 @@ sdh-shacl:crm_E21_Shape a sh:NodeShape ;
 
     sh:property [
         sh:path rdfs:comment ;
+        sh:name "Description";
         sh:datatype rdf:HTML;
         sh:order 2;
         sh:minCount 1;
         ];   
-
-        
-
     
     sh:property [
-        rdfs:label "Inverse of: was a membership of" ;
+        sh:path sdh-short:P2 ;
+        sh:name 'has birth date';
+        sh:datatype xsd:string;
+        sh:order 3;
+        ];
+        
+        
+    
+    sh:property [
+        sh:name "Inverse of: was a membership of" ;
         
         sh:path [ 
             sh:inversePath sdh-so:P1;
-            ### Ne marche pas pour expliciter
-            # sh:class/targetClass sdh-so:C5;
+            ### None of both is not valid in SHACL
+            # sh:class — sh:targetClass sdh-so:C5;
             ] ;
         ];
             . 
 
 sdh-shacl:crm_E74_Shape a sh:NodeShape ;
     sh:targetClass crm:E74 ;
-    rdfs:label "Group" ;
+    sh:name "Group" ;
 
     sh:property [
         sh:path rdfs:label ;
+        sh:name "Label";
         sh:datatype xsd:string;
         sh:order 1;
         sh:minCount 1;
@@ -58,21 +67,22 @@ sdh-shacl:crm_E74_Shape a sh:NodeShape ;
 
     sh:property [
         sh:path rdfs:comment ;
+        sh:name "Description";
         sh:datatype rdf:HTML;
         sh:order 2;
         sh:minCount 1;
         ];   
-
+    
         
-
     . 
 
 sdh-shacl:sdh-so_C5_Shape a sh:NodeShape ;
     sh:targetClass sdh-so:C5 ;
-    rdfs:label "Membership" ;
+    sh:name "Membership" ;
 
     sh:property [
         sh:path rdfs:label ;
+        sh:name "Label";
         sh:datatype xsd:string;
         sh:order 1;
         
@@ -81,59 +91,59 @@ sdh-shacl:sdh-so_C5_Shape a sh:NodeShape ;
 
     sh:property [
         sh:path rdfs:comment ;
+        sh:name "Description";
         sh:datatype rdf:HTML;
         sh:order 2;
         
         ];   
-
+    
     
         sh:property [
-        sh:path sdh-short:C1 ;
-        rdfs:label 'Standard Date-Time';
+        sh:path sdh-short:P1 ;
+        sh:name 'Standard Date-Time';
         sh:datatype xsd:string;
         sh:order 3;
         ];
             
-
-    
-    sh:property [
+        
+sh:property [
         sh:path sdh-so:P1 ;
-        rdfs:label "was a membership of";
+        sh:name "was a membership of";
         sh:class crm:E21 ;
         sh:maxCount 1 ;
         ];
-        
-    sh:property [
+            
+sh:property [
         sh:path sdh-so:P1 ;
-        rdfs:label "was a membership of";
+        sh:name "was a membership of";
         sh:class crm:E74 ;
         sh:maxCount 1 ;
         ];
-        
-    sh:property [
+            
+sh:property [
         sh:path sdh-so:P2 ;
-        rdfs:label "was membership in";
+        sh:name "was membership in";
         sh:class crm:E74 ;
         sh:maxCount 1 ;
         ];
-        
-    sh:property [
+            
+sh:property [
         sh:path sdh-so:P3 ;
-        rdfs:label "has membership type";
+        sh:name "has membership type";
         sh:class sdh-so:C6 ;
         sh:maxCount 1 ;
         ];
-        
-    sh:property [
+            
+sh:property [
         sh:path sdh-so:P63 ;
-        rdfs:label "has quality during membership";
+        sh:name "has quality during membership";
         sh:class sdh-so:C2 ;
         
         ];
-        
-    sh:property [
+            
+sh:property [
         sh:path sdh-so:P63 ;
-        rdfs:label "has quality during membership";
+        sh:name "has quality during membership";
         sh:class sdh-so:C12 ;
         
         ];
@@ -141,10 +151,11 @@ sdh-shacl:sdh-so_C5_Shape a sh:NodeShape ;
 
 sdh-shacl:sdh-so_C2_Shape a sh:NodeShape ;
     sh:targetClass sdh-so:C2 ;
-    rdfs:label "Actor's Social Quality" ;
+    sh:name "Actor's Social Quality" ;
 
     sh:property [
         sh:path rdfs:label ;
+        sh:name "Label";
         sh:datatype xsd:string;
         sh:order 1;
         sh:minCount 1;
@@ -153,21 +164,22 @@ sdh-shacl:sdh-so_C2_Shape a sh:NodeShape ;
 
     sh:property [
         sh:path rdfs:comment ;
+        sh:name "Description";
         sh:datatype rdf:HTML;
         sh:order 2;
         sh:minCount 1;
         ];   
-
+    
         
-
     . 
 
 sdh-shacl:sdh-so_C6_Shape a sh:NodeShape ;
     sh:targetClass sdh-so:C6 ;
-    rdfs:label "Membership Type" ;
+    sh:name "Membership Type" ;
 
     sh:property [
         sh:path rdfs:label ;
+        sh:name "Label";
         sh:datatype xsd:string;
         sh:order 1;
         sh:minCount 1;
@@ -176,21 +188,22 @@ sdh-shacl:sdh-so_C6_Shape a sh:NodeShape ;
 
     sh:property [
         sh:path rdfs:comment ;
+        sh:name "Description";
         sh:datatype rdf:HTML;
         sh:order 2;
         sh:minCount 1;
         ];   
-
+    
         
-
     . 
 
 sdh-shacl:sdh-so_C12_Shape a sh:NodeShape ;
     sh:targetClass sdh-so:C12 ;
-    rdfs:label "Actor's Social Role" ;
+    sh:name "Actor's Social Role" ;
 
     sh:property [
         sh:path rdfs:label ;
+        sh:name "Label";
         sh:datatype xsd:string;
         sh:order 1;
         sh:minCount 1;
@@ -199,11 +212,11 @@ sdh-shacl:sdh-so_C12_Shape a sh:NodeShape ;
 
     sh:property [
         sh:path rdfs:comment ;
+        sh:name "Description";
         sh:datatype rdf:HTML;
         sh:order 2;
         sh:minCount 1;
         ];   
-
+    
         
-
     .
