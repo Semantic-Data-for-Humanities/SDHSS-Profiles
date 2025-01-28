@@ -34,7 +34,7 @@ sdh-shacl:crm_E21_Shape a sh:NodeShape ;
     
     sh:property [
         sh:path sdh-short:P2 ;
-        sh:name 'has birth date';
+        sh:name "has birth date";
         sh:datatype xsd:string;
         sh:order 3;
         ];
@@ -100,7 +100,7 @@ sdh-shacl:sdh-so_C5_Shape a sh:NodeShape ;
     
         sh:property [
         sh:path sdh-short:P1 ;
-        sh:name 'Standard Date-Time';
+        sh:name "Standard Date-Time";
         sh:datatype xsd:string;
         sh:order 3;
         ];

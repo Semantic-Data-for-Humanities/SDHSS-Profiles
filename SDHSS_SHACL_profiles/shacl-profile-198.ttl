@@ -1,4 +1,7 @@
 ### SHACL OntoME Profile 198 
+
+
+
 @prefix sdh-shacl: <https://sdhss.org/shacl/profiles/>. 
 @prefix sh: <http://www.w3.org/ns/shacl#> .  
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -31,7 +34,7 @@ sdh-shacl:crm_E21_Shape a sh:NodeShape ;
     
     sh:property [
         sh:path sdh-short:P2 ;
-        sh:name 'has birth date';
+        sh:name "has birth date";
         sh:datatype xsd:string;
         sh:order 3;
         ];
@@ -83,7 +86,7 @@ sdh-shacl:crm_E67_Shape a sh:NodeShape ;
     
         sh:property [
         sh:path sdh-short:P1 ;
-        sh:name 'Standard Date-Time';
+        sh:name "Standard Date-Time";
         sh:datatype xsd:string;
         sh:order 3;
         ];
@@ -135,7 +138,7 @@ sdh-shacl:crm_E69_Shape a sh:NodeShape ;
     
         sh:property [
         sh:path sdh-short:P1 ;
-        sh:name 'Standard Date-Time';
+        sh:name "Standard Date-Time";
         sh:datatype xsd:string;
         sh:order 3;
         ];
