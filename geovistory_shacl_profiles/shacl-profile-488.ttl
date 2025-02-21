@@ -1,0 +1,140 @@
+### SHACL OntoME Profile 488 
+
+
+
+@prefix sdh-shacl: <https://sdhss.org/shacl/profiles/>. 
+@prefix sh: <http://www.w3.org/ns/shacl#> .  
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: 	<http://www.w3.org/2000/01/rdf-schema#> .  
+@prefix sdh-short: <https://sdhss.org/ontology/shortcuts/P1>.
+        @prefix crm: <http://www.cidoc-crm.org/cidoc-crm/>.
+@prefix frbroo: <http://iflastandards.info/ns/fr/frbr/frbroo/>. 
+
+sdh-shacl:crm_E52_Shape a sh:NodeShape ;
+    sh:targetClass crm:E52 ;
+    sh:name "Time-Span" ;
+
+    sh:property [
+        sh:path rdfs:label ;
+        sh:name "Label";
+        sh:datatype xsd:string;
+        sh:order 1;
+        sh:minCount 1;
+        sh:maxCount 1;
+        ];
+
+    sh:property [
+        sh:path rdfs:comment ;
+        sh:name "Description";
+        sh:datatype rdf:HTML;
+        sh:order 2;
+        sh:minCount 1;
+        ];   
+    
+        
+                
+        sh:property [
+                sh:path crm:P81 ;
+                sh:name "ongoing throughout";
+                sh:class crm:E61 ;
+                sh:maxCount 1 ;
+                ];
+                    
+        sh:property [
+                sh:path crm:P82 ;
+                sh:name "at some time within";
+                sh:class crm:E61 ;
+                sh:maxCount 1 ;
+                ];
+                    
+        sh:property [
+                sh:path crm:P81a ;
+                sh:name "end of the begin";
+                sh:class crm:E61 ;
+                sh:maxCount 1 ;
+                ];
+                    
+        sh:property [
+                sh:path crm:P81b ;
+                sh:name "begin of the end";
+                sh:class crm:E61 ;
+                sh:maxCount 1 ;
+                ];
+                    
+        sh:property [
+                sh:path crm:P82a ;
+                sh:name "begin of the begin";
+                sh:class crm:E61 ;
+                sh:maxCount 1 ;
+                ];
+                    
+        sh:property [
+                sh:path crm:P82b ;
+                sh:name "end of the end";
+                sh:class crm:E61 ;
+                sh:maxCount 1 ;
+                ];
+                . 
+
+sdh-shacl:frbroo_F28_Shape a sh:NodeShape ;
+    sh:targetClass frbroo:F28 ;
+    sh:name "Expression Creation" ;
+
+    sh:property [
+        sh:path rdfs:label ;
+        sh:name "Label";
+        sh:datatype xsd:string;
+        sh:order 1;
+        
+        sh:maxCount 1;
+        ];
+
+    sh:property [
+        sh:path rdfs:comment ;
+        sh:name "Description";
+        sh:datatype rdf:HTML;
+        sh:order 2;
+        
+        ];   
+    
+    
+                sh:property [
+                sh:path sdh-short:P1 ;
+                sh:name "Standard Date-Time";
+                sh:datatype xsd:string;
+                sh:order 3;
+                ];
+                    
+                
+        sh:property [
+                sh:path crm:P4 ;
+                sh:name "has time-span";
+                sh:class crm:E52 ;
+                sh:maxCount 1 ;
+                ];
+                . 
+
+sdh-shacl:crm_E61_Shape a sh:NodeShape ;
+    sh:targetClass crm:E61 ;
+    sh:name "Time Primitive" ;
+
+    sh:property [
+        sh:path rdfs:label ;
+        sh:name "Label";
+        sh:datatype xsd:string;
+        sh:order 1;
+        sh:minCount 1;
+        sh:maxCount 1;
+        ];
+
+    sh:property [
+        sh:path rdfs:comment ;
+        sh:name "Description";
+        sh:datatype rdf:HTML;
+        sh:order 2;
+        sh:minCount 1;
+        ];   
+    
+        
+            .

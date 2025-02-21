@@ -1,0 +1,299 @@
+### SHACL OntoME Profile 260 
+
+
+
+@prefix sdh-shacl: <https://sdhss.org/shacl/profiles/>. 
+@prefix sh: <http://www.w3.org/ns/shacl#> .  
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: 	<http://www.w3.org/2000/01/rdf-schema#> .  
+@prefix sdh-short: <https://sdhss.org/ontology/shortcuts/P1>.
+        @prefix crm: <http://www.cidoc-crm.org/cidoc-crm/>.
+@prefix sdh: <https://sdhss.org/ontology/core/>.
+@prefix crm-sup: <https://sdhss.org/ontology/crm-supplement/>. 
+
+sdh-shacl:crm_E54_Shape a sh:NodeShape ;
+    sh:targetClass crm:E54 ;
+    sh:name "Dimension" ;
+
+    sh:property [
+        sh:path rdfs:label ;
+        sh:name "Label";
+        sh:datatype xsd:string;
+        sh:order 1;
+        sh:minCount 1;
+        sh:maxCount 1;
+        ];
+
+    sh:property [
+        sh:path rdfs:comment ;
+        sh:name "Description";
+        sh:datatype rdf:HTML;
+        sh:order 2;
+        sh:minCount 1;
+        ];   
+    
+        
+                
+        sh:property [
+                sh:path crm:P90 ;
+                sh:name "has value";
+                sh:class crm:E60 ;
+                sh:maxCount 1 ;
+                ];
+                    
+        sh:property [
+                sh:path crm:P91 ;
+                sh:name "has unit";
+                sh:class crm:E58 ;
+                sh:maxCount 1 ;
+                ];
+                . 
+
+sdh-shacl:crm_E58_Shape a sh:NodeShape ;
+    sh:targetClass crm:E58 ;
+    sh:name "Measurement Unit" ;
+
+    sh:property [
+        sh:path rdfs:label ;
+        sh:name "Label";
+        sh:datatype xsd:string;
+        sh:order 1;
+        sh:minCount 1;
+        sh:maxCount 1;
+        ];
+
+    sh:property [
+        sh:path rdfs:comment ;
+        sh:name "Description";
+        sh:datatype rdf:HTML;
+        sh:order 2;
+        sh:minCount 1;
+        ];   
+    
+        
+            . 
+
+sdh-shacl:crm_E74_Shape a sh:NodeShape ;
+    sh:targetClass crm:E74 ;
+    sh:name "Group" ;
+
+    sh:property [
+        sh:path rdfs:label ;
+        sh:name "Label";
+        sh:datatype xsd:string;
+        sh:order 1;
+        sh:minCount 1;
+        sh:maxCount 1;
+        ];
+
+    sh:property [
+        sh:path rdfs:comment ;
+        sh:name "Description";
+        sh:datatype rdf:HTML;
+        sh:order 2;
+        sh:minCount 1;
+        ];   
+    
+        
+            . 
+
+sdh-shacl:crm_E60_Shape a sh:NodeShape ;
+    sh:targetClass crm:E60 ;
+    sh:name "Number" ;
+
+    sh:property [
+        sh:path rdfs:label ;
+        sh:name "Label";
+        sh:datatype xsd:string;
+        sh:order 1;
+        sh:minCount 1;
+        sh:maxCount 1;
+        ];
+
+    sh:property [
+        sh:path rdfs:comment ;
+        sh:name "Description";
+        sh:datatype rdf:HTML;
+        sh:order 2;
+        sh:minCount 1;
+        ];   
+    
+        
+            . 
+
+sdh-shacl:crm-sup_C21_Shape a sh:NodeShape ;
+    sh:targetClass crm-sup:C21 ;
+    sh:name "Monetary amount" ;
+
+    sh:property [
+        sh:path rdfs:label ;
+        sh:name "Label";
+        sh:datatype xsd:string;
+        sh:order 1;
+        sh:minCount 1;
+        sh:maxCount 1;
+        ];
+
+    sh:property [
+        sh:path rdfs:comment ;
+        sh:name "Description";
+        sh:datatype rdf:HTML;
+        sh:order 2;
+        sh:minCount 1;
+        ];   
+    
+        
+                
+        sh:property [
+                sh:path crm-sup:P16 ;
+                sh:name "has currency";
+                sh:class crm-sup:C22 ;
+                sh:maxCount 1 ;
+                ];
+                . 
+
+sdh-shacl:crm-sup_C22_Shape a sh:NodeShape ;
+    sh:targetClass crm-sup:C22 ;
+    sh:name "Currency" ;
+
+    sh:property [
+        sh:path rdfs:label ;
+        sh:name "Label";
+        sh:datatype xsd:string;
+        sh:order 1;
+        sh:minCount 1;
+        sh:maxCount 1;
+        ];
+
+    sh:property [
+        sh:path rdfs:comment ;
+        sh:name "Description";
+        sh:datatype rdf:HTML;
+        sh:order 2;
+        sh:minCount 1;
+        ];   
+    
+        
+            . 
+
+sdh-shacl:sdh_C59_Shape a sh:NodeShape ;
+    sh:targetClass sdh:C59 ;
+    sh:name "Quantifiable Quality of an Epistemic Situation" ;
+
+    sh:property [
+        sh:path rdfs:label ;
+        sh:name "Label";
+        sh:datatype xsd:string;
+        sh:order 1;
+        
+        sh:maxCount 1;
+        ];
+
+    sh:property [
+        sh:path rdfs:comment ;
+        sh:name "Description";
+        sh:datatype rdf:HTML;
+        sh:order 2;
+        
+        ];   
+    
+    
+                sh:property [
+                sh:path sdh-short:P1 ;
+                sh:name "Standard Date-Time";
+                sh:datatype xsd:string;
+                sh:order 3;
+                ];
+                    
+                
+        sh:property [
+                sh:path sdh:P35 ;
+                sh:name "has quality dimension";
+                sh:class crm:E54 ;
+                sh:maxCount 1 ;
+                ];
+                    
+        sh:property [
+                sh:path sdh:P35 ;
+                sh:name "has quality dimension";
+                sh:class crm-sup:C21 ;
+                sh:maxCount 1 ;
+                ];
+                    
+        sh:property [
+                sh:path sdh:P76 ;
+                sh:name "is quantifiable quality of";
+                sh:class sdh:C73 ;
+                sh:maxCount 1 ;
+                ];
+                    
+        sh:property [
+                sh:path sdh:P92 ;
+                sh:name "has quantifiable quality type";
+                sh:class sdh:C74 ;
+                sh:maxCount 1 ;
+                ];
+                . 
+
+sdh-shacl:sdh_C73_Shape a sh:NodeShape ;
+    sh:targetClass sdh:C73 ;
+    sh:name "Epistemic Situation of a Group" ;
+
+    sh:property [
+        sh:path rdfs:label ;
+        sh:name "Label";
+        sh:datatype xsd:string;
+        sh:order 1;
+        
+        sh:maxCount 1;
+        ];
+
+    sh:property [
+        sh:path rdfs:comment ;
+        sh:name "Description";
+        sh:datatype rdf:HTML;
+        sh:order 2;
+        
+        ];   
+    
+    
+                sh:property [
+                sh:path sdh-short:P1 ;
+                sh:name "Standard Date-Time";
+                sh:datatype xsd:string;
+                sh:order 3;
+                ];
+                    
+                
+        sh:property [
+                sh:path sdh:P93 ;
+                sh:name "involves group";
+                sh:class crm:E74 ;
+                sh:maxCount 1 ;
+                ];
+                . 
+
+sdh-shacl:sdh_C74_Shape a sh:NodeShape ;
+    sh:targetClass sdh:C74 ;
+    sh:name "Type of Quantifiable Quality of an Epistemic Situation" ;
+
+    sh:property [
+        sh:path rdfs:label ;
+        sh:name "Label";
+        sh:datatype xsd:string;
+        sh:order 1;
+        sh:minCount 1;
+        sh:maxCount 1;
+        ];
+
+    sh:property [
+        sh:path rdfs:comment ;
+        sh:name "Description";
+        sh:datatype rdf:HTML;
+        sh:order 2;
+        sh:minCount 1;
+        ];   
+    
+        
+            .

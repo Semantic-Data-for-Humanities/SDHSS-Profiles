@@ -1,0 +1,523 @@
+### SHACL OntoME Profile 34 
+
+
+
+@prefix sdh-shacl: <https://sdhss.org/shacl/profiles/>. 
+@prefix sh: <http://www.w3.org/ns/shacl#> .  
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: 	<http://www.w3.org/2000/01/rdf-schema#> .  
+@prefix sdh-short: <https://sdhss.org/ontology/shortcuts/P1>.
+        @prefix crmsci: <http://www.cidoc-crm.org/cidoc-crm/CRMsci/>.
+@prefix sdh: <https://sdhss.org/ontology/core/>.
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/>.
+@prefix sdh-arc: <https://ontome.net/ns/archeological-excavation-and-finds/>.
+@prefix crm-sup: <https://sdhss.org/ontology/crm-supplement/>.
+@prefix crmarc: <http://www.cidoc-crm.org/extensions/crmarchaeo/>. 
+
+sdh-shacl:crm_E21_Shape a sh:NodeShape ;
+    sh:targetClass crm:E21 ;
+    sh:name "Person" ;
+
+    sh:property [
+        sh:path rdfs:label ;
+        sh:name "Label";
+        sh:datatype xsd:string;
+        sh:order 1;
+        sh:minCount 1;
+        sh:maxCount 1;
+        ];
+
+    sh:property [
+        sh:path rdfs:comment ;
+        sh:name "Description";
+        sh:datatype rdf:HTML;
+        sh:order 2;
+        sh:minCount 1;
+        ];   
+    
+            sh:property [
+                sh:path sdh-short:P2 ;
+                sh:name "has birth date";
+                sh:datatype xsd:string;
+                sh:order 3;
+                ];
+                
+        
+            . 
+
+sdh-shacl:crm_E24_Shape a sh:NodeShape ;
+    sh:targetClass crm:E24 ;
+    sh:name "Physical Human-Made Thing" ;
+
+    sh:property [
+        sh:path rdfs:label ;
+        sh:name "Label";
+        sh:datatype xsd:string;
+        sh:order 1;
+        sh:minCount 1;
+        sh:maxCount 1;
+        ];
+
+    sh:property [
+        sh:path rdfs:comment ;
+        sh:name "Description";
+        sh:datatype rdf:HTML;
+        sh:order 2;
+        sh:minCount 1;
+        ];   
+    
+        
+            . 
+
+sdh-shacl:sdh_C13_Shape a sh:NodeShape ;
+    sh:targetClass sdh:C13 ;
+    sh:name "Geographical Place" ;
+
+    sh:property [
+        sh:path rdfs:label ;
+        sh:name "Label";
+        sh:datatype xsd:string;
+        sh:order 1;
+        sh:minCount 1;
+        sh:maxCount 1;
+        ];
+
+    sh:property [
+        sh:path rdfs:comment ;
+        sh:name "Description";
+        sh:datatype rdf:HTML;
+        sh:order 2;
+        sh:minCount 1;
+        ];   
+    
+        
+                
+        sh:property [
+                sh:path crm:P43 ;
+                sh:name "has dimension";
+                sh:class crm-sup:C17 ;
+                
+                ];
+                . 
+
+sdh-shacl:sdh_C14_Shape a sh:NodeShape ;
+    sh:targetClass sdh:C14 ;
+    sh:name "Geographical Place Type" ;
+
+    sh:property [
+        sh:path rdfs:label ;
+        sh:name "Label";
+        sh:datatype xsd:string;
+        sh:order 1;
+        sh:minCount 1;
+        sh:maxCount 1;
+        ];
+
+    sh:property [
+        sh:path rdfs:comment ;
+        sh:name "Description";
+        sh:datatype rdf:HTML;
+        sh:order 2;
+        sh:minCount 1;
+        ];   
+    
+        
+            . 
+
+sdh-shacl:crmsci_S19_Shape a sh:NodeShape ;
+    sh:targetClass crmsci:S19 ;
+    sh:name "Encounter Event" ;
+
+    sh:property [
+        sh:path rdfs:label ;
+        sh:name "Label";
+        sh:datatype xsd:string;
+        sh:order 1;
+        
+        sh:maxCount 1;
+        ];
+
+    sh:property [
+        sh:path rdfs:comment ;
+        sh:name "Description";
+        sh:datatype rdf:HTML;
+        sh:order 2;
+        
+        ];   
+    
+    
+                sh:property [
+                sh:path sdh-short:P1 ;
+                sh:name "Standard Date-Time";
+                sh:datatype xsd:string;
+                sh:order 3;
+                ];
+                    
+                
+        sh:property [
+                sh:path crmsci:O19 ;
+                sh:name "encountered object";
+                sh:class crm:E24 ;
+                
+                ];
+                    
+        sh:property [
+                sh:path sdh:P6 ;
+                sh:name "took place at";
+                sh:class sdh:C13 ;
+                
+                ];
+                . 
+
+sdh-shacl:crmarc_A1_Shape a sh:NodeShape ;
+    sh:targetClass crmarc:A1 ;
+    sh:name "Excavation Process Unit" ;
+
+    sh:property [
+        sh:path rdfs:label ;
+        sh:name "Label";
+        sh:datatype xsd:string;
+        sh:order 1;
+        
+        sh:maxCount 1;
+        ];
+
+    sh:property [
+        sh:path rdfs:comment ;
+        sh:name "Description";
+        sh:datatype rdf:HTML;
+        sh:order 2;
+        
+        ];   
+    
+    
+                sh:property [
+                sh:path sdh-short:P1 ;
+                sh:name "Standard Date-Time";
+                sh:datatype xsd:string;
+                sh:order 3;
+                ];
+                    
+                
+        sh:property [
+                sh:path crmarc:AP5 ;
+                sh:name "removed part or all of";
+                sh:class crmarc:A2 ;
+                
+                ];
+                    
+        sh:property [
+                sh:path crmarc:AP5 ;
+                sh:name "removed part or all of";
+                sh:class crmarc:A3 ;
+                
+                ];
+                    
+        sh:property [
+                sh:path sdh-arc:P2 ;
+                sh:name "has excavation process unit type";
+                sh:class sdh-arc:C2 ;
+                sh:maxCount 1 ;
+                ];
+                . 
+
+sdh-shacl:crmarc_A2_Shape a sh:NodeShape ;
+    sh:targetClass crmarc:A2 ;
+    sh:name "Stratigraphic Volume Unit" ;
+
+    sh:property [
+        sh:path rdfs:label ;
+        sh:name "Label";
+        sh:datatype xsd:string;
+        sh:order 1;
+        sh:minCount 1;
+        sh:maxCount 1;
+        ];
+
+    sh:property [
+        sh:path rdfs:comment ;
+        sh:name "Description";
+        sh:datatype rdf:HTML;
+        sh:order 2;
+        sh:minCount 1;
+        ];   
+    
+        
+                
+        sh:property [
+                sh:path crm:P43 ;
+                sh:name "has dimension";
+                sh:class crm-sup:C20 ;
+                
+                ];
+                    
+        sh:property [
+                sh:path sdh-arc:P3 ;
+                sh:name "overlies";
+                sh:class crmarc:A2 ;
+                
+                ];
+                    
+        sh:property [
+                sh:path sdh-arc:P4 ;
+                sh:name "cuts";
+                sh:class crmarc:A2 ;
+                
+                ];
+                . 
+
+sdh-shacl:crmarc_A3_Shape a sh:NodeShape ;
+    sh:targetClass crmarc:A3 ;
+    sh:name "Stratigraphic Interface" ;
+
+    sh:property [
+        sh:path rdfs:label ;
+        sh:name "Label";
+        sh:datatype xsd:string;
+        sh:order 1;
+        sh:minCount 1;
+        sh:maxCount 1;
+        ];
+
+    sh:property [
+        sh:path rdfs:comment ;
+        sh:name "Description";
+        sh:datatype rdf:HTML;
+        sh:order 2;
+        sh:minCount 1;
+        ];   
+    
+        
+            . 
+
+sdh-shacl:crmarc_A7_Shape a sh:NodeShape ;
+    sh:targetClass crmarc:A7 ;
+    sh:name "Embedding" ;
+
+    sh:property [
+        sh:path rdfs:label ;
+        sh:name "Label";
+        sh:datatype xsd:string;
+        sh:order 1;
+        
+        sh:maxCount 1;
+        ];
+
+    sh:property [
+        sh:path rdfs:comment ;
+        sh:name "Description";
+        sh:datatype rdf:HTML;
+        sh:order 2;
+        
+        ];   
+    
+    
+                sh:property [
+                sh:path sdh-short:P1 ;
+                sh:name "Standard Date-Time";
+                sh:datatype xsd:string;
+                sh:order 3;
+                ];
+                    
+                
+        sh:property [
+                sh:path crmarc:AP18 ;
+                sh:name "is embedding of";
+                sh:class crm:E24 ;
+                
+                ];
+                    
+        sh:property [
+                sh:path crmarc:AP19 ;
+                sh:name "is embedding in";
+                sh:class crmarc:A2 ;
+                
+                ];
+                . 
+
+sdh-shacl:crmarc_A9_Shape a sh:NodeShape ;
+    sh:targetClass crmarc:A9 ;
+    sh:name "Archaeological Excavation" ;
+
+    sh:property [
+        sh:path rdfs:label ;
+        sh:name "Label";
+        sh:datatype xsd:string;
+        sh:order 1;
+        
+        sh:maxCount 1;
+        ];
+
+    sh:property [
+        sh:path rdfs:comment ;
+        sh:name "Description";
+        sh:datatype rdf:HTML;
+        sh:order 2;
+        
+        ];   
+    
+    
+                sh:property [
+                sh:path sdh-short:P1 ;
+                sh:name "Standard Date-Time";
+                sh:datatype xsd:string;
+                sh:order 3;
+                ];
+                    
+                
+        sh:property [
+                sh:path crm:P9 ;
+                sh:name "consists of";
+                sh:class crmarc:A1 ;
+                
+                ];
+                    
+        sh:property [
+                sh:path crm:P11 ;
+                sh:name "had participant";
+                sh:class crm:E21 ;
+                
+                ];
+                    
+        sh:property [
+                sh:path sdh:P6 ;
+                sh:name "took place at";
+                sh:class sdh:C13 ;
+                
+                ];
+                    
+        sh:property [
+                sh:path sdh-arc:P1 ;
+                sh:name "has archeological excavation type";
+                sh:class sdh-arc:C1 ;
+                sh:maxCount 1 ;
+                ];
+                . 
+
+sdh-shacl:crm-sup_C17_Shape a sh:NodeShape ;
+    sh:targetClass crm-sup:C17 ;
+    sh:name "Area" ;
+
+    sh:property [
+        sh:path rdfs:label ;
+        sh:name "Label";
+        sh:datatype xsd:string;
+        sh:order 1;
+        sh:minCount 1;
+        sh:maxCount 1;
+        ];
+
+    sh:property [
+        sh:path rdfs:comment ;
+        sh:name "Description";
+        sh:datatype rdf:HTML;
+        sh:order 2;
+        sh:minCount 1;
+        ];   
+    
+        
+                
+        sh:property [
+                sh:path crm-sup:P14 ;
+                sh:name "has measurement unit";
+                sh:class crm-sup:C18 ;
+                sh:maxCount 1 ;
+                ];
+                . 
+
+sdh-shacl:crm-sup_C18_Shape a sh:NodeShape ;
+    sh:targetClass crm-sup:C18 ;
+    sh:name "Area measurement unit" ;
+
+    sh:property [
+        sh:path rdfs:label ;
+        sh:name "Label";
+        sh:datatype xsd:string;
+        sh:order 1;
+        sh:minCount 1;
+        sh:maxCount 1;
+        ];
+
+    sh:property [
+        sh:path rdfs:comment ;
+        sh:name "Description";
+        sh:datatype rdf:HTML;
+        sh:order 2;
+        sh:minCount 1;
+        ];   
+    
+        
+            . 
+
+sdh-shacl:crm-sup_C20_Shape a sh:NodeShape ;
+    sh:targetClass crm-sup:C20 ;
+    sh:name "Volume" ;
+
+    sh:property [
+        sh:path rdfs:label ;
+        sh:name "Label";
+        sh:datatype xsd:string;
+        sh:order 1;
+        sh:minCount 1;
+        sh:maxCount 1;
+        ];
+
+    sh:property [
+        sh:path rdfs:comment ;
+        sh:name "Description";
+        sh:datatype rdf:HTML;
+        sh:order 2;
+        sh:minCount 1;
+        ];   
+    
+        
+            . 
+
+sdh-shacl:sdh-arc_C1_Shape a sh:NodeShape ;
+    sh:targetClass sdh-arc:C1 ;
+    sh:name "Archaeological Excavation Type" ;
+
+    sh:property [
+        sh:path rdfs:label ;
+        sh:name "Label";
+        sh:datatype xsd:string;
+        sh:order 1;
+        sh:minCount 1;
+        sh:maxCount 1;
+        ];
+
+    sh:property [
+        sh:path rdfs:comment ;
+        sh:name "Description";
+        sh:datatype rdf:HTML;
+        sh:order 2;
+        sh:minCount 1;
+        ];   
+    
+        
+            . 
+
+sdh-shacl:sdh-arc_C2_Shape a sh:NodeShape ;
+    sh:targetClass sdh-arc:C2 ;
+    sh:name "Excavation Process Unit Type" ;
+
+    sh:property [
+        sh:path rdfs:label ;
+        sh:name "Label";
+        sh:datatype xsd:string;
+        sh:order 1;
+        sh:minCount 1;
+        sh:maxCount 1;
+        ];
+
+    sh:property [
+        sh:path rdfs:comment ;
+        sh:name "Description";
+        sh:datatype rdf:HTML;
+        sh:order 2;
+        sh:minCount 1;
+        ];   
+    
+        
+            .

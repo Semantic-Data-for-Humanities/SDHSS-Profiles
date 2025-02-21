@@ -1,0 +1,435 @@
+### SHACL OntoME Profile 8 
+
+
+
+@prefix sdh-shacl: <https://sdhss.org/shacl/profiles/>. 
+@prefix sh: <http://www.w3.org/ns/shacl#> .  
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: 	<http://www.w3.org/2000/01/rdf-schema#> .  
+@prefix sdh-short: <https://sdhss.org/ontology/shortcuts/P1>.
+        @prefix crm: <http://www.cidoc-crm.org/cidoc-crm/>.
+@prefix sdh: <https://sdhss.org/ontology/core/>.
+@prefix sdh-so: <https://ontome.net/ns/social-legal-economic-life/>.
+@prefix mar: <https://ontome.net/ns/maritime-history/>. 
+
+sdh-shacl:crm_E21_Shape a sh:NodeShape ;
+    sh:targetClass crm:E21 ;
+    sh:name "Person" ;
+
+    sh:property [
+        sh:path rdfs:label ;
+        sh:name "Label";
+        sh:datatype xsd:string;
+        sh:order 1;
+        sh:minCount 1;
+        sh:maxCount 1;
+        ];
+
+    sh:property [
+        sh:path rdfs:comment ;
+        sh:name "Description";
+        sh:datatype rdf:HTML;
+        sh:order 2;
+        sh:minCount 1;
+        ];   
+    
+            sh:property [
+                sh:path sdh-short:P2 ;
+                sh:name "has birth date";
+                sh:datatype xsd:string;
+                sh:order 3;
+                ];
+                
+        
+                
+        sh:property [
+                sh:path mar:P12 ;
+                sh:name "participated in";
+                sh:class mar:C1 ;
+                
+                ];
+                . 
+
+sdh-shacl:sdh_C13_Shape a sh:NodeShape ;
+    sh:targetClass sdh:C13 ;
+    sh:name "Geographical Place" ;
+
+    sh:property [
+        sh:path rdfs:label ;
+        sh:name "Label";
+        sh:datatype xsd:string;
+        sh:order 1;
+        sh:minCount 1;
+        sh:maxCount 1;
+        ];
+
+    sh:property [
+        sh:path rdfs:comment ;
+        sh:name "Description";
+        sh:datatype rdf:HTML;
+        sh:order 2;
+        sh:minCount 1;
+        ];   
+    
+        
+            . 
+
+sdh-shacl:mar_C2_Shape a sh:NodeShape ;
+    sh:targetClass mar:C2 ;
+    sh:name "Ship" ;
+
+    sh:property [
+        sh:path rdfs:label ;
+        sh:name "Label";
+        sh:datatype xsd:string;
+        sh:order 1;
+        sh:minCount 1;
+        sh:maxCount 1;
+        ];
+
+    sh:property [
+        sh:path rdfs:comment ;
+        sh:name "Description";
+        sh:datatype rdf:HTML;
+        sh:order 2;
+        sh:minCount 1;
+        ];   
+    
+        
+                
+        sh:property [
+                sh:path mar:P6 ;
+                sh:name "has ship type";
+                sh:class mar:C3 ;
+                sh:maxCount 1 ;
+                ];
+                . 
+
+sdh-shacl:mar_C1_Shape a sh:NodeShape ;
+    sh:targetClass mar:C1 ;
+    sh:name "Ship Voyage" ;
+
+    sh:property [
+        sh:path rdfs:label ;
+        sh:name "Label";
+        sh:datatype xsd:string;
+        sh:order 1;
+        
+        sh:maxCount 1;
+        ];
+
+    sh:property [
+        sh:path rdfs:comment ;
+        sh:name "Description";
+        sh:datatype rdf:HTML;
+        sh:order 2;
+        
+        ];   
+    
+    
+                sh:property [
+                sh:path sdh-short:P1 ;
+                sh:name "Standard Date-Time";
+                sh:datatype xsd:string;
+                sh:order 3;
+                ];
+                    
+                
+        sh:property [
+                sh:path mar:P1 ;
+                sh:name "had departure place";
+                sh:class sdh:C13 ;
+                sh:maxCount 1 ;
+                ];
+                    
+        sh:property [
+                sh:path mar:P2 ;
+                sh:name "had arrival place";
+                sh:class sdh:C13 ;
+                sh:maxCount 1 ;
+                ];
+                    
+        sh:property [
+                sh:path mar:P3 ;
+                sh:name "was carried out by";
+                sh:class mar:C2 ;
+                sh:maxCount 1 ;
+                ];
+                . 
+
+sdh-shacl:mar_C3_Shape a sh:NodeShape ;
+    sh:targetClass mar:C3 ;
+    sh:name "Ship Type" ;
+
+    sh:property [
+        sh:path rdfs:label ;
+        sh:name "Label";
+        sh:datatype xsd:string;
+        sh:order 1;
+        sh:minCount 1;
+        sh:maxCount 1;
+        ];
+
+    sh:property [
+        sh:path rdfs:comment ;
+        sh:name "Description";
+        sh:datatype rdf:HTML;
+        sh:order 2;
+        sh:minCount 1;
+        ];   
+    
+        
+            . 
+
+sdh-shacl:mar_C4_Shape a sh:NodeShape ;
+    sh:targetClass mar:C4 ;
+    sh:name "Shipyard" ;
+
+    sh:property [
+        sh:path rdfs:label ;
+        sh:name "Label";
+        sh:datatype xsd:string;
+        sh:order 1;
+        sh:minCount 1;
+        sh:maxCount 1;
+        ];
+
+    sh:property [
+        sh:path rdfs:comment ;
+        sh:name "Description";
+        sh:datatype rdf:HTML;
+        sh:order 2;
+        sh:minCount 1;
+        ];   
+    
+        
+            . 
+
+sdh-shacl:mar_C5_Shape a sh:NodeShape ;
+    sh:targetClass mar:C5 ;
+    sh:name "Economic good" ;
+
+    sh:property [
+        sh:path rdfs:label ;
+        sh:name "Label";
+        sh:datatype xsd:string;
+        sh:order 1;
+        sh:minCount 1;
+        sh:maxCount 1;
+        ];
+
+    sh:property [
+        sh:path rdfs:comment ;
+        sh:name "Description";
+        sh:datatype rdf:HTML;
+        sh:order 2;
+        sh:minCount 1;
+        ];   
+    
+        
+            . 
+
+sdh-shacl:mar_C6_Shape a sh:NodeShape ;
+    sh:targetClass mar:C6 ;
+    sh:name "Transport" ;
+
+    sh:property [
+        sh:path rdfs:label ;
+        sh:name "Label";
+        sh:datatype xsd:string;
+        sh:order 1;
+        
+        sh:maxCount 1;
+        ];
+
+    sh:property [
+        sh:path rdfs:comment ;
+        sh:name "Description";
+        sh:datatype rdf:HTML;
+        sh:order 2;
+        
+        ];   
+    
+    
+                sh:property [
+                sh:path sdh-short:P1 ;
+                sh:name "Standard Date-Time";
+                sh:datatype xsd:string;
+                sh:order 3;
+                ];
+                    
+                
+        sh:property [
+                sh:path mar:P9 ;
+                sh:name "is carried out in the context of";
+                sh:class mar:C1 ;
+                
+                ];
+                    
+        sh:property [
+                sh:path mar:P11 ;
+                sh:name "carried";
+                sh:class mar:C5 ;
+                
+                ];
+                . 
+
+sdh-shacl:mar_C7_Shape a sh:NodeShape ;
+    sh:targetClass mar:C7 ;
+    sh:name "Stopover" ;
+
+    sh:property [
+        sh:path rdfs:label ;
+        sh:name "Label";
+        sh:datatype xsd:string;
+        sh:order 1;
+        
+        sh:maxCount 1;
+        ];
+
+    sh:property [
+        sh:path rdfs:comment ;
+        sh:name "Description";
+        sh:datatype rdf:HTML;
+        sh:order 2;
+        
+        ];   
+    
+    
+                sh:property [
+                sh:path sdh-short:P1 ;
+                sh:name "Standard Date-Time";
+                sh:datatype xsd:string;
+                sh:order 3;
+                ];
+                    
+                
+        sh:property [
+                sh:path mar:P4 ;
+                sh:name "took place at";
+                sh:class sdh:C13 ;
+                sh:maxCount 1 ;
+                ];
+                    
+        sh:property [
+                sh:path mar:P5 ;
+                sh:name "was part of";
+                sh:class mar:C1 ;
+                sh:maxCount 1 ;
+                ];
+                . 
+
+sdh-shacl:mar_C8_Shape a sh:NodeShape ;
+    sh:targetClass mar:C8 ;
+    sh:name "VOC Chamber" ;
+
+    sh:property [
+        sh:path rdfs:label ;
+        sh:name "Label";
+        sh:datatype xsd:string;
+        sh:order 1;
+        sh:minCount 1;
+        sh:maxCount 1;
+        ];
+
+    sh:property [
+        sh:path rdfs:comment ;
+        sh:name "Description";
+        sh:datatype rdf:HTML;
+        sh:order 2;
+        sh:minCount 1;
+        ];   
+    
+        
+                
+        sh:property [
+                sh:path mar:P10 ;
+                sh:name "has set up";
+                sh:class mar:C1 ;
+                
+                ];
+                . 
+
+sdh-shacl:mar_C12_Shape a sh:NodeShape ;
+    sh:targetClass mar:C12 ;
+    sh:name "Shipbuilding" ;
+
+    sh:property [
+        sh:path rdfs:label ;
+        sh:name "Label";
+        sh:datatype xsd:string;
+        sh:order 1;
+        
+        sh:maxCount 1;
+        ];
+
+    sh:property [
+        sh:path rdfs:comment ;
+        sh:name "Description";
+        sh:datatype rdf:HTML;
+        sh:order 2;
+        
+        ];   
+    
+    
+                sh:property [
+                sh:path sdh-short:P1 ;
+                sh:name "Standard Date-Time";
+                sh:datatype xsd:string;
+                sh:order 3;
+                ];
+                    
+                
+        sh:property [
+                sh:path mar:P7 ;
+                sh:name "has built";
+                sh:class mar:C2 ;
+                
+                ];
+                    
+        sh:property [
+                sh:path mar:P8 ;
+                sh:name "carried out by";
+                sh:class mar:C4 ;
+                sh:maxCount 1 ;
+                ];
+                . 
+
+sdh-shacl:sdh-so_C15_Shape a sh:NodeShape ;
+    sh:targetClass sdh-so:C15 ;
+    sh:name "Participation" ;
+
+    sh:property [
+        sh:path rdfs:label ;
+        sh:name "Label";
+        sh:datatype xsd:string;
+        sh:order 1;
+        
+        sh:maxCount 1;
+        ];
+
+    sh:property [
+        sh:path rdfs:comment ;
+        sh:name "Description";
+        sh:datatype rdf:HTML;
+        sh:order 2;
+        
+        ];   
+    
+    
+                sh:property [
+                sh:path sdh-short:P1 ;
+                sh:name "Standard Date-Time";
+                sh:datatype xsd:string;
+                sh:order 3;
+                ];
+                    
+                
+        sh:property [
+                sh:path sdh-so:P11 ;
+                sh:name "is participation in";
+                sh:class mar:C1 ;
+                sh:maxCount 1 ;
+                ];
+                .

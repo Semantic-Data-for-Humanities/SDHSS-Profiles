@@ -1,0 +1,174 @@
+### SHACL OntoME Profile 166 
+
+
+
+@prefix sdh-shacl: <https://sdhss.org/shacl/profiles/>. 
+@prefix sh: <http://www.w3.org/ns/shacl#> .  
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: 	<http://www.w3.org/2000/01/rdf-schema#> .  
+@prefix sdh-short: <https://sdhss.org/ontology/shortcuts/P1>.
+        @prefix crm: <http://www.cidoc-crm.org/cidoc-crm/>.
+@prefix sdh: <https://sdhss.org/ontology/core/>. 
+
+sdh-shacl:crm_E33_Shape a sh:NodeShape ;
+    sh:targetClass crm:E33 ;
+    sh:name "Linguistic Object" ;
+
+    sh:property [
+        sh:path rdfs:label ;
+        sh:name "Label";
+        sh:datatype xsd:string;
+        sh:order 1;
+        sh:minCount 1;
+        sh:maxCount 1;
+        ];
+
+    sh:property [
+        sh:path rdfs:comment ;
+        sh:name "Description";
+        sh:datatype rdf:HTML;
+        sh:order 2;
+        sh:minCount 1;
+        ];   
+    
+        
+                
+        sh:property [
+                sh:path crm:P72 ;
+                sh:name "has language";
+                sh:class crm:E56 ;
+                
+                ];
+                    
+        sh:property [
+                sh:path crm:P165 ;
+                sh:name "incorporates";
+                sh:class crm:E33 ;
+                
+                ];
+                . 
+
+sdh-shacl:crm_E52_Shape a sh:NodeShape ;
+    sh:targetClass crm:E52 ;
+    sh:name "Time-Span" ;
+
+    sh:property [
+        sh:path rdfs:label ;
+        sh:name "Label";
+        sh:datatype xsd:string;
+        sh:order 1;
+        sh:minCount 1;
+        sh:maxCount 1;
+        ];
+
+    sh:property [
+        sh:path rdfs:comment ;
+        sh:name "Description";
+        sh:datatype rdf:HTML;
+        sh:order 2;
+        sh:minCount 1;
+        ];   
+    
+        
+            . 
+
+sdh-shacl:crm_E56_Shape a sh:NodeShape ;
+    sh:targetClass crm:E56 ;
+    sh:name "Language" ;
+
+    sh:property [
+        sh:path rdfs:label ;
+        sh:name "Label";
+        sh:datatype xsd:string;
+        sh:order 1;
+        sh:minCount 1;
+        sh:maxCount 1;
+        ];
+
+    sh:property [
+        sh:path rdfs:comment ;
+        sh:name "Description";
+        sh:datatype rdf:HTML;
+        sh:order 2;
+        sh:minCount 1;
+        ];   
+    
+        
+            . 
+
+sdh-shacl:crm_E65_Shape a sh:NodeShape ;
+    sh:targetClass crm:E65 ;
+    sh:name "Creation" ;
+
+    sh:property [
+        sh:path rdfs:label ;
+        sh:name "Label";
+        sh:datatype xsd:string;
+        sh:order 1;
+        
+        sh:maxCount 1;
+        ];
+
+    sh:property [
+        sh:path rdfs:comment ;
+        sh:name "Description";
+        sh:datatype rdf:HTML;
+        sh:order 2;
+        
+        ];   
+    
+    
+                sh:property [
+                sh:path sdh-short:P1 ;
+                sh:name "Standard Date-Time";
+                sh:datatype xsd:string;
+                sh:order 3;
+                ];
+                    
+                
+        sh:property [
+                sh:path crm:P4 ;
+                sh:name "has time-span";
+                sh:class crm:E52 ;
+                sh:maxCount 1 ;
+                ];
+                    
+        sh:property [
+                sh:path crm:P94 ;
+                sh:name "has created";
+                sh:class crm:E33 ;
+                
+                ];
+                    
+        sh:property [
+                sh:path sdh:P6 ;
+                sh:name "took place at";
+                sh:class sdh:C13 ;
+                
+                ];
+                . 
+
+sdh-shacl:sdh_C13_Shape a sh:NodeShape ;
+    sh:targetClass sdh:C13 ;
+    sh:name "Geographical Place" ;
+
+    sh:property [
+        sh:path rdfs:label ;
+        sh:name "Label";
+        sh:datatype xsd:string;
+        sh:order 1;
+        sh:minCount 1;
+        sh:maxCount 1;
+        ];
+
+    sh:property [
+        sh:path rdfs:comment ;
+        sh:name "Description";
+        sh:datatype rdf:HTML;
+        sh:order 2;
+        sh:minCount 1;
+        ];   
+    
+        
+            .

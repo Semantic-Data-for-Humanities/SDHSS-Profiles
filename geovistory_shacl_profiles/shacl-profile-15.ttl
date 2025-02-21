@@ -1,0 +1,490 @@
+### SHACL OntoME Profile 15 
+
+
+
+@prefix sdh-shacl: <https://sdhss.org/shacl/profiles/>. 
+@prefix sh: <http://www.w3.org/ns/shacl#> .  
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: 	<http://www.w3.org/2000/01/rdf-schema#> .  
+@prefix sdh-short: <https://sdhss.org/ontology/shortcuts/P1>.
+        @prefix sdh: <https://sdhss.org/ontology/core/>.
+@prefix sdh-so: <https://ontome.net/ns/social-legal-economic-life/>.
+@prefix sdh-int: <https://ontome.net/ns/intellectual-literary-life/>.
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/>.
+@prefix prct: <https://ontome.net/ns/processetti/>.
+@prefix crm-sup: <https://sdhss.org/ontology/crm-supplement/>.
+@prefix geov: <https://ontome.net/ns/geovistory/>. 
+
+sdh-shacl:crm_E21_Shape a sh:NodeShape ;
+    sh:targetClass crm:E21 ;
+    sh:name "Person" ;
+
+    sh:property [
+        sh:path rdfs:label ;
+        sh:name "Label";
+        sh:datatype xsd:string;
+        sh:order 1;
+        sh:minCount 1;
+        sh:maxCount 1;
+        ];
+
+    sh:property [
+        sh:path rdfs:comment ;
+        sh:name "Description";
+        sh:datatype rdf:HTML;
+        sh:order 2;
+        sh:minCount 1;
+        ];   
+    
+            sh:property [
+                sh:path sdh-short:P2 ;
+                sh:name "has birth date";
+                sh:datatype xsd:string;
+                sh:order 3;
+                ];
+                
+        
+                
+        sh:property [
+                sh:path geov:P13 ;
+                sh:name "should be merged with";
+                sh:class crm:E21 ;
+                sh:maxCount 1 ;
+                ];
+                . 
+
+sdh-shacl:sdh-so_C1_Shape a sh:NodeShape ;
+    sh:targetClass sdh-so:C1 ;
+    sh:name "Social Perception of an Actor" ;
+
+    sh:property [
+        sh:path rdfs:label ;
+        sh:name "Label";
+        sh:datatype xsd:string;
+        sh:order 1;
+        
+        sh:maxCount 1;
+        ];
+
+    sh:property [
+        sh:path rdfs:comment ;
+        sh:name "Description";
+        sh:datatype rdf:HTML;
+        sh:order 2;
+        
+        ];   
+    
+    
+                sh:property [
+                sh:path sdh-short:P1 ;
+                sh:name "Standard Date-Time";
+                sh:datatype xsd:string;
+                sh:order 3;
+                ];
+                    
+                
+        sh:property [
+                sh:path prct:P15 ;
+                sh:name "has marital status";
+                sh:class prct:C2 ;
+                sh:maxCount 1 ;
+                ];
+                . 
+
+sdh-shacl:sdh_C13_Shape a sh:NodeShape ;
+    sh:targetClass sdh:C13 ;
+    sh:name "Geographical Place" ;
+
+    sh:property [
+        sh:path rdfs:label ;
+        sh:name "Label";
+        sh:datatype xsd:string;
+        sh:order 1;
+        sh:minCount 1;
+        sh:maxCount 1;
+        ];
+
+    sh:property [
+        sh:path rdfs:comment ;
+        sh:name "Description";
+        sh:datatype rdf:HTML;
+        sh:order 2;
+        sh:minCount 1;
+        ];   
+    
+        
+            . 
+
+sdh-shacl:sdh-int_C2_Shape a sh:NodeShape ;
+    sh:targetClass sdh-int:C2 ;
+    sh:name "Expression Portion" ;
+
+    sh:property [
+        sh:path rdfs:label ;
+        sh:name "Label";
+        sh:datatype xsd:string;
+        sh:order 1;
+        sh:minCount 1;
+        sh:maxCount 1;
+        ];
+
+    sh:property [
+        sh:path rdfs:comment ;
+        sh:name "Description";
+        sh:datatype rdf:HTML;
+        sh:order 2;
+        sh:minCount 1;
+        ];   
+    
+        
+            . 
+
+sdh-shacl:prct_C1_Shape a sh:NodeShape ;
+    sh:targetClass prct:C1 ;
+    sh:name "Pre-matrimonial enquiry" ;
+
+    sh:property [
+        sh:path rdfs:label ;
+        sh:name "Label";
+        sh:datatype xsd:string;
+        sh:order 1;
+        
+        sh:maxCount 1;
+        ];
+
+    sh:property [
+        sh:path rdfs:comment ;
+        sh:name "Description";
+        sh:datatype rdf:HTML;
+        sh:order 2;
+        
+        ];   
+    
+    
+                sh:property [
+                sh:path sdh-short:P1 ;
+                sh:name "Standard Date-Time";
+                sh:datatype xsd:string;
+                sh:order 3;
+                ];
+                    
+                
+        sh:property [
+                sh:path prct:P1 ;
+                sh:name "the investigation concerns";
+                sh:class crm:E21 ;
+                sh:maxCount 1 ;
+                ];
+                    
+        sh:property [
+                sh:path prct:P2 ;
+                sh:name "is requested as a witness";
+                sh:class crm:E21 ;
+                
+                ];
+                    
+        sh:property [
+                sh:path prct:P3 ;
+                sh:name "is documented in";
+                sh:class sdh-int:C2 ;
+                
+                ];
+                    
+        sh:property [
+                sh:path prct:P4 ;
+                sh:name "has motivation";
+                sh:class sdh-so:C9 ;
+                
+                ];
+                    
+        sh:property [
+                sh:path prct:P5 ;
+                sh:name "has motivation type";
+                sh:class prct:C3 ;
+                
+                ];
+                    
+        sh:property [
+                sh:path prct:P16 ;
+                sh:name "has intermediary";
+                sh:class crm:E21 ;
+                
+                ];
+                . 
+
+sdh-shacl:sdh-so_C9_Shape a sh:NodeShape ;
+    sh:targetClass sdh-so:C9 ;
+    sh:name "Relationship" ;
+
+    sh:property [
+        sh:path rdfs:label ;
+        sh:name "Label";
+        sh:datatype xsd:string;
+        sh:order 1;
+        
+        sh:maxCount 1;
+        ];
+
+    sh:property [
+        sh:path rdfs:comment ;
+        sh:name "Description";
+        sh:datatype rdf:HTML;
+        sh:order 2;
+        
+        ];   
+    
+    
+                sh:property [
+                sh:path sdh-short:P1 ;
+                sh:name "Standard Date-Time";
+                sh:datatype xsd:string;
+                sh:order 3;
+                ];
+                    
+            . 
+
+sdh-shacl:geov_C9_Shape a sh:NodeShape ;
+    sh:targetClass geov:C9 ;
+    sh:name "Tag" ;
+
+    sh:property [
+        sh:path rdfs:label ;
+        sh:name "Label";
+        sh:datatype xsd:string;
+        sh:order 1;
+        sh:minCount 1;
+        sh:maxCount 1;
+        ];
+
+    sh:property [
+        sh:path rdfs:comment ;
+        sh:name "Description";
+        sh:datatype rdf:HTML;
+        sh:order 2;
+        sh:minCount 1;
+        ];   
+    
+        
+            . 
+
+sdh-shacl:prct_C2_Shape a sh:NodeShape ;
+    sh:targetClass prct:C2 ;
+    sh:name "Marital status" ;
+
+    sh:property [
+        sh:path rdfs:label ;
+        sh:name "Label";
+        sh:datatype xsd:string;
+        sh:order 1;
+        sh:minCount 1;
+        sh:maxCount 1;
+        ];
+
+    sh:property [
+        sh:path rdfs:comment ;
+        sh:name "Description";
+        sh:datatype rdf:HTML;
+        sh:order 2;
+        sh:minCount 1;
+        ];   
+    
+        
+            . 
+
+sdh-shacl:prct_C3_Shape a sh:NodeShape ;
+    sh:targetClass prct:C3 ;
+    sh:name "Pre-matrimonial enquiry motivation type" ;
+
+    sh:property [
+        sh:path rdfs:label ;
+        sh:name "Label";
+        sh:datatype xsd:string;
+        sh:order 1;
+        sh:minCount 1;
+        sh:maxCount 1;
+        ];
+
+    sh:property [
+        sh:path rdfs:comment ;
+        sh:name "Description";
+        sh:datatype rdf:HTML;
+        sh:order 2;
+        sh:minCount 1;
+        ];   
+    
+        
+            . 
+
+sdh-shacl:crm-sup_C1_Shape a sh:NodeShape ;
+    sh:targetClass crm-sup:C1 ;
+    sh:name "Duration" ;
+
+    sh:property [
+        sh:path rdfs:label ;
+        sh:name "Label";
+        sh:datatype xsd:string;
+        sh:order 1;
+        sh:minCount 1;
+        sh:maxCount 1;
+        ];
+
+    sh:property [
+        sh:path rdfs:comment ;
+        sh:name "Description";
+        sh:datatype rdf:HTML;
+        sh:order 2;
+        sh:minCount 1;
+        ];   
+    
+        
+            . 
+
+sdh-shacl:prct_C4_Shape a sh:NodeShape ;
+    sh:targetClass prct:C4 ;
+    sh:name "Account of a journey or stay" ;
+
+    sh:property [
+        sh:path rdfs:label ;
+        sh:name "Label";
+        sh:datatype xsd:string;
+        sh:order 1;
+        sh:minCount 1;
+        sh:maxCount 1;
+        ];
+
+    sh:property [
+        sh:path rdfs:comment ;
+        sh:name "Description";
+        sh:datatype rdf:HTML;
+        sh:order 2;
+        sh:minCount 1;
+        ];   
+    
+        
+                
+        sh:property [
+                sh:path geov:P12 ;
+                sh:name "tagged by";
+                sh:class geov:C9 ;
+                
+                ];
+                    
+        sh:property [
+                sh:path prct:P6 ;
+                sh:name "has duration";
+                sh:class crm-sup:C1 ;
+                sh:maxCount 1 ;
+                ];
+                    
+        sh:property [
+                sh:path prct:P7 ;
+                sh:name "mentions geographical place";
+                sh:class sdh:C13 ;
+                
+                ];
+                    
+        sh:property [
+                sh:path prct:P8 ;
+                sh:name "concerns";
+                sh:class crm:E21 ;
+                
+                ];
+                    
+        sh:property [
+                sh:path prct:P9 ;
+                sh:name "has time lapse before account";
+                sh:class crm-sup:C1 ;
+                sh:maxCount 1 ;
+                ];
+                    
+        sh:property [
+                sh:path prct:P10 ;
+                sh:name "refers to";
+                sh:class prct:C5 ;
+                
+                ];
+                    
+        sh:property [
+                sh:path prct:P11 ;
+                sh:name "has frequency classification";
+                sh:class prct:C6 ;
+                sh:maxCount 1 ;
+                ];
+                    
+        sh:property [
+                sh:path prct:P12 ;
+                sh:name "has as a minimum duration";
+                sh:class crm-sup:C1 ;
+                sh:maxCount 1 ;
+                ];
+                    
+        sh:property [
+                sh:path prct:P13 ;
+                sh:name "has as a maximum duration";
+                sh:class crm-sup:C1 ;
+                sh:maxCount 1 ;
+                ];
+                    
+        sh:property [
+                sh:path prct:P14 ;
+                sh:name "has time lapse of last journey before account";
+                sh:class crm-sup:C1 ;
+                sh:maxCount 1 ;
+                ];
+                . 
+
+sdh-shacl:prct_C5_Shape a sh:NodeShape ;
+    sh:targetClass prct:C5 ;
+    sh:name "Concept referred to in a journey's or stay's account" ;
+
+    sh:property [
+        sh:path rdfs:label ;
+        sh:name "Label";
+        sh:datatype xsd:string;
+        sh:order 1;
+        sh:minCount 1;
+        sh:maxCount 1;
+        ];
+
+    sh:property [
+        sh:path rdfs:comment ;
+        sh:name "Description";
+        sh:datatype rdf:HTML;
+        sh:order 2;
+        sh:minCount 1;
+        ];   
+    
+        
+                
+        sh:property [
+                sh:path crm:P127 ;
+                sh:name "has broader term";
+                sh:class prct:C5 ;
+                
+                ];
+                . 
+
+sdh-shacl:prct_C6_Shape a sh:NodeShape ;
+    sh:targetClass prct:C6 ;
+    sh:name "Frequency class" ;
+
+    sh:property [
+        sh:path rdfs:label ;
+        sh:name "Label";
+        sh:datatype xsd:string;
+        sh:order 1;
+        sh:minCount 1;
+        sh:maxCount 1;
+        ];
+
+    sh:property [
+        sh:path rdfs:comment ;
+        sh:name "Description";
+        sh:datatype rdf:HTML;
+        sh:order 2;
+        sh:minCount 1;
+        ];   
+    
+        
+            .

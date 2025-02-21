@@ -1,0 +1,398 @@
+### SHACL OntoME Profile 89 
+
+
+
+@prefix sdh-shacl: <https://sdhss.org/shacl/profiles/>. 
+@prefix sh: <http://www.w3.org/ns/shacl#> .  
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: 	<http://www.w3.org/2000/01/rdf-schema#> .  
+@prefix sdh-short: <https://sdhss.org/ontology/shortcuts/P1>.
+        @prefix sdh: <https://sdhss.org/ontology/core/>.
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/>.
+@prefix prct: <https://ontome.net/ns/processetti/>.
+@prefix crm-sup: <https://sdhss.org/ontology/crm-supplement/>.
+@prefix sdh-sls: <https://ontome.net/ns/social-life-specific/>. 
+
+sdh-shacl:crm_E21_Shape a sh:NodeShape ;
+    sh:targetClass crm:E21 ;
+    sh:name "Person" ;
+
+    sh:property [
+        sh:path rdfs:label ;
+        sh:name "Label";
+        sh:datatype xsd:string;
+        sh:order 1;
+        sh:minCount 1;
+        sh:maxCount 1;
+        ];
+
+    sh:property [
+        sh:path rdfs:comment ;
+        sh:name "Description";
+        sh:datatype rdf:HTML;
+        sh:order 2;
+        sh:minCount 1;
+        ];   
+    
+            sh:property [
+                sh:path sdh-short:P2 ;
+                sh:name "has birth date";
+                sh:datatype xsd:string;
+                sh:order 3;
+                ];
+                
+        
+            . 
+
+sdh-shacl:crm_E74_Shape a sh:NodeShape ;
+    sh:targetClass crm:E74 ;
+    sh:name "Group" ;
+
+    sh:property [
+        sh:path rdfs:label ;
+        sh:name "Label";
+        sh:datatype xsd:string;
+        sh:order 1;
+        sh:minCount 1;
+        sh:maxCount 1;
+        ];
+
+    sh:property [
+        sh:path rdfs:comment ;
+        sh:name "Description";
+        sh:datatype rdf:HTML;
+        sh:order 2;
+        sh:minCount 1;
+        ];   
+    
+        
+            . 
+
+sdh-shacl:sdh_C13_Shape a sh:NodeShape ;
+    sh:targetClass sdh:C13 ;
+    sh:name "Geographical Place" ;
+
+    sh:property [
+        sh:path rdfs:label ;
+        sh:name "Label";
+        sh:datatype xsd:string;
+        sh:order 1;
+        sh:minCount 1;
+        sh:maxCount 1;
+        ];
+
+    sh:property [
+        sh:path rdfs:comment ;
+        sh:name "Description";
+        sh:datatype rdf:HTML;
+        sh:order 2;
+        sh:minCount 1;
+        ];   
+    
+        
+            . 
+
+sdh-shacl:crm-sup_C1_Shape a sh:NodeShape ;
+    sh:targetClass crm-sup:C1 ;
+    sh:name "Duration" ;
+
+    sh:property [
+        sh:path rdfs:label ;
+        sh:name "Label";
+        sh:datatype xsd:string;
+        sh:order 1;
+        sh:minCount 1;
+        sh:maxCount 1;
+        ];
+
+    sh:property [
+        sh:path rdfs:comment ;
+        sh:name "Description";
+        sh:datatype rdf:HTML;
+        sh:order 2;
+        sh:minCount 1;
+        ];   
+    
+        
+            . 
+
+sdh-shacl:prct_C4_Shape a sh:NodeShape ;
+    sh:targetClass prct:C4 ;
+    sh:name "Account of a journey or stay" ;
+
+    sh:property [
+        sh:path rdfs:label ;
+        sh:name "Label";
+        sh:datatype xsd:string;
+        sh:order 1;
+        sh:minCount 1;
+        sh:maxCount 1;
+        ];
+
+    sh:property [
+        sh:path rdfs:comment ;
+        sh:name "Description";
+        sh:datatype rdf:HTML;
+        sh:order 2;
+        sh:minCount 1;
+        ];   
+    
+        
+                
+        sh:property [
+                sh:path prct:P6 ;
+                sh:name "has duration";
+                sh:class crm-sup:C1 ;
+                sh:maxCount 1 ;
+                ];
+                    
+        sh:property [
+                sh:path prct:P7 ;
+                sh:name "mentions geographical place";
+                sh:class sdh:C13 ;
+                
+                ];
+                    
+        sh:property [
+                sh:path prct:P8 ;
+                sh:name "concerns";
+                sh:class crm:E21 ;
+                
+                ];
+                    
+        sh:property [
+                sh:path prct:P10 ;
+                sh:name "refers to";
+                sh:class prct:C5 ;
+                
+                ];
+                    
+        sh:property [
+                sh:path prct:P11 ;
+                sh:name "has frequency classification";
+                sh:class prct:C6 ;
+                sh:maxCount 1 ;
+                ];
+                    
+        sh:property [
+                sh:path prct:P12 ;
+                sh:name "has as a minimum duration";
+                sh:class crm-sup:C1 ;
+                sh:maxCount 1 ;
+                ];
+                    
+        sh:property [
+                sh:path prct:P13 ;
+                sh:name "has as a maximum duration";
+                sh:class crm-sup:C1 ;
+                sh:maxCount 1 ;
+                ];
+                . 
+
+sdh-shacl:prct_C5_Shape a sh:NodeShape ;
+    sh:targetClass prct:C5 ;
+    sh:name "Concept referred to in a journey's or stay's account" ;
+
+    sh:property [
+        sh:path rdfs:label ;
+        sh:name "Label";
+        sh:datatype xsd:string;
+        sh:order 1;
+        sh:minCount 1;
+        sh:maxCount 1;
+        ];
+
+    sh:property [
+        sh:path rdfs:comment ;
+        sh:name "Description";
+        sh:datatype rdf:HTML;
+        sh:order 2;
+        sh:minCount 1;
+        ];   
+    
+        
+            . 
+
+sdh-shacl:prct_C6_Shape a sh:NodeShape ;
+    sh:targetClass prct:C6 ;
+    sh:name "Frequency class" ;
+
+    sh:property [
+        sh:path rdfs:label ;
+        sh:name "Label";
+        sh:datatype xsd:string;
+        sh:order 1;
+        sh:minCount 1;
+        sh:maxCount 1;
+        ];
+
+    sh:property [
+        sh:path rdfs:comment ;
+        sh:name "Description";
+        sh:datatype rdf:HTML;
+        sh:order 2;
+        sh:minCount 1;
+        ];   
+    
+        
+            . 
+
+sdh-shacl:sdh-sls_C1_Shape a sh:NodeShape ;
+    sh:targetClass sdh-sls:C1 ;
+    sh:name "Taking Care of a Person" ;
+
+    sh:property [
+        sh:path rdfs:label ;
+        sh:name "Label";
+        sh:datatype xsd:string;
+        sh:order 1;
+        
+        sh:maxCount 1;
+        ];
+
+    sh:property [
+        sh:path rdfs:comment ;
+        sh:name "Description";
+        sh:datatype rdf:HTML;
+        sh:order 2;
+        
+        ];   
+    
+    
+                sh:property [
+                sh:path sdh-short:P1 ;
+                sh:name "Standard Date-Time";
+                sh:datatype xsd:string;
+                sh:order 3;
+                ];
+                    
+                
+        sh:property [
+                sh:path sdh-sls:P1 ;
+                sh:name "take care of";
+                sh:class crm:E21 ;
+                sh:maxCount 1 ;
+                ];
+                    
+        sh:property [
+                sh:path sdh-sls:P2 ;
+                sh:name "has caretaker";
+                sh:class crm:E21 ;
+                sh:maxCount 1 ;
+                ];
+                    
+        sh:property [
+                sh:path sdh-sls:P2 ;
+                sh:name "has caretaker";
+                sh:class crm:E74 ;
+                sh:maxCount 1 ;
+                ];
+                    
+        sh:property [
+                sh:path sdh-sls:P5 ;
+                sh:name "has taking care type";
+                sh:class sdh-sls:C3 ;
+                sh:maxCount 1 ;
+                ];
+                . 
+
+sdh-shacl:sdh-sls_C2_Shape a sh:NodeShape ;
+    sh:targetClass sdh-sls:C2 ;
+    sh:name "Attending a School" ;
+
+    sh:property [
+        sh:path rdfs:label ;
+        sh:name "Label";
+        sh:datatype xsd:string;
+        sh:order 1;
+        
+        sh:maxCount 1;
+        ];
+
+    sh:property [
+        sh:path rdfs:comment ;
+        sh:name "Description";
+        sh:datatype rdf:HTML;
+        sh:order 2;
+        
+        ];   
+    
+    
+                sh:property [
+                sh:path sdh-short:P1 ;
+                sh:name "Standard Date-Time";
+                sh:datatype xsd:string;
+                sh:order 3;
+                ];
+                    
+                
+        sh:property [
+                sh:path sdh-sls:P3 ;
+                sh:name "concerned person";
+                sh:class crm:E21 ;
+                sh:maxCount 1 ;
+                ];
+                    
+        sh:property [
+                sh:path sdh-sls:P4 ;
+                sh:name "concerned school";
+                sh:class crm:E74 ;
+                sh:maxCount 1 ;
+                ];
+                    
+        sh:property [
+                sh:path sdh-sls:P6 ;
+                sh:name "has attending a school type";
+                sh:class sdh-sls:C4 ;
+                sh:maxCount 1 ;
+                ];
+                . 
+
+sdh-shacl:sdh-sls_C3_Shape a sh:NodeShape ;
+    sh:targetClass sdh-sls:C3 ;
+    sh:name "Taking Care of a Person Type" ;
+
+    sh:property [
+        sh:path rdfs:label ;
+        sh:name "Label";
+        sh:datatype xsd:string;
+        sh:order 1;
+        sh:minCount 1;
+        sh:maxCount 1;
+        ];
+
+    sh:property [
+        sh:path rdfs:comment ;
+        sh:name "Description";
+        sh:datatype rdf:HTML;
+        sh:order 2;
+        sh:minCount 1;
+        ];   
+    
+        
+            . 
+
+sdh-shacl:sdh-sls_C4_Shape a sh:NodeShape ;
+    sh:targetClass sdh-sls:C4 ;
+    sh:name "Attending a School Type" ;
+
+    sh:property [
+        sh:path rdfs:label ;
+        sh:name "Label";
+        sh:datatype xsd:string;
+        sh:order 1;
+        sh:minCount 1;
+        sh:maxCount 1;
+        ];
+
+    sh:property [
+        sh:path rdfs:comment ;
+        sh:name "Description";
+        sh:datatype rdf:HTML;
+        sh:order 2;
+        sh:minCount 1;
+        ];   
+    
+        
+            .
