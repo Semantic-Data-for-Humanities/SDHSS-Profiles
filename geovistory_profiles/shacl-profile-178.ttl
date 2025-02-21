@@ -1,0 +1,74 @@
+### SHACL OntoME Profile 178 
+
+
+
+        @prefix sdh-shacl: <https://sdhss.org/shacl/profiles/>. 
+        @prefix sh: <http://www.w3.org/ns/shacl#> .  
+        @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+        @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+        @prefix rdfs: 	<http://www.w3.org/2000/01/rdf-schema#> .  
+        @prefix sdh-short: <https://sdhss.org/ontology/shortcuts/P1>.
+        @prefix crm: <http://www.cidoc-crm.org/cidoc-crm/>.
+@prefix sdh: <https://sdhss.org/ontology/core/>. 
+
+        sdh-shacl:sdh_C67_Shape a sh:NodeShape ;
+            sh:targetClass sdh:C67 ;
+            sh:name "Animal" ;
+
+            sh:property [
+                sh:path rdfs:label ;
+                sh:name "Label";
+                sh:datatype xsd:string;
+                sh:order 1;
+                sh:minCount 1;
+                sh:maxCount 1;
+                ];
+
+            sh:property [
+                sh:path rdfs:comment ;
+                sh:name "Description";
+                sh:datatype rdf:HTML;
+                sh:order 2;
+                sh:minCount 1;
+                ];   
+            
+                
+                
+        sh:property [
+                sh:path sdh:P86 ;
+                sh:name "is of biological object classification type";
+                sh:class sdh:C68 ;
+                
+                ];
+                . 
+
+        sdh-shacl:sdh_C68_Shape a sh:NodeShape ;
+            sh:targetClass sdh:C68 ;
+            sh:name "Biological Object Classification Type" ;
+
+            sh:property [
+                sh:path rdfs:label ;
+                sh:name "Label";
+                sh:datatype xsd:string;
+                sh:order 1;
+                sh:minCount 1;
+                sh:maxCount 1;
+                ];
+
+            sh:property [
+                sh:path rdfs:comment ;
+                sh:name "Description";
+                sh:datatype rdf:HTML;
+                sh:order 2;
+                sh:minCount 1;
+                ];   
+            
+                
+                
+        sh:property [
+                sh:path crm:P127 ;
+                sh:name "has broader term";
+                sh:class sdh:C68 ;
+                
+                ];
+                .

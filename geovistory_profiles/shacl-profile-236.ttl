@@ -1,0 +1,67 @@
+### SHACL OntoME Profile 236 
+
+
+
+        @prefix sdh-shacl: <https://sdhss.org/shacl/profiles/>. 
+        @prefix sh: <http://www.w3.org/ns/shacl#> .  
+        @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+        @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+        @prefix rdfs: 	<http://www.w3.org/2000/01/rdf-schema#> .  
+        @prefix sdh-short: <https://sdhss.org/ontology/shortcuts/P1>.
+        @prefix crm: <http://www.cidoc-crm.org/cidoc-crm/>.
+@prefix crm-sup: <https://sdhss.org/ontology/crm-supplement/>. 
+
+        sdh-shacl:crm_E74_Shape a sh:NodeShape ;
+            sh:targetClass crm:E74 ;
+            sh:name "Group" ;
+
+            sh:property [
+                sh:path rdfs:label ;
+                sh:name "Label";
+                sh:datatype xsd:string;
+                sh:order 1;
+                sh:minCount 1;
+                sh:maxCount 1;
+                ];
+
+            sh:property [
+                sh:path rdfs:comment ;
+                sh:name "Description";
+                sh:datatype rdf:HTML;
+                sh:order 2;
+                sh:minCount 1;
+                ];   
+            
+                
+                
+        sh:property [
+                sh:path crm-sup:P7 ;
+                sh:name "has group type";
+                sh:class crm-sup:C9 ;
+                sh:maxCount 1 ;
+                ];
+                . 
+
+        sdh-shacl:crm-sup_C9_Shape a sh:NodeShape ;
+            sh:targetClass crm-sup:C9 ;
+            sh:name "Group Type" ;
+
+            sh:property [
+                sh:path rdfs:label ;
+                sh:name "Label";
+                sh:datatype xsd:string;
+                sh:order 1;
+                sh:minCount 1;
+                sh:maxCount 1;
+                ];
+
+            sh:property [
+                sh:path rdfs:comment ;
+                sh:name "Description";
+                sh:datatype rdf:HTML;
+                sh:order 2;
+                sh:minCount 1;
+                ];   
+            
+                
+            .

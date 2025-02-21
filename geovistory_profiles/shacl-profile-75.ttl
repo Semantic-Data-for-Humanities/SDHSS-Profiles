@@ -1,0 +1,265 @@
+### SHACL OntoME Profile 75 
+
+
+
+        @prefix sdh-shacl: <https://sdhss.org/shacl/profiles/>. 
+        @prefix sh: <http://www.w3.org/ns/shacl#> .  
+        @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+        @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+        @prefix rdfs: 	<http://www.w3.org/2000/01/rdf-schema#> .  
+        @prefix sdh-short: <https://sdhss.org/ontology/shortcuts/P1>.
+        @prefix crm: <http://www.cidoc-crm.org/cidoc-crm/>.
+@prefix sdh: <https://sdhss.org/ontology/core/>.
+@prefix sdh-edu: <https://ontome.net/ns/higher-education-and-academies/>. 
+
+        sdh-shacl:crm_E21_Shape a sh:NodeShape ;
+            sh:targetClass crm:E21 ;
+            sh:name "Person" ;
+
+            sh:property [
+                sh:path rdfs:label ;
+                sh:name "Label";
+                sh:datatype xsd:string;
+                sh:order 1;
+                sh:minCount 1;
+                sh:maxCount 1;
+                ];
+
+            sh:property [
+                sh:path rdfs:comment ;
+                sh:name "Description";
+                sh:datatype rdf:HTML;
+                sh:order 2;
+                sh:minCount 1;
+                ];   
+            
+            sh:property [
+                sh:path sdh-short:P2 ;
+                sh:name "has birth date";
+                sh:datatype xsd:string;
+                sh:order 3;
+                ];
+                
+                
+            . 
+
+        sdh-shacl:crm_E74_Shape a sh:NodeShape ;
+            sh:targetClass crm:E74 ;
+            sh:name "Group" ;
+
+            sh:property [
+                sh:path rdfs:label ;
+                sh:name "Label";
+                sh:datatype xsd:string;
+                sh:order 1;
+                sh:minCount 1;
+                sh:maxCount 1;
+                ];
+
+            sh:property [
+                sh:path rdfs:comment ;
+                sh:name "Description";
+                sh:datatype rdf:HTML;
+                sh:order 2;
+                sh:minCount 1;
+                ];   
+            
+                
+            . 
+
+        sdh-shacl:sdh_C13_Shape a sh:NodeShape ;
+            sh:targetClass sdh:C13 ;
+            sh:name "Geographical Place" ;
+
+            sh:property [
+                sh:path rdfs:label ;
+                sh:name "Label";
+                sh:datatype xsd:string;
+                sh:order 1;
+                sh:minCount 1;
+                sh:maxCount 1;
+                ];
+
+            sh:property [
+                sh:path rdfs:comment ;
+                sh:name "Description";
+                sh:datatype rdf:HTML;
+                sh:order 2;
+                sh:minCount 1;
+                ];   
+            
+                
+            . 
+
+        sdh-shacl:sdh-edu_C2_Shape a sh:NodeShape ;
+            sh:targetClass sdh-edu:C2 ;
+            sh:name "Study" ;
+
+            sh:property [
+                sh:path rdfs:label ;
+                sh:name "Label";
+                sh:datatype xsd:string;
+                sh:order 1;
+                
+                sh:maxCount 1;
+                ];
+
+            sh:property [
+                sh:path rdfs:comment ;
+                sh:name "Description";
+                sh:datatype rdf:HTML;
+                sh:order 2;
+                
+                ];   
+            
+            
+                sh:property [
+                sh:path sdh-short:P1 ;
+                sh:name "Standard Date-Time";
+                sh:datatype xsd:string;
+                sh:order 3;
+                ];
+                    
+                
+        sh:property [
+                sh:path sdh:P6 ;
+                sh:name "took place at";
+                sh:class sdh:C13 ;
+                
+                ];
+                    
+        sh:property [
+                sh:path sdh-edu:P1 ;
+                sh:name "is study at";
+                sh:class crm:E74 ;
+                sh:maxCount 1 ;
+                ];
+                    
+        sh:property [
+                sh:path sdh-edu:P2 ;
+                sh:name "is the study by";
+                sh:class crm:E21 ;
+                sh:maxCount 1 ;
+                ];
+                    
+        sh:property [
+                sh:path sdh-edu:P12 ;
+                sh:name "is study of";
+                sh:class sdh-edu:C5 ;
+                
+                ];
+                . 
+
+        sdh-shacl:sdh-edu_C3_Shape a sh:NodeShape ;
+            sh:targetClass sdh-edu:C3 ;
+            sh:name "Obtaining a Study Title" ;
+
+            sh:property [
+                sh:path rdfs:label ;
+                sh:name "Label";
+                sh:datatype xsd:string;
+                sh:order 1;
+                
+                sh:maxCount 1;
+                ];
+
+            sh:property [
+                sh:path rdfs:comment ;
+                sh:name "Description";
+                sh:datatype rdf:HTML;
+                sh:order 2;
+                
+                ];   
+            
+            
+                sh:property [
+                sh:path sdh-short:P1 ;
+                sh:name "Standard Date-Time";
+                sh:datatype xsd:string;
+                sh:order 3;
+                ];
+                    
+                
+        sh:property [
+                sh:path sdh-edu:P3 ;
+                sh:name "was obtained by";
+                sh:class crm:E21 ;
+                sh:maxCount 1 ;
+                ];
+                    
+        sh:property [
+                sh:path sdh-edu:P4 ;
+                sh:name "is obtention of";
+                sh:class sdh-edu:C4 ;
+                sh:maxCount 1 ;
+                ];
+                    
+        sh:property [
+                sh:path sdh-edu:P5 ;
+                sh:name "has academic supervisor";
+                sh:class crm:E21 ;
+                
+                ];
+                    
+        sh:property [
+                sh:path sdh-edu:P11 ;
+                sh:name "is delivered by";
+                sh:class crm:E74 ;
+                
+                ];
+                    
+        sh:property [
+                sh:path sdh-edu:P13 ;
+                sh:name "is obtained at";
+                sh:class sdh:C13 ;
+                
+                ];
+                . 
+
+        sdh-shacl:sdh-edu_C4_Shape a sh:NodeShape ;
+            sh:targetClass sdh-edu:C4 ;
+            sh:name "Study title" ;
+
+            sh:property [
+                sh:path rdfs:label ;
+                sh:name "Label";
+                sh:datatype xsd:string;
+                sh:order 1;
+                sh:minCount 1;
+                sh:maxCount 1;
+                ];
+
+            sh:property [
+                sh:path rdfs:comment ;
+                sh:name "Description";
+                sh:datatype rdf:HTML;
+                sh:order 2;
+                sh:minCount 1;
+                ];   
+            
+                
+            . 
+
+        sdh-shacl:sdh-edu_C5_Shape a sh:NodeShape ;
+            sh:targetClass sdh-edu:C5 ;
+            sh:name "Academic Discipline" ;
+
+            sh:property [
+                sh:path rdfs:label ;
+                sh:name "Label";
+                sh:datatype xsd:string;
+                sh:order 1;
+                sh:minCount 1;
+                sh:maxCount 1;
+                ];
+
+            sh:property [
+                sh:path rdfs:comment ;
+                sh:name "Description";
+                sh:datatype rdf:HTML;
+                sh:order 2;
+                sh:minCount 1;
+                ];   
+            
+                
+            .

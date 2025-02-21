@@ -1,0 +1,226 @@
+### SHACL OntoME Profile 220 
+
+
+
+        @prefix sdh-shacl: <https://sdhss.org/shacl/profiles/>. 
+        @prefix sh: <http://www.w3.org/ns/shacl#> .  
+        @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+        @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+        @prefix rdfs: 	<http://www.w3.org/2000/01/rdf-schema#> .  
+        @prefix sdh-short: <https://sdhss.org/ontology/shortcuts/P1>.
+        @prefix sdh-so: <https://ontome.net/ns/social-legal-economic-life/>.
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/>. 
+
+        sdh-shacl:crm_E21_Shape a sh:NodeShape ;
+            sh:targetClass crm:E21 ;
+            sh:name "Person" ;
+
+            sh:property [
+                sh:path rdfs:label ;
+                sh:name "Label";
+                sh:datatype xsd:string;
+                sh:order 1;
+                sh:minCount 1;
+                sh:maxCount 1;
+                ];
+
+            sh:property [
+                sh:path rdfs:comment ;
+                sh:name "Description";
+                sh:datatype rdf:HTML;
+                sh:order 2;
+                sh:minCount 1;
+                ];   
+            
+            sh:property [
+                sh:path sdh-short:P2 ;
+                sh:name "has birth date";
+                sh:datatype xsd:string;
+                sh:order 3;
+                ];
+                
+                
+            . 
+
+        sdh-shacl:crm_E74_Shape a sh:NodeShape ;
+            sh:targetClass crm:E74 ;
+            sh:name "Group" ;
+
+            sh:property [
+                sh:path rdfs:label ;
+                sh:name "Label";
+                sh:datatype xsd:string;
+                sh:order 1;
+                sh:minCount 1;
+                sh:maxCount 1;
+                ];
+
+            sh:property [
+                sh:path rdfs:comment ;
+                sh:name "Description";
+                sh:datatype rdf:HTML;
+                sh:order 2;
+                sh:minCount 1;
+                ];   
+            
+                
+            . 
+
+        sdh-shacl:sdh-so_C22_Shape a sh:NodeShape ;
+            sh:targetClass sdh-so:C22 ;
+            sh:name "Legal Quality Type" ;
+
+            sh:property [
+                sh:path rdfs:label ;
+                sh:name "Label";
+                sh:datatype xsd:string;
+                sh:order 1;
+                sh:minCount 1;
+                sh:maxCount 1;
+                ];
+
+            sh:property [
+                sh:path rdfs:comment ;
+                sh:name "Description";
+                sh:datatype rdf:HTML;
+                sh:order 2;
+                sh:minCount 1;
+                ];   
+            
+                
+            . 
+
+        sdh-shacl:sdh-so_C26_Shape a sh:NodeShape ;
+            sh:targetClass sdh-so:C26 ;
+            sh:name "Legal Quality" ;
+
+            sh:property [
+                sh:path rdfs:label ;
+                sh:name "Label";
+                sh:datatype xsd:string;
+                sh:order 1;
+                sh:minCount 1;
+                sh:maxCount 1;
+                ];
+
+            sh:property [
+                sh:path rdfs:comment ;
+                sh:name "Description";
+                sh:datatype rdf:HTML;
+                sh:order 2;
+                sh:minCount 1;
+                ];   
+            
+                
+                
+        sh:property [
+                sh:path sdh-so:P39 ;
+                sh:name "has type";
+                sh:class sdh-so:C22 ;
+                sh:maxCount 1 ;
+                ];
+                . 
+
+        sdh-shacl:sdh-so_C29_Shape a sh:NodeShape ;
+            sh:targetClass sdh-so:C29 ;
+            sh:name "Legal Quality Acquisition" ;
+
+            sh:property [
+                sh:path rdfs:label ;
+                sh:name "Label";
+                sh:datatype xsd:string;
+                sh:order 1;
+                
+                sh:maxCount 1;
+                ];
+
+            sh:property [
+                sh:path rdfs:comment ;
+                sh:name "Description";
+                sh:datatype rdf:HTML;
+                sh:order 2;
+                
+                ];   
+            
+            
+                sh:property [
+                sh:path sdh-short:P1 ;
+                sh:name "Standard Date-Time";
+                sh:datatype xsd:string;
+                sh:order 3;
+                ];
+                    
+                
+        sh:property [
+                sh:path sdh-so:P43 ;
+                sh:name "is acquisition by";
+                sh:class crm:E21 ;
+                sh:maxCount 1 ;
+                ];
+                    
+        sh:property [
+                sh:path sdh-so:P44 ;
+                sh:name "is acquisition of";
+                sh:class sdh-so:C26 ;
+                sh:maxCount 1 ;
+                ];
+                    
+        sh:property [
+                sh:path sdh-so:P45 ;
+                sh:name "issued by";
+                sh:class crm:E21 ;
+                
+                ];
+                    
+        sh:property [
+                sh:path sdh-so:P45 ;
+                sh:name "issued by";
+                sh:class crm:E74 ;
+                
+                ];
+                    
+        sh:property [
+                sh:path sdh-so:P46 ;
+                sh:name "has legal quality acquisition type";
+                sh:class sdh-so:C30 ;
+                sh:maxCount 1 ;
+                ];
+                    
+        sh:property [
+                sh:path sdh-so:P62 ;
+                sh:name "is in relation to";
+                sh:class crm:E21 ;
+                
+                ];
+                    
+        sh:property [
+                sh:path sdh-so:P62 ;
+                sh:name "is in relation to";
+                sh:class crm:E74 ;
+                
+                ];
+                . 
+
+        sdh-shacl:sdh-so_C30_Shape a sh:NodeShape ;
+            sh:targetClass sdh-so:C30 ;
+            sh:name "Actor's Legal Quality Acquisition Type" ;
+
+            sh:property [
+                sh:path rdfs:label ;
+                sh:name "Label";
+                sh:datatype xsd:string;
+                sh:order 1;
+                sh:minCount 1;
+                sh:maxCount 1;
+                ];
+
+            sh:property [
+                sh:path rdfs:comment ;
+                sh:name "Description";
+                sh:datatype rdf:HTML;
+                sh:order 2;
+                sh:minCount 1;
+                ];   
+            
+                
+            .

@@ -1,0 +1,410 @@
+### SHACL OntoME Profile 140 
+
+
+
+        @prefix sdh-shacl: <https://sdhss.org/shacl/profiles/>. 
+        @prefix sh: <http://www.w3.org/ns/shacl#> .  
+        @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+        @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+        @prefix rdfs: 	<http://www.w3.org/2000/01/rdf-schema#> .  
+        @prefix sdh-short: <https://sdhss.org/ontology/shortcuts/P1>.
+        @prefix sdh-so: <https://ontome.net/ns/social-legal-economic-life/>.
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/>.
+@prefix sdh: <https://sdhss.org/ontology/core/>. 
+
+        sdh-shacl:crm_E8_Shape a sh:NodeShape ;
+            sh:targetClass crm:E8 ;
+            sh:name "Acquisition" ;
+
+            sh:property [
+                sh:path rdfs:label ;
+                sh:name "Label";
+                sh:datatype xsd:string;
+                sh:order 1;
+                
+                sh:maxCount 1;
+                ];
+
+            sh:property [
+                sh:path rdfs:comment ;
+                sh:name "Description";
+                sh:datatype rdf:HTML;
+                sh:order 2;
+                
+                ];   
+            
+            
+                sh:property [
+                sh:path sdh-short:P1 ;
+                sh:name "Standard Date-Time";
+                sh:datatype xsd:string;
+                sh:order 3;
+                ];
+                    
+                
+        sh:property [
+                sh:path crm:P8 ;
+                sh:name "took place on or within";
+                sh:class crm:E18 ;
+                
+                ];
+                    
+        sh:property [
+                sh:path crm:P22 ;
+                sh:name "transferred title to";
+                sh:class crm:E21 ;
+                
+                ];
+                    
+        sh:property [
+                sh:path crm:P22 ;
+                sh:name "transferred title to";
+                sh:class crm:E74 ;
+                
+                ];
+                    
+        sh:property [
+                sh:path crm:P23 ;
+                sh:name "transferred title from";
+                sh:class crm:E21 ;
+                
+                ];
+                    
+        sh:property [
+                sh:path crm:P23 ;
+                sh:name "transferred title from";
+                sh:class crm:E74 ;
+                
+                ];
+                    
+        sh:property [
+                sh:path crm:P24 ;
+                sh:name "transferred title of";
+                sh:class crm:E24 ;
+                
+                ];
+                . 
+
+        sdh-shacl:crm_E18_Shape a sh:NodeShape ;
+            sh:targetClass crm:E18 ;
+            sh:name "Physical Thing" ;
+
+            sh:property [
+                sh:path rdfs:label ;
+                sh:name "Label";
+                sh:datatype xsd:string;
+                sh:order 1;
+                sh:minCount 1;
+                sh:maxCount 1;
+                ];
+
+            sh:property [
+                sh:path rdfs:comment ;
+                sh:name "Description";
+                sh:datatype rdf:HTML;
+                sh:order 2;
+                sh:minCount 1;
+                ];   
+            
+                
+            . 
+
+        sdh-shacl:crm_E21_Shape a sh:NodeShape ;
+            sh:targetClass crm:E21 ;
+            sh:name "Person" ;
+
+            sh:property [
+                sh:path rdfs:label ;
+                sh:name "Label";
+                sh:datatype xsd:string;
+                sh:order 1;
+                sh:minCount 1;
+                sh:maxCount 1;
+                ];
+
+            sh:property [
+                sh:path rdfs:comment ;
+                sh:name "Description";
+                sh:datatype rdf:HTML;
+                sh:order 2;
+                sh:minCount 1;
+                ];   
+            
+            sh:property [
+                sh:path sdh-short:P2 ;
+                sh:name "has birth date";
+                sh:datatype xsd:string;
+                sh:order 3;
+                ];
+                
+                
+            . 
+
+        sdh-shacl:crm_E24_Shape a sh:NodeShape ;
+            sh:targetClass crm:E24 ;
+            sh:name "Physical Human-Made Thing" ;
+
+            sh:property [
+                sh:path rdfs:label ;
+                sh:name "Label";
+                sh:datatype xsd:string;
+                sh:order 1;
+                sh:minCount 1;
+                sh:maxCount 1;
+                ];
+
+            sh:property [
+                sh:path rdfs:comment ;
+                sh:name "Description";
+                sh:datatype rdf:HTML;
+                sh:order 2;
+                sh:minCount 1;
+                ];   
+            
+                
+            . 
+
+        sdh-shacl:crm_E74_Shape a sh:NodeShape ;
+            sh:targetClass crm:E74 ;
+            sh:name "Group" ;
+
+            sh:property [
+                sh:path rdfs:label ;
+                sh:name "Label";
+                sh:datatype xsd:string;
+                sh:order 1;
+                sh:minCount 1;
+                sh:maxCount 1;
+                ];
+
+            sh:property [
+                sh:path rdfs:comment ;
+                sh:name "Description";
+                sh:datatype rdf:HTML;
+                sh:order 2;
+                sh:minCount 1;
+                ];   
+            
+                
+            . 
+
+        sdh-shacl:crm_E78_Shape a sh:NodeShape ;
+            sh:targetClass crm:E78 ;
+            sh:name "Curated Holding" ;
+
+            sh:property [
+                sh:path rdfs:label ;
+                sh:name "Label";
+                sh:datatype xsd:string;
+                sh:order 1;
+                sh:minCount 1;
+                sh:maxCount 1;
+                ];
+
+            sh:property [
+                sh:path rdfs:comment ;
+                sh:name "Description";
+                sh:datatype rdf:HTML;
+                sh:order 2;
+                sh:minCount 1;
+                ];   
+            
+                
+            . 
+
+        sdh-shacl:crm_E87_Shape a sh:NodeShape ;
+            sh:targetClass crm:E87 ;
+            sh:name "Curation Activity" ;
+
+            sh:property [
+                sh:path rdfs:label ;
+                sh:name "Label";
+                sh:datatype xsd:string;
+                sh:order 1;
+                
+                sh:maxCount 1;
+                ];
+
+            sh:property [
+                sh:path rdfs:comment ;
+                sh:name "Description";
+                sh:datatype rdf:HTML;
+                sh:order 2;
+                
+                ];   
+            
+            
+                sh:property [
+                sh:path sdh-short:P1 ;
+                sh:name "Standard Date-Time";
+                sh:datatype xsd:string;
+                sh:order 3;
+                ];
+                    
+                
+        sh:property [
+                sh:path crm:P147 ;
+                sh:name "curated";
+                sh:class crm:E78 ;
+                
+                ];
+                . 
+
+        sdh-shacl:sdh-so_C2_Shape a sh:NodeShape ;
+            sh:targetClass sdh-so:C2 ;
+            sh:name "Actor's Social Quality" ;
+
+            sh:property [
+                sh:path rdfs:label ;
+                sh:name "Label";
+                sh:datatype xsd:string;
+                sh:order 1;
+                sh:minCount 1;
+                sh:maxCount 1;
+                ];
+
+            sh:property [
+                sh:path rdfs:comment ;
+                sh:name "Description";
+                sh:datatype rdf:HTML;
+                sh:order 2;
+                sh:minCount 1;
+                ];   
+            
+                
+            . 
+
+        sdh-shacl:sdh-so_C15_Shape a sh:NodeShape ;
+            sh:targetClass sdh-so:C15 ;
+            sh:name "Participation" ;
+
+            sh:property [
+                sh:path rdfs:label ;
+                sh:name "Label";
+                sh:datatype xsd:string;
+                sh:order 1;
+                
+                sh:maxCount 1;
+                ];
+
+            sh:property [
+                sh:path rdfs:comment ;
+                sh:name "Description";
+                sh:datatype rdf:HTML;
+                sh:order 2;
+                
+                ];   
+            
+            
+                sh:property [
+                sh:path sdh-short:P1 ;
+                sh:name "Standard Date-Time";
+                sh:datatype xsd:string;
+                sh:order 3;
+                ];
+                    
+                
+        sh:property [
+                sh:path sdh-so:P10 ;
+                sh:name "is participation of";
+                sh:class crm:E21 ;
+                sh:maxCount 1 ;
+                ];
+                    
+        sh:property [
+                sh:path sdh-so:P10 ;
+                sh:name "is participation of";
+                sh:class crm:E74 ;
+                sh:maxCount 1 ;
+                ];
+                    
+        sh:property [
+                sh:path sdh-so:P11 ;
+                sh:name "is participation in";
+                sh:class crm:E87 ;
+                sh:maxCount 1 ;
+                ];
+                    
+        sh:property [
+                sh:path sdh-so:P12 ;
+                sh:name "is participation in the quality of";
+                sh:class sdh-so:C2 ;
+                
+                ];
+                    
+        sh:property [
+                sh:path sdh-so:P64 ;
+                sh:name "has type of participation";
+                sh:class sdh-so:C36 ;
+                sh:maxCount 1 ;
+                ];
+                . 
+
+        sdh-shacl:sdh_C27_Shape a sh:NodeShape ;
+            sh:targetClass sdh:C27 ;
+            sh:name "Belonging to a Physical Collection" ;
+
+            sh:property [
+                sh:path rdfs:label ;
+                sh:name "Label";
+                sh:datatype xsd:string;
+                sh:order 1;
+                
+                sh:maxCount 1;
+                ];
+
+            sh:property [
+                sh:path rdfs:comment ;
+                sh:name "Description";
+                sh:datatype rdf:HTML;
+                sh:order 2;
+                
+                ];   
+            
+            
+                sh:property [
+                sh:path sdh-short:P1 ;
+                sh:name "Standard Date-Time";
+                sh:datatype xsd:string;
+                sh:order 3;
+                ];
+                    
+                
+        sh:property [
+                sh:path sdh:P55 ;
+                sh:name "is about";
+                sh:class crm:E24 ;
+                sh:maxCount 1 ;
+                ];
+                    
+        sh:property [
+                sh:path sdh:P56 ;
+                sh:name "belongs to";
+                sh:class crm:E78 ;
+                sh:maxCount 1 ;
+                ];
+                . 
+
+        sdh-shacl:sdh-so_C36_Shape a sh:NodeShape ;
+            sh:targetClass sdh-so:C36 ;
+            sh:name "Participation Type" ;
+
+            sh:property [
+                sh:path rdfs:label ;
+                sh:name "Label";
+                sh:datatype xsd:string;
+                sh:order 1;
+                sh:minCount 1;
+                sh:maxCount 1;
+                ];
+
+            sh:property [
+                sh:path rdfs:comment ;
+                sh:name "Description";
+                sh:datatype rdf:HTML;
+                sh:order 2;
+                sh:minCount 1;
+                ];   
+            
+                
+            .

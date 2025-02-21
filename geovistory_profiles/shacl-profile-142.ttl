@@ -1,0 +1,362 @@
+### SHACL OntoME Profile 142 
+
+
+
+        @prefix sdh-shacl: <https://sdhss.org/shacl/profiles/>. 
+        @prefix sh: <http://www.w3.org/ns/shacl#> .  
+        @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+        @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+        @prefix rdfs: 	<http://www.w3.org/2000/01/rdf-schema#> .  
+        @prefix sdh-short: <https://sdhss.org/ontology/shortcuts/P1>.
+        @prefix crm: <http://www.cidoc-crm.org/cidoc-crm/>.
+@prefix sdh-int: <https://ontome.net/ns/intellectual-literary-life/>.
+@prefix sdh: <https://sdhss.org/ontology/core/>.
+@prefix crm-sup: <https://sdhss.org/ontology/crm-supplement/>. 
+
+        sdh-shacl:crm_E54_Shape a sh:NodeShape ;
+            sh:targetClass crm:E54 ;
+            sh:name "Dimension" ;
+
+            sh:property [
+                sh:path rdfs:label ;
+                sh:name "Label";
+                sh:datatype xsd:string;
+                sh:order 1;
+                sh:minCount 1;
+                sh:maxCount 1;
+                ];
+
+            sh:property [
+                sh:path rdfs:comment ;
+                sh:name "Description";
+                sh:datatype rdf:HTML;
+                sh:order 2;
+                sh:minCount 1;
+                ];   
+            
+                
+                
+        sh:property [
+                sh:path crm:P90 ;
+                sh:name "has value";
+                sh:class crm:E60 ;
+                sh:maxCount 1 ;
+                ];
+                    
+        sh:property [
+                sh:path crm:P91 ;
+                sh:name "has unit";
+                sh:class crm:E58 ;
+                sh:maxCount 1 ;
+                ];
+                    
+        sh:property [
+                sh:path crm-sup:P25 ;
+                sh:name "has dimension type";
+                sh:class crm-sup:C27 ;
+                sh:maxCount 1 ;
+                ];
+                . 
+
+        sdh-shacl:crm_E58_Shape a sh:NodeShape ;
+            sh:targetClass crm:E58 ;
+            sh:name "Measurement Unit" ;
+
+            sh:property [
+                sh:path rdfs:label ;
+                sh:name "Label";
+                sh:datatype xsd:string;
+                sh:order 1;
+                sh:minCount 1;
+                sh:maxCount 1;
+                ];
+
+            sh:property [
+                sh:path rdfs:comment ;
+                sh:name "Description";
+                sh:datatype rdf:HTML;
+                sh:order 2;
+                sh:minCount 1;
+                ];   
+            
+                
+            . 
+
+        sdh-shacl:crm_E61_Shape a sh:NodeShape ;
+            sh:targetClass crm:E61 ;
+            sh:name "Time Primitive" ;
+
+            sh:property [
+                sh:path rdfs:label ;
+                sh:name "Label";
+                sh:datatype xsd:string;
+                sh:order 1;
+                sh:minCount 1;
+                sh:maxCount 1;
+                ];
+
+            sh:property [
+                sh:path rdfs:comment ;
+                sh:name "Description";
+                sh:datatype rdf:HTML;
+                sh:order 2;
+                sh:minCount 1;
+                ];   
+            
+                
+            . 
+
+        sdh-shacl:crm_E60_Shape a sh:NodeShape ;
+            sh:targetClass crm:E60 ;
+            sh:name "Number" ;
+
+            sh:property [
+                sh:path rdfs:label ;
+                sh:name "Label";
+                sh:datatype xsd:string;
+                sh:order 1;
+                sh:minCount 1;
+                sh:maxCount 1;
+                ];
+
+            sh:property [
+                sh:path rdfs:comment ;
+                sh:name "Description";
+                sh:datatype rdf:HTML;
+                sh:order 2;
+                sh:minCount 1;
+                ];   
+            
+                
+            . 
+
+        sdh-shacl:sdh_C13_Shape a sh:NodeShape ;
+            sh:targetClass sdh:C13 ;
+            sh:name "Geographical Place" ;
+
+            sh:property [
+                sh:path rdfs:label ;
+                sh:name "Label";
+                sh:datatype xsd:string;
+                sh:order 1;
+                sh:minCount 1;
+                sh:maxCount 1;
+                ];
+
+            sh:property [
+                sh:path rdfs:comment ;
+                sh:name "Description";
+                sh:datatype rdf:HTML;
+                sh:order 2;
+                sh:minCount 1;
+                ];   
+            
+                
+            . 
+
+        sdh-shacl:crm-sup_C27_Shape a sh:NodeShape ;
+            sh:targetClass crm-sup:C27 ;
+            sh:name "Dimension Type" ;
+
+            sh:property [
+                sh:path rdfs:label ;
+                sh:name "Label";
+                sh:datatype xsd:string;
+                sh:order 1;
+                sh:minCount 1;
+                sh:maxCount 1;
+                ];
+
+            sh:property [
+                sh:path rdfs:comment ;
+                sh:name "Description";
+                sh:datatype rdf:HTML;
+                sh:order 2;
+                sh:minCount 1;
+                ];   
+            
+                
+            . 
+
+        sdh-shacl:sdh-int_C13_Shape a sh:NodeShape ;
+            sh:targetClass sdh-int:C13 ;
+            sh:name "Propositional Datation" ;
+
+            sh:property [
+                sh:path rdfs:label ;
+                sh:name "Label";
+                sh:datatype xsd:string;
+                sh:order 1;
+                sh:minCount 1;
+                sh:maxCount 1;
+                ];
+
+            sh:property [
+                sh:path rdfs:comment ;
+                sh:name "Description";
+                sh:datatype rdf:HTML;
+                sh:order 2;
+                sh:minCount 1;
+                ];   
+            
+                
+                
+        sh:property [
+                sh:path sdh-int:P26 ;
+                sh:name "has datation value";
+                sh:class crm:E61 ;
+                sh:maxCount 1 ;
+                ];
+                    
+        sh:property [
+                sh:path sdh-int:P27 ;
+                sh:name "has datation type";
+                sh:class sdh-int:C14 ;
+                sh:maxCount 1 ;
+                ];
+                . 
+
+        sdh-shacl:sdh-int_C14_Shape a sh:NodeShape ;
+            sh:targetClass sdh-int:C14 ;
+            sh:name "Datation Type" ;
+
+            sh:property [
+                sh:path rdfs:label ;
+                sh:name "Label";
+                sh:datatype xsd:string;
+                sh:order 1;
+                sh:minCount 1;
+                sh:maxCount 1;
+                ];
+
+            sh:property [
+                sh:path rdfs:comment ;
+                sh:name "Description";
+                sh:datatype rdf:HTML;
+                sh:order 2;
+                sh:minCount 1;
+                ];   
+            
+                
+            . 
+
+        sdh-shacl:sdh-int_C15_Shape a sh:NodeShape ;
+            sh:targetClass sdh-int:C15 ;
+            sh:name "Planned Move" ;
+
+            sh:property [
+                sh:path rdfs:label ;
+                sh:name "Label";
+                sh:datatype xsd:string;
+                sh:order 1;
+                sh:minCount 1;
+                sh:maxCount 1;
+                ];
+
+            sh:property [
+                sh:path rdfs:comment ;
+                sh:name "Description";
+                sh:datatype rdf:HTML;
+                sh:order 2;
+                sh:minCount 1;
+                ];   
+            
+                
+                
+        sh:property [
+                sh:path crm:P148 ;
+                sh:name "has component";
+                sh:class sdh-int:C13 ;
+                
+                ];
+                    
+        sh:property [
+                sh:path crm:P148 ;
+                sh:name "has component";
+                sh:class sdh-int:C15 ;
+                
+                ];
+                    
+        sh:property [
+                sh:path crm:P148 ;
+                sh:name "has component";
+                sh:class sdh-int:C16 ;
+                
+                ];
+                    
+        sh:property [
+                sh:path sdh-int:P28 ;
+                sh:name "planned move from";
+                sh:class sdh:C13 ;
+                
+                ];
+                    
+        sh:property [
+                sh:path sdh-int:P29 ;
+                sh:name "planned move to";
+                sh:class sdh:C13 ;
+                
+                ];
+                . 
+
+        sdh-shacl:sdh-int_C16_Shape a sh:NodeShape ;
+            sh:targetClass sdh-int:C16 ;
+            sh:name "Quantifiable Component" ;
+
+            sh:property [
+                sh:path rdfs:label ;
+                sh:name "Label";
+                sh:datatype xsd:string;
+                sh:order 1;
+                sh:minCount 1;
+                sh:maxCount 1;
+                ];
+
+            sh:property [
+                sh:path rdfs:comment ;
+                sh:name "Description";
+                sh:datatype rdf:HTML;
+                sh:order 2;
+                sh:minCount 1;
+                ];   
+            
+                
+                
+        sh:property [
+                sh:path sdh-int:P30 ;
+                sh:name "has component dimension";
+                sh:class crm:E54 ;
+                sh:maxCount 1 ;
+                ];
+                    
+        sh:property [
+                sh:path sdh-int:P31 ;
+                sh:name "has quantifiable component type";
+                sh:class sdh-int:C17 ;
+                sh:maxCount 1 ;
+                ];
+                . 
+
+        sdh-shacl:sdh-int_C17_Shape a sh:NodeShape ;
+            sh:targetClass sdh-int:C17 ;
+            sh:name "Quantifiable Component Type" ;
+
+            sh:property [
+                sh:path rdfs:label ;
+                sh:name "Label";
+                sh:datatype xsd:string;
+                sh:order 1;
+                sh:minCount 1;
+                sh:maxCount 1;
+                ];
+
+            sh:property [
+                sh:path rdfs:comment ;
+                sh:name "Description";
+                sh:datatype rdf:HTML;
+                sh:order 2;
+                sh:minCount 1;
+                ];   
+            
+                
+            .
