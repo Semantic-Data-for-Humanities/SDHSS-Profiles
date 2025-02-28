@@ -7,9 +7,9 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: 	<http://www.w3.org/2000/01/rdf-schema#> .  
-@prefix sdh-short: <https://sdhss.org/ontology/shortcuts/P1>.
-        @prefix crm: <http://www.cidoc-crm.org/cidoc-crm/>.
-@prefix sdh: <https://sdhss.org/ontology/core/>. 
+@prefix sdh-short: <https://sdhss.org/ontology/shortcuts/>.
+        @prefix sdh: <https://sdhss.org/ontology/core/>.
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/>. 
 
 sdh-shacl:crm_E7_Shape a sh:NodeShape ;
     sh:targetClass crm:E7 ;
@@ -37,6 +37,7 @@ sdh-shacl:crm_E7_Shape a sh:NodeShape ;
                 sh:path sdh-short:P1 ;
                 sh:name "Standard Date-Time";
                 sh:datatype xsd:string;
+                sh:maxCount 1;
                 sh:order 3;
                 ];
                     
@@ -67,6 +68,7 @@ sdh-shacl:crm_E21_Shape a sh:NodeShape ;
                 sh:path sdh-short:P2 ;
                 sh:name "has birth date";
                 sh:datatype xsd:string;
+                sh:maxCount 1;
                 sh:order 3;
                 ];
                 
@@ -123,6 +125,7 @@ sdh-shacl:sdh_C64_Shape a sh:NodeShape ;
                 sh:path sdh-short:P1 ;
                 sh:name "Standard Date-Time";
                 sh:datatype xsd:string;
+                sh:maxCount 1;
                 sh:order 3;
                 ];
                     

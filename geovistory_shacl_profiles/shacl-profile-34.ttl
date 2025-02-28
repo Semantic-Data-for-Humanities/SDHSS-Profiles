@@ -7,13 +7,13 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: 	<http://www.w3.org/2000/01/rdf-schema#> .  
-@prefix sdh-short: <https://sdhss.org/ontology/shortcuts/P1>.
-        @prefix crmsci: <http://www.cidoc-crm.org/cidoc-crm/CRMsci/>.
-@prefix sdh: <https://sdhss.org/ontology/core/>.
-@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/>.
-@prefix sdh-arc: <https://ontome.net/ns/archeological-excavation-and-finds/>.
+@prefix sdh-short: <https://sdhss.org/ontology/shortcuts/>.
+        @prefix sdh-arc: <https://ontome.net/ns/archeological-excavation-and-finds/>.
 @prefix crm-sup: <https://sdhss.org/ontology/crm-supplement/>.
-@prefix crmarc: <http://www.cidoc-crm.org/extensions/crmarchaeo/>. 
+@prefix crmarc: <http://www.cidoc-crm.org/extensions/crmarchaeo/>.
+@prefix crmsci: <http://www.cidoc-crm.org/cidoc-crm/CRMsci/>.
+@prefix sdh: <https://sdhss.org/ontology/core/>.
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/>. 
 
 sdh-shacl:crm_E21_Shape a sh:NodeShape ;
     sh:targetClass crm:E21 ;
@@ -40,6 +40,7 @@ sdh-shacl:crm_E21_Shape a sh:NodeShape ;
                 sh:path sdh-short:P2 ;
                 sh:name "has birth date";
                 sh:datatype xsd:string;
+                sh:maxCount 1;
                 sh:order 3;
                 ];
                 
@@ -151,6 +152,7 @@ sdh-shacl:crmsci_S19_Shape a sh:NodeShape ;
                 sh:path sdh-short:P1 ;
                 sh:name "Standard Date-Time";
                 sh:datatype xsd:string;
+                sh:maxCount 1;
                 sh:order 3;
                 ];
                     
@@ -196,6 +198,7 @@ sdh-shacl:crmarc_A1_Shape a sh:NodeShape ;
                 sh:path sdh-short:P1 ;
                 sh:name "Standard Date-Time";
                 sh:datatype xsd:string;
+                sh:maxCount 1;
                 sh:order 3;
                 ];
                     
@@ -317,6 +320,7 @@ sdh-shacl:crmarc_A7_Shape a sh:NodeShape ;
                 sh:path sdh-short:P1 ;
                 sh:name "Standard Date-Time";
                 sh:datatype xsd:string;
+                sh:maxCount 1;
                 sh:order 3;
                 ];
                     
@@ -362,6 +366,7 @@ sdh-shacl:crmarc_A9_Shape a sh:NodeShape ;
                 sh:path sdh-short:P1 ;
                 sh:name "Standard Date-Time";
                 sh:datatype xsd:string;
+                sh:maxCount 1;
                 sh:order 3;
                 ];
                     

@@ -7,7 +7,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: 	<http://www.w3.org/2000/01/rdf-schema#> .  
-@prefix sdh-short: <https://sdhss.org/ontology/shortcuts/P1>.
+@prefix sdh-short: <https://sdhss.org/ontology/shortcuts/>.
         @prefix crm: <http://www.cidoc-crm.org/cidoc-crm/>.
 @prefix frbroo: <http://iflastandards.info/ns/fr/frbr/frbroo/>. 
 
@@ -103,6 +103,7 @@ sdh-shacl:frbroo_F28_Shape a sh:NodeShape ;
                 sh:path sdh-short:P1 ;
                 sh:name "Standard Date-Time";
                 sh:datatype xsd:string;
+                sh:maxCount 1;
                 sh:order 3;
                 ];
                     
