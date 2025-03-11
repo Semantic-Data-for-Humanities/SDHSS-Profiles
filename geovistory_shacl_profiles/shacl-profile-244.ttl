@@ -8,78 +8,8 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: 	<http://www.w3.org/2000/01/rdf-schema#> .  
 @prefix sdh-short: <https://sdhss.org/ontology/shortcuts/>.
-        @prefix sdh: <https://sdhss.org/ontology/core/>.
-@prefix frbroo: <http://iflastandards.info/ns/fr/frbr/frbroo/>. 
-
-sdh-shacl:frbroo_F2_Shape a sh:NodeShape ;
-    sh:targetClass frbroo:F2 ;
-    sh:name "Expression" ;
-
-    sh:property [
-        sh:path rdfs:label ;
-        sh:name "Label";
-        sh:datatype xsd:string;
-        sh:order 1;
-        sh:minCount 1;
-        sh:maxCount 1;
-        ];
-
-    sh:property [
-        sh:path rdfs:comment ;
-        sh:name "Description";
-        sh:datatype rdf:HTML;
-        sh:order 2;
-        sh:minCount 1;
-        ];   
-    
-        
-            . 
-
-sdh-shacl:frbroo_F28_Shape a sh:NodeShape ;
-    sh:targetClass frbroo:F28 ;
-    sh:name "Expression Creation" ;
-
-    sh:property [
-        sh:path rdfs:label ;
-        sh:name "Label";
-        sh:datatype xsd:string;
-        sh:order 1;
-        
-        sh:maxCount 1;
-        ];
-
-    sh:property [
-        sh:path rdfs:comment ;
-        sh:name "Description";
-        sh:datatype rdf:HTML;
-        sh:order 2;
-        
-        ];   
-    
-    
-                sh:property [
-                sh:path sdh-short:P1 ;
-                sh:name "Standard Date-Time";
-                sh:datatype xsd:string;
-                sh:maxCount 1;
-                sh:order 3;
-                ];
-                    
-                
-        sh:property [
-                sh:path frbroo:R17 ;
-                sh:name "created";
-                sh:class frbroo:F2 ;
-                sh:maxCount 1 ;
-                ];
-                    
-        sh:property [
-                sh:path sdh:P6 ;
-                sh:name "took place at";
-                sh:class sdh:C13 ;
-                
-                ];
-                . 
+        @prefix frbroo: <http://iflastandards.info/ns/fr/frbr/frbroo/>.
+@prefix sdh: <https://sdhss.org/ontology/core/>. 
 
 sdh-shacl:sdh_C13_Shape a sh:NodeShape ;
     sh:targetClass sdh:C13 ;
@@ -102,5 +32,5 @@ sdh-shacl:sdh_C13_Shape a sh:NodeShape ;
         sh:minCount 1;
         ];   
     
-        
-            .
+       
+        .

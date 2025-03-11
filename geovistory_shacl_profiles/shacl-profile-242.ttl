@@ -11,76 +11,6 @@
         @prefix sdh: <https://sdhss.org/ontology/core/>.
 @prefix crm: <http://www.cidoc-crm.org/cidoc-crm/>. 
 
-sdh-shacl:crm_E65_Shape a sh:NodeShape ;
-    sh:targetClass crm:E65 ;
-    sh:name "Creation" ;
-
-    sh:property [
-        sh:path rdfs:label ;
-        sh:name "Label";
-        sh:datatype xsd:string;
-        sh:order 1;
-        
-        sh:maxCount 1;
-        ];
-
-    sh:property [
-        sh:path rdfs:comment ;
-        sh:name "Description";
-        sh:datatype rdf:HTML;
-        sh:order 2;
-        
-        ];   
-    
-    
-                sh:property [
-                sh:path sdh-short:P1 ;
-                sh:name "Standard Date-Time";
-                sh:datatype xsd:string;
-                sh:maxCount 1;
-                sh:order 3;
-                ];
-                    
-                
-        sh:property [
-                sh:path crm:P94 ;
-                sh:name "has created";
-                sh:class crm:E73 ;
-                
-                ];
-                    
-        sh:property [
-                sh:path sdh:P6 ;
-                sh:name "took place at";
-                sh:class sdh:C13 ;
-                
-                ];
-                . 
-
-sdh-shacl:crm_E73_Shape a sh:NodeShape ;
-    sh:targetClass crm:E73 ;
-    sh:name "Information Object" ;
-
-    sh:property [
-        sh:path rdfs:label ;
-        sh:name "Label";
-        sh:datatype xsd:string;
-        sh:order 1;
-        sh:minCount 1;
-        sh:maxCount 1;
-        ];
-
-    sh:property [
-        sh:path rdfs:comment ;
-        sh:name "Description";
-        sh:datatype rdf:HTML;
-        sh:order 2;
-        sh:minCount 1;
-        ];   
-    
-        
-            . 
-
 sdh-shacl:sdh_C13_Shape a sh:NodeShape ;
     sh:targetClass sdh:C13 ;
     sh:name "Geographical Place" ;
@@ -102,5 +32,5 @@ sdh-shacl:sdh_C13_Shape a sh:NodeShape ;
         sh:minCount 1;
         ];   
     
-        
-            .
+       
+        .

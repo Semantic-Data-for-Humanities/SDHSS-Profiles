@@ -8,118 +8,9 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: 	<http://www.w3.org/2000/01/rdf-schema#> .  
 @prefix sdh-short: <https://sdhss.org/ontology/shortcuts/>.
-        @prefix crm: <http://www.cidoc-crm.org/cidoc-crm/>.
-@prefix frbroo: <http://iflastandards.info/ns/fr/frbr/frbroo/>.
-@prefix sdh-so: <https://ontome.net/ns/social-legal-economic-life/>. 
-
-sdh-shacl:crm_E5_Shape a sh:NodeShape ;
-    sh:targetClass crm:E5 ;
-    sh:name "Event" ;
-
-    sh:property [
-        sh:path rdfs:label ;
-        sh:name "Label";
-        sh:datatype xsd:string;
-        sh:order 1;
-        
-        sh:maxCount 1;
-        ];
-
-    sh:property [
-        sh:path rdfs:comment ;
-        sh:name "Description";
-        sh:datatype rdf:HTML;
-        sh:order 2;
-        
-        ];   
-    
-    
-                sh:property [
-                sh:path sdh-short:P1 ;
-                sh:name "Standard Date-Time";
-                sh:datatype xsd:string;
-                sh:maxCount 1;
-                sh:order 3;
-                ];
-                    
-            . 
-
-sdh-shacl:frbroo_F2_Shape a sh:NodeShape ;
-    sh:targetClass frbroo:F2 ;
-    sh:name "Expression" ;
-
-    sh:property [
-        sh:path rdfs:label ;
-        sh:name "Label";
-        sh:datatype xsd:string;
-        sh:order 1;
-        sh:minCount 1;
-        sh:maxCount 1;
-        ];
-
-    sh:property [
-        sh:path rdfs:comment ;
-        sh:name "Description";
-        sh:datatype rdf:HTML;
-        sh:order 2;
-        sh:minCount 1;
-        ];   
-    
-        
-            . 
-
-sdh-shacl:sdh-so_C38_Shape a sh:NodeShape ;
-    sh:targetClass sdh-so:C38 ;
-    sh:name "Presence of a Thing" ;
-
-    sh:property [
-        sh:path rdfs:label ;
-        sh:name "Label";
-        sh:datatype xsd:string;
-        sh:order 1;
-        
-        sh:maxCount 1;
-        ];
-
-    sh:property [
-        sh:path rdfs:comment ;
-        sh:name "Description";
-        sh:datatype rdf:HTML;
-        sh:order 2;
-        
-        ];   
-    
-    
-                sh:property [
-                sh:path sdh-short:P1 ;
-                sh:name "Standard Date-Time";
-                sh:datatype xsd:string;
-                sh:maxCount 1;
-                sh:order 3;
-                ];
-                    
-                
-        sh:property [
-                sh:path sdh-so:P75 ;
-                sh:name "is presence of";
-                sh:class frbroo:F2 ;
-                sh:maxCount 1 ;
-                ];
-                    
-        sh:property [
-                sh:path sdh-so:P76 ;
-                sh:name "is presence in";
-                sh:class crm:E5 ;
-                sh:maxCount 1 ;
-                ];
-                    
-        sh:property [
-                sh:path sdh-so:P77 ;
-                sh:name "has type of presence";
-                sh:class sdh-so:C44 ;
-                sh:maxCount 1 ;
-                ];
-                . 
+        @prefix frbroo: <http://iflastandards.info/ns/fr/frbr/frbroo/>.
+@prefix sdh-so: <https://ontome.net/ns/social-legal-economic-life/>.
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/>. 
 
 sdh-shacl:sdh-so_C44_Shape a sh:NodeShape ;
     sh:targetClass sdh-so:C44 ;
@@ -142,5 +33,5 @@ sdh-shacl:sdh-so_C44_Shape a sh:NodeShape ;
         sh:minCount 1;
         ];   
     
-        
-            .
+       
+        .

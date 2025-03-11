@@ -8,72 +8,8 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: 	<http://www.w3.org/2000/01/rdf-schema#> .  
 @prefix sdh-short: <https://sdhss.org/ontology/shortcuts/>.
-        @prefix crm: <http://www.cidoc-crm.org/cidoc-crm/>.
-@prefix sdh-so: <https://ontome.net/ns/social-legal-economic-life/>. 
-
-sdh-shacl:crm_E7_Shape a sh:NodeShape ;
-    sh:targetClass crm:E7 ;
-    sh:name "Activity" ;
-
-    sh:property [
-        sh:path rdfs:label ;
-        sh:name "Label";
-        sh:datatype xsd:string;
-        sh:order 1;
-        
-        sh:maxCount 1;
-        ];
-
-    sh:property [
-        sh:path rdfs:comment ;
-        sh:name "Description";
-        sh:datatype rdf:HTML;
-        sh:order 2;
-        
-        ];   
-    
-    
-                sh:property [
-                sh:path sdh-short:P1 ;
-                sh:name "Standard Date-Time";
-                sh:datatype xsd:string;
-                sh:maxCount 1;
-                sh:order 3;
-                ];
-                    
-            . 
-
-sdh-shacl:sdh-so_C15_Shape a sh:NodeShape ;
-    sh:targetClass sdh-so:C15 ;
-    sh:name "Participation" ;
-
-    sh:property [
-        sh:path rdfs:label ;
-        sh:name "Label";
-        sh:datatype xsd:string;
-        sh:order 1;
-        
-        sh:maxCount 1;
-        ];
-
-    sh:property [
-        sh:path rdfs:comment ;
-        sh:name "Description";
-        sh:datatype rdf:HTML;
-        sh:order 2;
-        
-        ];   
-    
-    
-                sh:property [
-                sh:path sdh-short:P1 ;
-                sh:name "Standard Date-Time";
-                sh:datatype xsd:string;
-                sh:maxCount 1;
-                sh:order 3;
-                ];
-                    
-            . 
+        @prefix sdh-so: <https://ontome.net/ns/social-legal-economic-life/>.
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/>. 
 
 sdh-shacl:sdh-so_C16_Shape a sh:NodeShape ;
     sh:targetClass sdh-so:C16 ;
@@ -96,8 +32,8 @@ sdh-shacl:sdh-so_C16_Shape a sh:NodeShape ;
         sh:minCount 1;
         ];   
     
-        
-                
+       
+            
         sh:property [
                 sh:path sdh-so:P25 ;
                 sh:name "is participant in";

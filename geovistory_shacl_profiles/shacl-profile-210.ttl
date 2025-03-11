@@ -10,115 +10,6 @@
 @prefix sdh-short: <https://sdhss.org/ontology/shortcuts/>.
         @prefix crm: <http://www.cidoc-crm.org/cidoc-crm/>. 
 
-sdh-shacl:crm_E21_Shape a sh:NodeShape ;
-    sh:targetClass crm:E21 ;
-    sh:name "Person" ;
-
-    sh:property [
-        sh:path rdfs:label ;
-        sh:name "Label";
-        sh:datatype xsd:string;
-        sh:order 1;
-        sh:minCount 1;
-        sh:maxCount 1;
-        ];
-
-    sh:property [
-        sh:path rdfs:comment ;
-        sh:name "Description";
-        sh:datatype rdf:HTML;
-        sh:order 2;
-        sh:minCount 1;
-        ];   
-    
-            sh:property [
-                sh:path sdh-short:P2 ;
-                sh:name "has birth date";
-                sh:datatype xsd:string;
-                sh:maxCount 1;
-                sh:order 3;
-                ];
-                
-        
-            . 
-
-sdh-shacl:crm_E74_Shape a sh:NodeShape ;
-    sh:targetClass crm:E74 ;
-    sh:name "Group" ;
-
-    sh:property [
-        sh:path rdfs:label ;
-        sh:name "Label";
-        sh:datatype xsd:string;
-        sh:order 1;
-        sh:minCount 1;
-        sh:maxCount 1;
-        ];
-
-    sh:property [
-        sh:path rdfs:comment ;
-        sh:name "Description";
-        sh:datatype rdf:HTML;
-        sh:order 2;
-        sh:minCount 1;
-        ];   
-    
-        
-            . 
-
-sdh-shacl:crm_E85_Shape a sh:NodeShape ;
-    sh:targetClass crm:E85 ;
-    sh:name "Joining" ;
-
-    sh:property [
-        sh:path rdfs:label ;
-        sh:name "Label";
-        sh:datatype xsd:string;
-        sh:order 1;
-        
-        sh:maxCount 1;
-        ];
-
-    sh:property [
-        sh:path rdfs:comment ;
-        sh:name "Description";
-        sh:datatype rdf:HTML;
-        sh:order 2;
-        
-        ];   
-    
-    
-                sh:property [
-                sh:path sdh-short:P1 ;
-                sh:name "Standard Date-Time";
-                sh:datatype xsd:string;
-                sh:maxCount 1;
-                sh:order 3;
-                ];
-                    
-                
-        sh:property [
-                sh:path crm:P143 ;
-                sh:name "joined";
-                sh:class crm:E21 ;
-                
-                ];
-                    
-        sh:property [
-                sh:path crm:P143 ;
-                sh:name "joined";
-                sh:class crm:E74 ;
-                
-                ];
-                    
-        sh:property [
-                sh:path crm:P144 ;
-                sh:name "joined with";
-                sh:class crm:E74 ;
-                
-                ];
-                . 
-
 sdh-shacl:crm_E86_Shape a sh:NodeShape ;
     sh:targetClass crm:E86 ;
     sh:name "Leaving" ;
@@ -128,7 +19,7 @@ sdh-shacl:crm_E86_Shape a sh:NodeShape ;
         sh:name "Label";
         sh:datatype xsd:string;
         sh:order 1;
-        
+        sh:minCount 1;
         sh:maxCount 1;
         ];
 
@@ -137,19 +28,11 @@ sdh-shacl:crm_E86_Shape a sh:NodeShape ;
         sh:name "Description";
         sh:datatype rdf:HTML;
         sh:order 2;
-        
+        sh:minCount 1;
         ];   
     
-    
-                sh:property [
-                sh:path sdh-short:P1 ;
-                sh:name "Standard Date-Time";
-                sh:datatype xsd:string;
-                sh:maxCount 1;
-                sh:order 3;
-                ];
-                    
-                
+       
+            
         sh:property [
                 sh:path crm:P145 ;
                 sh:name "separated";

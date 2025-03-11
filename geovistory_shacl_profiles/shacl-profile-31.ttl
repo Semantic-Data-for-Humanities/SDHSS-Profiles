@@ -9,140 +9,8 @@
 @prefix rdfs: 	<http://www.w3.org/2000/01/rdf-schema#> .  
 @prefix sdh-short: <https://sdhss.org/ontology/shortcuts/>.
         @prefix sdh: <https://sdhss.org/ontology/core/>.
-@prefix geov: <https://ontome.net/ns/geovistory/>.
-@prefix sdh-so: <https://ontome.net/ns/social-legal-economic-life/>. 
-
-sdh-shacl:sdh_C13_Shape a sh:NodeShape ;
-    sh:targetClass sdh:C13 ;
-    sh:name "Geographical Place" ;
-
-    sh:property [
-        sh:path rdfs:label ;
-        sh:name "Label";
-        sh:datatype xsd:string;
-        sh:order 1;
-        sh:minCount 1;
-        sh:maxCount 1;
-        ];
-
-    sh:property [
-        sh:path rdfs:comment ;
-        sh:name "Description";
-        sh:datatype rdf:HTML;
-        sh:order 2;
-        sh:minCount 1;
-        ];   
-    
-        
-            . 
-
-sdh-shacl:geov_C9_Shape a sh:NodeShape ;
-    sh:targetClass geov:C9 ;
-    sh:name "Tag" ;
-
-    sh:property [
-        sh:path rdfs:label ;
-        sh:name "Label";
-        sh:datatype xsd:string;
-        sh:order 1;
-        sh:minCount 1;
-        sh:maxCount 1;
-        ];
-
-    sh:property [
-        sh:path rdfs:comment ;
-        sh:name "Description";
-        sh:datatype rdf:HTML;
-        sh:order 2;
-        sh:minCount 1;
-        ];   
-    
-        
-            . 
-
-sdh-shacl:sdh-so_C17_Shape a sh:NodeShape ;
-    sh:targetClass sdh-so:C17 ;
-    sh:name "Custom or Law" ;
-
-    sh:property [
-        sh:path rdfs:label ;
-        sh:name "Label";
-        sh:datatype xsd:string;
-        sh:order 1;
-        sh:minCount 1;
-        sh:maxCount 1;
-        ];
-
-    sh:property [
-        sh:path rdfs:comment ;
-        sh:name "Description";
-        sh:datatype rdf:HTML;
-        sh:order 2;
-        sh:minCount 1;
-        ];   
-    
-        
-                
-        sh:property [
-                sh:path geov:P12 ;
-                sh:name "tagged by";
-                sh:class geov:C9 ;
-                
-                ];
-                    
-        sh:property [
-                sh:path sdh-so:P32 ;
-                sh:name "has custom or law type";
-                sh:class sdh-so:C21 ;
-                sh:maxCount 1 ;
-                ];
-                . 
-
-sdh-shacl:sdh-so_C20_Shape a sh:NodeShape ;
-    sh:targetClass sdh-so:C20 ;
-    sh:name "Being in Force" ;
-
-    sh:property [
-        sh:path rdfs:label ;
-        sh:name "Label";
-        sh:datatype xsd:string;
-        sh:order 1;
-        
-        sh:maxCount 1;
-        ];
-
-    sh:property [
-        sh:path rdfs:comment ;
-        sh:name "Description";
-        sh:datatype rdf:HTML;
-        sh:order 2;
-        
-        ];   
-    
-    
-                sh:property [
-                sh:path sdh-short:P1 ;
-                sh:name "Standard Date-Time";
-                sh:datatype xsd:string;
-                sh:maxCount 1;
-                sh:order 3;
-                ];
-                    
-                
-        sh:property [
-                sh:path sdh-so:P30 ;
-                sh:name "is validity of";
-                sh:class sdh-so:C17 ;
-                sh:maxCount 1 ;
-                ];
-                    
-        sh:property [
-                sh:path sdh-so:P40 ;
-                sh:name "is valid in";
-                sh:class sdh:C13 ;
-                sh:maxCount 1 ;
-                ];
-                . 
+@prefix sdh-so: <https://ontome.net/ns/social-legal-economic-life/>.
+@prefix geov: <https://ontome.net/ns/geovistory/>. 
 
 sdh-shacl:sdh-so_C21_Shape a sh:NodeShape ;
     sh:targetClass sdh-so:C21 ;
@@ -165,8 +33,8 @@ sdh-shacl:sdh-so_C21_Shape a sh:NodeShape ;
         sh:minCount 1;
         ];   
     
-        
-                
+       
+            
         sh:property [
                 sh:path geov:P12 ;
                 sh:name "tagged by";

@@ -10,132 +10,6 @@
 @prefix sdh-short: <https://sdhss.org/ontology/shortcuts/>.
         @prefix sdh-so: <https://ontome.net/ns/social-legal-economic-life/>. 
 
-sdh-shacl:sdh-so_C2_Shape a sh:NodeShape ;
-    sh:targetClass sdh-so:C2 ;
-    sh:name "Actor's Social Quality" ;
-
-    sh:property [
-        sh:path rdfs:label ;
-        sh:name "Label";
-        sh:datatype xsd:string;
-        sh:order 1;
-        sh:minCount 1;
-        sh:maxCount 1;
-        ];
-
-    sh:property [
-        sh:path rdfs:comment ;
-        sh:name "Description";
-        sh:datatype rdf:HTML;
-        sh:order 2;
-        sh:minCount 1;
-        ];   
-    
-        
-            . 
-
-sdh-shacl:sdh-so_C15_Shape a sh:NodeShape ;
-    sh:targetClass sdh-so:C15 ;
-    sh:name "Participation" ;
-
-    sh:property [
-        sh:path rdfs:label ;
-        sh:name "Label";
-        sh:datatype xsd:string;
-        sh:order 1;
-        
-        sh:maxCount 1;
-        ];
-
-    sh:property [
-        sh:path rdfs:comment ;
-        sh:name "Description";
-        sh:datatype rdf:HTML;
-        sh:order 2;
-        
-        ];   
-    
-    
-                sh:property [
-                sh:path sdh-short:P1 ;
-                sh:name "Standard Date-Time";
-                sh:datatype xsd:string;
-                sh:maxCount 1;
-                sh:order 3;
-                ];
-                    
-            . 
-
-sdh-shacl:sdh-so_C39_Shape a sh:NodeShape ;
-    sh:targetClass sdh-so:C39 ;
-    sh:name "Participation Relation" ;
-
-    sh:property [
-        sh:path rdfs:label ;
-        sh:name "Label";
-        sh:datatype xsd:string;
-        sh:order 1;
-        
-        sh:maxCount 1;
-        ];
-
-    sh:property [
-        sh:path rdfs:comment ;
-        sh:name "Description";
-        sh:datatype rdf:HTML;
-        sh:order 2;
-        
-        ];   
-    
-    
-                sh:property [
-                sh:path sdh-short:P1 ;
-                sh:name "Standard Date-Time";
-                sh:datatype xsd:string;
-                sh:maxCount 1;
-                sh:order 3;
-                ];
-                    
-                
-        sh:property [
-                sh:path sdh-so:P65 ;
-                sh:name "has participation relation type";
-                sh:class sdh-so:C40 ;
-                sh:maxCount 1 ;
-                ];
-                    
-        sh:property [
-                sh:path sdh-so:P66 ;
-                sh:name "is participation relation of";
-                sh:class sdh-so:C41 ;
-                sh:maxCount 1 ;
-                ];
-                . 
-
-sdh-shacl:sdh-so_C40_Shape a sh:NodeShape ;
-    sh:targetClass sdh-so:C40 ;
-    sh:name "Participation Relation Type" ;
-
-    sh:property [
-        sh:path rdfs:label ;
-        sh:name "Label";
-        sh:datatype xsd:string;
-        sh:order 1;
-        sh:minCount 1;
-        sh:maxCount 1;
-        ];
-
-    sh:property [
-        sh:path rdfs:comment ;
-        sh:name "Description";
-        sh:datatype rdf:HTML;
-        sh:order 2;
-        sh:minCount 1;
-        ];   
-    
-        
-            . 
-
 sdh-shacl:sdh-so_C41_Shape a sh:NodeShape ;
     sh:targetClass sdh-so:C41 ;
     sh:name "Role in Participation Relation" ;
@@ -157,8 +31,8 @@ sdh-shacl:sdh-so_C41_Shape a sh:NodeShape ;
         sh:minCount 1;
         ];   
     
-        
-                
+       
+            
         sh:property [
                 sh:path sdh-so:P67 ;
                 sh:name "is role in";

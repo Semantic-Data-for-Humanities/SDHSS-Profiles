@@ -12,45 +12,6 @@
 @prefix sdh-so: <https://ontome.net/ns/social-legal-economic-life/>.
 @prefix crm: <http://www.cidoc-crm.org/cidoc-crm/>. 
 
-sdh-shacl:crm_E21_Shape a sh:NodeShape ;
-    sh:targetClass crm:E21 ;
-    sh:name "Person" ;
-
-    sh:property [
-        sh:path rdfs:label ;
-        sh:name "Label";
-        sh:datatype xsd:string;
-        sh:order 1;
-        sh:minCount 1;
-        sh:maxCount 1;
-        ];
-
-    sh:property [
-        sh:path rdfs:comment ;
-        sh:name "Description";
-        sh:datatype rdf:HTML;
-        sh:order 2;
-        sh:minCount 1;
-        ];   
-    
-            sh:property [
-                sh:path sdh-short:P2 ;
-                sh:name "has birth date";
-                sh:datatype xsd:string;
-                sh:maxCount 1;
-                sh:order 3;
-                ];
-                
-        
-                
-        sh:property [
-                sh:path sdh-so:P24 ;
-                sh:name "has its origins in";
-                sh:class sdh:C13 ;
-                
-                ];
-                . 
-
 sdh-shacl:sdh_C13_Shape a sh:NodeShape ;
     sh:targetClass sdh:C13 ;
     sh:name "Geographical Place" ;
@@ -72,5 +33,5 @@ sdh-shacl:sdh_C13_Shape a sh:NodeShape ;
         sh:minCount 1;
         ];   
     
-        
-            .
+       
+        .

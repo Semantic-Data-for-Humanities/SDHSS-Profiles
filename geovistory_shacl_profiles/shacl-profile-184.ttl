@@ -8,60 +8,8 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: 	<http://www.w3.org/2000/01/rdf-schema#> .  
 @prefix sdh-short: <https://sdhss.org/ontology/shortcuts/>.
-        @prefix crm-sup: <https://sdhss.org/ontology/crm-supplement/>.
-@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/>. 
-
-sdh-shacl:crm_E89_Shape a sh:NodeShape ;
-    sh:targetClass crm:E89 ;
-    sh:name "Propositional Object" ;
-
-    sh:property [
-        sh:path rdfs:label ;
-        sh:name "Label";
-        sh:datatype xsd:string;
-        sh:order 1;
-        sh:minCount 1;
-        sh:maxCount 1;
-        ];
-
-    sh:property [
-        sh:path rdfs:comment ;
-        sh:name "Description";
-        sh:datatype rdf:HTML;
-        sh:order 2;
-        sh:minCount 1;
-        ];   
-    
-        
-                
-        sh:property [
-                sh:path crm:P67 ;
-                sh:name "refers to";
-                sh:class crm:E89 ;
-                
-                ];
-                    
-        sh:property [
-                sh:path crm:P67 ;
-                sh:name "refers to";
-                sh:class crm-sup:C34 ;
-                
-                ];
-                    
-        sh:property [
-                sh:path crm:P129 ;
-                sh:name "is about";
-                sh:class crm:E89 ;
-                
-                ];
-                    
-        sh:property [
-                sh:path crm:P129 ;
-                sh:name "is about";
-                sh:class crm-sup:C34 ;
-                
-                ];
-                . 
+        @prefix crm: <http://www.cidoc-crm.org/cidoc-crm/>.
+@prefix crm-sup: <https://sdhss.org/ontology/crm-supplement/>. 
 
 sdh-shacl:crm-sup_C34_Shape a sh:NodeShape ;
     sh:targetClass crm-sup:C34 ;
@@ -84,5 +32,5 @@ sdh-shacl:crm-sup_C34_Shape a sh:NodeShape ;
         sh:minCount 1;
         ];   
     
-        
-            .
+       
+        .

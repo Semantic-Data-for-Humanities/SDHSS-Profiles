@@ -9,157 +9,8 @@
 @prefix rdfs: 	<http://www.w3.org/2000/01/rdf-schema#> .  
 @prefix sdh-short: <https://sdhss.org/ontology/shortcuts/>.
         @prefix sdh: <https://sdhss.org/ontology/core/>.
-@prefix crm-sup: <https://sdhss.org/ontology/crm-supplement/>.
-@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/>. 
-
-sdh-shacl:crm_E7_Shape a sh:NodeShape ;
-    sh:targetClass crm:E7 ;
-    sh:name "Activity" ;
-
-    sh:property [
-        sh:path rdfs:label ;
-        sh:name "Label";
-        sh:datatype xsd:string;
-        sh:order 1;
-        
-        sh:maxCount 1;
-        ];
-
-    sh:property [
-        sh:path rdfs:comment ;
-        sh:name "Description";
-        sh:datatype rdf:HTML;
-        sh:order 2;
-        
-        ];   
-    
-    
-                sh:property [
-                sh:path sdh-short:P1 ;
-                sh:name "Standard Date-Time";
-                sh:datatype xsd:string;
-                sh:maxCount 1;
-                sh:order 3;
-                ];
-                    
-            . 
-
-sdh-shacl:crm_E54_Shape a sh:NodeShape ;
-    sh:targetClass crm:E54 ;
-    sh:name "Dimension" ;
-
-    sh:property [
-        sh:path rdfs:label ;
-        sh:name "Label";
-        sh:datatype xsd:string;
-        sh:order 1;
-        sh:minCount 1;
-        sh:maxCount 1;
-        ];
-
-    sh:property [
-        sh:path rdfs:comment ;
-        sh:name "Description";
-        sh:datatype rdf:HTML;
-        sh:order 2;
-        sh:minCount 1;
-        ];   
-    
-        
-                
-        sh:property [
-                sh:path crm:P90 ;
-                sh:name "has value";
-                sh:class crm:E60 ;
-                sh:maxCount 1 ;
-                ];
-                    
-        sh:property [
-                sh:path crm:P91 ;
-                sh:name "has unit";
-                sh:class crm:E58 ;
-                sh:maxCount 1 ;
-                ];
-                    
-        sh:property [
-                sh:path crm-sup:P25 ;
-                sh:name "has dimension type";
-                sh:class crm-sup:C27 ;
-                sh:maxCount 1 ;
-                ];
-                . 
-
-sdh-shacl:crm_E58_Shape a sh:NodeShape ;
-    sh:targetClass crm:E58 ;
-    sh:name "Measurement Unit" ;
-
-    sh:property [
-        sh:path rdfs:label ;
-        sh:name "Label";
-        sh:datatype xsd:string;
-        sh:order 1;
-        sh:minCount 1;
-        sh:maxCount 1;
-        ];
-
-    sh:property [
-        sh:path rdfs:comment ;
-        sh:name "Description";
-        sh:datatype rdf:HTML;
-        sh:order 2;
-        sh:minCount 1;
-        ];   
-    
-        
-            . 
-
-sdh-shacl:crm_E60_Shape a sh:NodeShape ;
-    sh:targetClass crm:E60 ;
-    sh:name "Number" ;
-
-    sh:property [
-        sh:path rdfs:label ;
-        sh:name "Label";
-        sh:datatype xsd:string;
-        sh:order 1;
-        sh:minCount 1;
-        sh:maxCount 1;
-        ];
-
-    sh:property [
-        sh:path rdfs:comment ;
-        sh:name "Description";
-        sh:datatype rdf:HTML;
-        sh:order 2;
-        sh:minCount 1;
-        ];   
-    
-        
-            . 
-
-sdh-shacl:crm-sup_C27_Shape a sh:NodeShape ;
-    sh:targetClass crm-sup:C27 ;
-    sh:name "Dimension Type" ;
-
-    sh:property [
-        sh:path rdfs:label ;
-        sh:name "Label";
-        sh:datatype xsd:string;
-        sh:order 1;
-        sh:minCount 1;
-        sh:maxCount 1;
-        ];
-
-    sh:property [
-        sh:path rdfs:comment ;
-        sh:name "Description";
-        sh:datatype rdf:HTML;
-        sh:order 2;
-        sh:minCount 1;
-        ];   
-    
-        
-            . 
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/>.
+@prefix crm-sup: <https://sdhss.org/ontology/crm-supplement/>. 
 
 sdh-shacl:sdh_C57_Shape a sh:NodeShape ;
     sh:targetClass sdh:C57 ;
@@ -170,7 +21,7 @@ sdh-shacl:sdh_C57_Shape a sh:NodeShape ;
         sh:name "Label";
         sh:datatype xsd:string;
         sh:order 1;
-        
+        sh:minCount 1;
         sh:maxCount 1;
         ];
 
@@ -179,19 +30,11 @@ sdh-shacl:sdh_C57_Shape a sh:NodeShape ;
         sh:name "Description";
         sh:datatype rdf:HTML;
         sh:order 2;
-        
+        sh:minCount 1;
         ];   
     
-    
-                sh:property [
-                sh:path sdh-short:P1 ;
-                sh:name "Standard Date-Time";
-                sh:datatype xsd:string;
-                sh:maxCount 1;
-                sh:order 3;
-                ];
-                    
-                
+       
+            
         sh:property [
                 sh:path sdh:P35 ;
                 sh:name "has quality dimension";
