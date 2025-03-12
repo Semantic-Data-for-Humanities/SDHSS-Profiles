@@ -1,0 +1,1108 @@
+### SHACL OntoME Profile 21 
+
+
+
+@prefix sdh-shacl: <https://sdhss.org/shacl/profiles/>. 
+@prefix sh: <http://www.w3.org/ns/shacl#> .  
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: 	<http://www.w3.org/2000/01/rdf-schema#> .  
+@prefix sdh-short: <https://sdhss.org/ontology/shortcuts/>.
+        @prefix sdh: <https://sdhss.org/ontology/core/>.
+@prefix crm-sup: <https://sdhss.org/ontology/crm-supplement/>.
+@prefix frbroo: <http://iflastandards.info/ns/fr/frbr/frbroo/>.
+@prefix sdh-int: <https://ontome.net/ns/intellectual-literary-life/>.
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/>. 
+
+    sdh-shacl:crm_E21_Shape a sh:NodeShape ;
+        sh:targetClass crm:E21 ;
+        sh:name "Person" ;
+
+        sh:property [
+            sh:path rdfs:label ;
+            sh:name "Label";
+            sh:datatype xsd:string;
+            sh:order 1;
+            sh:minCount 1;
+            sh:maxCount 1;
+            ];
+
+        sh:property [
+            sh:path rdfs:comment ;
+            sh:name "Description";
+            sh:datatype rdf:HTML;
+            sh:order 2;
+            sh:minCount 1;
+            ];   
+        
+        sh:property [
+            sh:path sdh-short:P2 ;
+            sh:name "has birth date";
+            sh:datatype xsd:string;
+            sh:maxCount 1;
+            sh:order 3;
+            ];
+                    
+           
+            . 
+
+    sdh-shacl:crm_E22_Shape a sh:NodeShape ;
+        sh:targetClass crm:E22 ;
+        sh:name "Human-Made Object" ;
+
+        sh:property [
+            sh:path rdfs:label ;
+            sh:name "Label";
+            sh:datatype xsd:string;
+            sh:order 1;
+            sh:minCount 1;
+            sh:maxCount 1;
+            ];
+
+        sh:property [
+            sh:path rdfs:comment ;
+            sh:name "Description";
+            sh:datatype rdf:HTML;
+            sh:order 2;
+            sh:minCount 1;
+            ];   
+        
+           
+            . 
+
+    sdh-shacl:crm_E57_Shape a sh:NodeShape ;
+        sh:targetClass crm:E57 ;
+        sh:name "Material" ;
+
+        sh:property [
+            sh:path rdfs:label ;
+            sh:name "Label";
+            sh:datatype xsd:string;
+            sh:order 1;
+            sh:minCount 1;
+            sh:maxCount 1;
+            ];
+
+        sh:property [
+            sh:path rdfs:comment ;
+            sh:name "Description";
+            sh:datatype rdf:HTML;
+            sh:order 2;
+            sh:minCount 1;
+            ];   
+        
+           
+            . 
+
+    sdh-shacl:crm_E74_Shape a sh:NodeShape ;
+        sh:targetClass crm:E74 ;
+        sh:name "Group" ;
+
+        sh:property [
+            sh:path rdfs:label ;
+            sh:name "Label";
+            sh:datatype xsd:string;
+            sh:order 1;
+            sh:minCount 1;
+            sh:maxCount 1;
+            ];
+
+        sh:property [
+            sh:path rdfs:comment ;
+            sh:name "Description";
+            sh:datatype rdf:HTML;
+            sh:order 2;
+            sh:minCount 1;
+            ];   
+        
+           
+            . 
+
+    sdh-shacl:crm_E89_Shape a sh:NodeShape ;
+        sh:targetClass crm:E89 ;
+        sh:name "Propositional Object" ;
+
+        sh:property [
+            sh:path rdfs:label ;
+            sh:name "Label";
+            sh:datatype xsd:string;
+            sh:order 1;
+            sh:minCount 1;
+            sh:maxCount 1;
+            ];
+
+        sh:property [
+            sh:path rdfs:comment ;
+            sh:name "Description";
+            sh:datatype rdf:HTML;
+            sh:order 2;
+            sh:minCount 1;
+            ];   
+        
+           
+            . 
+
+    sdh-shacl:frbroo_F1_Shape a sh:NodeShape ;
+        sh:targetClass frbroo:F1 ;
+        sh:name "Work" ;
+
+        sh:property [
+            sh:path rdfs:label ;
+            sh:name "Label";
+            sh:datatype xsd:string;
+            sh:order 1;
+            sh:minCount 1;
+            sh:maxCount 1;
+            ];
+
+        sh:property [
+            sh:path rdfs:comment ;
+            sh:name "Description";
+            sh:datatype rdf:HTML;
+            sh:order 2;
+            sh:minCount 1;
+            ];   
+        
+           
+                
+        sh:property [
+                sh:path sdh-int:P35 ;
+                sh:name "is realised in";
+                sh:class frbroo:F2 ;
+                
+                ];
+                    . 
+
+    sdh-shacl:frbroo_F2_Shape a sh:NodeShape ;
+        sh:targetClass frbroo:F2 ;
+        sh:name "Expression" ;
+
+        sh:property [
+            sh:path rdfs:label ;
+            sh:name "Label";
+            sh:datatype xsd:string;
+            sh:order 1;
+            sh:minCount 1;
+            sh:maxCount 1;
+            ];
+
+        sh:property [
+            sh:path rdfs:comment ;
+            sh:name "Description";
+            sh:datatype rdf:HTML;
+            sh:order 2;
+            sh:minCount 1;
+            ];   
+        
+           
+                
+        sh:property [
+                sh:path frbroo:R41 ;
+                sh:name "has representative manifestation product type";
+                sh:class frbroo:F3 ;
+                
+                ];
+                    . 
+
+    sdh-shacl:frbroo_F3_Shape a sh:NodeShape ;
+        sh:targetClass frbroo:F3 ;
+        sh:name "Manifestation Product Type" ;
+
+        sh:property [
+            sh:path rdfs:label ;
+            sh:name "Label";
+            sh:datatype xsd:string;
+            sh:order 1;
+            sh:minCount 1;
+            sh:maxCount 1;
+            ];
+
+        sh:property [
+            sh:path rdfs:comment ;
+            sh:name "Description";
+            sh:datatype rdf:HTML;
+            sh:order 2;
+            sh:minCount 1;
+            ];   
+        
+           
+            . 
+
+    sdh-shacl:frbroo_F4_Shape a sh:NodeShape ;
+        sh:targetClass frbroo:F4 ;
+        sh:name "Manifestation Singleton" ;
+
+        sh:property [
+            sh:path rdfs:label ;
+            sh:name "Label";
+            sh:datatype xsd:string;
+            sh:order 1;
+            sh:minCount 1;
+            sh:maxCount 1;
+            ];
+
+        sh:property [
+            sh:path rdfs:comment ;
+            sh:name "Description";
+            sh:datatype rdf:HTML;
+            sh:order 2;
+            sh:minCount 1;
+            ];   
+        
+           
+            . 
+
+    sdh-shacl:frbroo_F28_Shape a sh:NodeShape ;
+        sh:targetClass frbroo:F28 ;
+        sh:name "Expression Creation" ;
+
+        sh:property [
+            sh:path rdfs:label ;
+            sh:name "Label";
+            sh:datatype xsd:string;
+            sh:order 1;
+            
+            sh:maxCount 1;
+            ];
+
+        sh:property [
+            sh:path rdfs:comment ;
+            sh:name "Description";
+            sh:datatype rdf:HTML;
+            sh:order 2;
+            
+            ];   
+        
+        
+        sh:property [
+            sh:path sdh-short:P1 ;
+            sh:name "at some time within";
+            sh:datatype xsd:string;
+            sh:order 3;
+            sh:maxCount 1;
+            ];
+                
+        sh:property [
+            sh:path sdh-short:P4 ;
+            sh:name "begins on";
+            sh:datatype xsd:string;
+            sh:order 4;
+            sh:maxCount 1;
+            ];
+            
+        sh:property [
+            sh:path sdh-short:P7 ;
+            sh:name "ends on";
+            sh:datatype xsd:string;
+            sh:order 5;
+            sh:maxCount 1;
+            ];
+            
+        sh:property [
+            sh:path sdh-short:P3 ;
+            sh:name "begins after";
+            sh:datatype xsd:string;
+            sh:order 6;
+            sh:maxCount 1;
+            ];
+            
+        sh:property [
+            sh:path sdh-short:P5 ;
+            sh:name "begins before";
+            sh:datatype xsd:string;
+            sh:order 7;
+            sh:maxCount 1;
+            ];
+            
+        sh:property [
+            sh:path sdh-short:P6 ;
+            sh:name "ends after";
+            sh:datatype xsd:string;
+            sh:order 8;
+            sh:maxCount 1;
+            ];
+            
+        sh:property [
+            sh:path sdh-short:P8 ;
+            sh:name "ends before";
+            sh:datatype xsd:string;
+            sh:order 9;
+            sh:maxCount 1;
+            ];
+               
+                
+        sh:property [
+                sh:path crm:P14 ;
+                sh:name "carried out by";
+                sh:class crm:E21 ;
+                
+                ];
+                        
+        sh:property [
+                sh:path crm:P32 ;
+                sh:name "used general technique";
+                sh:class sdh:C53 ;
+                
+                ];
+                        
+        sh:property [
+                sh:path frbroo:R17 ;
+                sh:name "created";
+                sh:class frbroo:F2 ;
+                sh:maxCount 1 ;
+                ];
+                        
+        sh:property [
+                sh:path frbroo:R17 ;
+                sh:name "created";
+                sh:class sdh-int:C2 ;
+                sh:maxCount 1 ;
+                ];
+                        
+        sh:property [
+                sh:path frbroo:R18 ;
+                sh:name "created";
+                sh:class frbroo:F4 ;
+                
+                ];
+                        
+        sh:property [
+                sh:path frbroo:R19 ;
+                sh:name "created a realisation of";
+                sh:class frbroo:F1 ;
+                
+                ];
+                        
+        sh:property [
+                sh:path sdh:P6 ;
+                sh:name "took place at";
+                sh:class sdh:C13 ;
+                
+                ];
+                    . 
+
+    sdh-shacl:sdh_C13_Shape a sh:NodeShape ;
+        sh:targetClass sdh:C13 ;
+        sh:name "Geographical Place" ;
+
+        sh:property [
+            sh:path rdfs:label ;
+            sh:name "Label";
+            sh:datatype xsd:string;
+            sh:order 1;
+            sh:minCount 1;
+            sh:maxCount 1;
+            ];
+
+        sh:property [
+            sh:path rdfs:comment ;
+            sh:name "Description";
+            sh:datatype rdf:HTML;
+            sh:order 2;
+            sh:minCount 1;
+            ];   
+        
+           
+            . 
+
+    sdh-shacl:crm-sup_C6_Shape a sh:NodeShape ;
+        sh:targetClass crm-sup:C6 ;
+        sh:name "Expression Type" ;
+
+        sh:property [
+            sh:path rdfs:label ;
+            sh:name "Label";
+            sh:datatype xsd:string;
+            sh:order 1;
+            sh:minCount 1;
+            sh:maxCount 1;
+            ];
+
+        sh:property [
+            sh:path rdfs:comment ;
+            sh:name "Description";
+            sh:datatype rdf:HTML;
+            sh:order 2;
+            sh:minCount 1;
+            ];   
+        
+           
+            . 
+
+    sdh-shacl:sdh-int_C2_Shape a sh:NodeShape ;
+        sh:targetClass sdh-int:C2 ;
+        sh:name "Expression Portion" ;
+
+        sh:property [
+            sh:path rdfs:label ;
+            sh:name "Label";
+            sh:datatype xsd:string;
+            sh:order 1;
+            sh:minCount 1;
+            sh:maxCount 1;
+            ];
+
+        sh:property [
+            sh:path rdfs:comment ;
+            sh:name "Description";
+            sh:datatype rdf:HTML;
+            sh:order 2;
+            sh:minCount 1;
+            ];   
+        
+           
+            . 
+
+    sdh-shacl:sdh-int_C3_Shape a sh:NodeShape ;
+        sh:targetClass sdh-int:C3 ;
+        sh:name "Expression Portion Type" ;
+
+        sh:property [
+            sh:path rdfs:label ;
+            sh:name "Label";
+            sh:datatype xsd:string;
+            sh:order 1;
+            sh:minCount 1;
+            sh:maxCount 1;
+            ];
+
+        sh:property [
+            sh:path rdfs:comment ;
+            sh:name "Description";
+            sh:datatype rdf:HTML;
+            sh:order 2;
+            sh:minCount 1;
+            ];   
+        
+           
+            . 
+
+    sdh-shacl:sdh-int_C1_Shape a sh:NodeShape ;
+        sh:targetClass sdh-int:C1 ;
+        sh:name "Expression Publication Event" ;
+
+        sh:property [
+            sh:path rdfs:label ;
+            sh:name "Label";
+            sh:datatype xsd:string;
+            sh:order 1;
+            
+            sh:maxCount 1;
+            ];
+
+        sh:property [
+            sh:path rdfs:comment ;
+            sh:name "Description";
+            sh:datatype rdf:HTML;
+            sh:order 2;
+            
+            ];   
+        
+        
+        sh:property [
+            sh:path sdh-short:P1 ;
+            sh:name "at some time within";
+            sh:datatype xsd:string;
+            sh:order 3;
+            sh:maxCount 1;
+            ];
+                
+        sh:property [
+            sh:path sdh-short:P4 ;
+            sh:name "begins on";
+            sh:datatype xsd:string;
+            sh:order 4;
+            sh:maxCount 1;
+            ];
+            
+        sh:property [
+            sh:path sdh-short:P7 ;
+            sh:name "ends on";
+            sh:datatype xsd:string;
+            sh:order 5;
+            sh:maxCount 1;
+            ];
+            
+        sh:property [
+            sh:path sdh-short:P3 ;
+            sh:name "begins after";
+            sh:datatype xsd:string;
+            sh:order 6;
+            sh:maxCount 1;
+            ];
+            
+        sh:property [
+            sh:path sdh-short:P5 ;
+            sh:name "begins before";
+            sh:datatype xsd:string;
+            sh:order 7;
+            sh:maxCount 1;
+            ];
+            
+        sh:property [
+            sh:path sdh-short:P6 ;
+            sh:name "ends after";
+            sh:datatype xsd:string;
+            sh:order 8;
+            sh:maxCount 1;
+            ];
+            
+        sh:property [
+            sh:path sdh-short:P8 ;
+            sh:name "ends before";
+            sh:datatype xsd:string;
+            sh:order 9;
+            sh:maxCount 1;
+            ];
+               
+                
+        sh:property [
+                sh:path crm:P14 ;
+                sh:name "carried out by";
+                sh:class crm:E21 ;
+                
+                ];
+                        
+        sh:property [
+                sh:path crm:P14 ;
+                sh:name "carried out by";
+                sh:class crm:E74 ;
+                
+                ];
+                        
+        sh:property [
+                sh:path frbroo:R17 ;
+                sh:name "created";
+                sh:class frbroo:F2 ;
+                sh:maxCount 1 ;
+                ];
+                        
+        sh:property [
+                sh:path sdh-int:P1 ;
+                sh:name "used specific expression";
+                sh:class frbroo:F2 ;
+                
+                ];
+                        
+        sh:property [
+                sh:path sdh-int:P2 ;
+                sh:name "created manifestation";
+                sh:class frbroo:F3 ;
+                sh:maxCount 1 ;
+                ];
+                        
+        sh:property [
+                sh:path sdh-int:P3 ;
+                sh:name "published the work of";
+                sh:class crm:E21 ;
+                
+                ];
+                        
+        sh:property [
+                sh:path sdh-int:P3 ;
+                sh:name "published the work of";
+                sh:class crm:E74 ;
+                
+                ];
+                        
+        sh:property [
+                sh:path sdh:P6 ;
+                sh:name "took place at";
+                sh:class sdh:C13 ;
+                
+                ];
+                    . 
+
+    sdh-shacl:crm-sup_C4_Shape a sh:NodeShape ;
+        sh:targetClass crm-sup:C4 ;
+        sh:name "Physical Human-Made Thing Type" ;
+
+        sh:property [
+            sh:path rdfs:label ;
+            sh:name "Label";
+            sh:datatype xsd:string;
+            sh:order 1;
+            sh:minCount 1;
+            sh:maxCount 1;
+            ];
+
+        sh:property [
+            sh:path rdfs:comment ;
+            sh:name "Description";
+            sh:datatype rdf:HTML;
+            sh:order 2;
+            sh:minCount 1;
+            ];   
+        
+           
+            . 
+
+    sdh-shacl:crm-sup_C1_Shape a sh:NodeShape ;
+        sh:targetClass crm-sup:C1 ;
+        sh:name "Duration" ;
+
+        sh:property [
+            sh:path rdfs:label ;
+            sh:name "Label";
+            sh:datatype xsd:string;
+            sh:order 1;
+            sh:minCount 1;
+            sh:maxCount 1;
+            ];
+
+        sh:property [
+            sh:path rdfs:comment ;
+            sh:name "Description";
+            sh:datatype rdf:HTML;
+            sh:order 2;
+            sh:minCount 1;
+            ];   
+        
+           
+            . 
+
+    sdh-shacl:crm-sup_C15_Shape a sh:NodeShape ;
+        sh:targetClass crm-sup:C15 ;
+        sh:name "Weight" ;
+
+        sh:property [
+            sh:path rdfs:label ;
+            sh:name "Label";
+            sh:datatype xsd:string;
+            sh:order 1;
+            sh:minCount 1;
+            sh:maxCount 1;
+            ];
+
+        sh:property [
+            sh:path rdfs:comment ;
+            sh:name "Description";
+            sh:datatype rdf:HTML;
+            sh:order 2;
+            sh:minCount 1;
+            ];   
+        
+           
+                
+        sh:property [
+                sh:path crm-sup:P13 ;
+                sh:name "has measurement unit";
+                sh:class crm-sup:C16 ;
+                sh:maxCount 1 ;
+                ];
+                    . 
+
+    sdh-shacl:crm-sup_C16_Shape a sh:NodeShape ;
+        sh:targetClass crm-sup:C16 ;
+        sh:name "Weight measurement unit" ;
+
+        sh:property [
+            sh:path rdfs:label ;
+            sh:name "Label";
+            sh:datatype xsd:string;
+            sh:order 1;
+            sh:minCount 1;
+            sh:maxCount 1;
+            ];
+
+        sh:property [
+            sh:path rdfs:comment ;
+            sh:name "Description";
+            sh:datatype rdf:HTML;
+            sh:order 2;
+            sh:minCount 1;
+            ];   
+        
+           
+            . 
+
+    sdh-shacl:crm-sup_C20_Shape a sh:NodeShape ;
+        sh:targetClass crm-sup:C20 ;
+        sh:name "Volume" ;
+
+        sh:property [
+            sh:path rdfs:label ;
+            sh:name "Label";
+            sh:datatype xsd:string;
+            sh:order 1;
+            sh:minCount 1;
+            sh:maxCount 1;
+            ];
+
+        sh:property [
+            sh:path rdfs:comment ;
+            sh:name "Description";
+            sh:datatype rdf:HTML;
+            sh:order 2;
+            sh:minCount 1;
+            ];   
+        
+           
+            . 
+
+    sdh-shacl:sdh-int_C4_Shape a sh:NodeShape ;
+        sh:targetClass sdh-int:C4 ;
+        sh:name "Procedure" ;
+
+        sh:property [
+            sh:path rdfs:label ;
+            sh:name "Label";
+            sh:datatype xsd:string;
+            sh:order 1;
+            sh:minCount 1;
+            sh:maxCount 1;
+            ];
+
+        sh:property [
+            sh:path rdfs:comment ;
+            sh:name "Description";
+            sh:datatype rdf:HTML;
+            sh:order 2;
+            sh:minCount 1;
+            ];   
+        
+           
+                
+        sh:property [
+                sh:path crm:P129 ;
+                sh:name "is about";
+                sh:class crm:E22 ;
+                
+                ];
+                        
+        sh:property [
+                sh:path crm:P129 ;
+                sh:name "is about";
+                sh:class crm-sup:C4 ;
+                
+                ];
+                        
+        sh:property [
+                sh:path crm:P148 ;
+                sh:name "has component";
+                sh:class sdh-int:C5 ;
+                
+                ];
+                        
+        sh:property [
+                sh:path sdh-int:P9 ;
+                sh:name "has planned duration";
+                sh:class crm-sup:C1 ;
+                sh:maxCount 1 ;
+                ];
+                        
+        sh:property [
+                sh:path sdh-int:P13 ;
+                sh:name "has procedure type";
+                sh:class sdh-int:C7 ;
+                sh:maxCount 1 ;
+                ];
+                    . 
+
+    sdh-shacl:sdh-int_C5_Shape a sh:NodeShape ;
+        sh:targetClass sdh-int:C5 ;
+        sh:name "Step" ;
+
+        sh:property [
+            sh:path rdfs:label ;
+            sh:name "Label";
+            sh:datatype xsd:string;
+            sh:order 1;
+            sh:minCount 1;
+            sh:maxCount 1;
+            ];
+
+        sh:property [
+            sh:path rdfs:comment ;
+            sh:name "Description";
+            sh:datatype rdf:HTML;
+            sh:order 2;
+            sh:minCount 1;
+            ];   
+        
+           
+                
+        sh:property [
+                sh:path crm:P148 ;
+                sh:name "has component";
+                sh:class sdh-int:C5 ;
+                
+                ];
+                        
+        sh:property [
+                sh:path sdh-int:P6 ;
+                sh:name "requires the use of";
+                sh:class sdh-int:C6 ;
+                
+                ];
+                        
+        sh:property [
+                sh:path sdh-int:P9 ;
+                sh:name "has planned duration";
+                sh:class crm-sup:C1 ;
+                sh:maxCount 1 ;
+                ];
+                        
+        sh:property [
+                sh:path sdh-int:P11 ;
+                sh:name "shall be performed after";
+                sh:class sdh-int:C5 ;
+                sh:maxCount 1 ;
+                ];
+                        
+        sh:property [
+                sh:path sdh-int:P12 ;
+                sh:name "has step type";
+                sh:class sdh-int:C8 ;
+                sh:maxCount 1 ;
+                ];
+                        
+        sh:property [
+                sh:path sdh-int:P14 ;
+                sh:name "foresees the use of specific object";
+                sh:class crm:E22 ;
+                
+                ];
+                        
+        sh:property [
+                sh:path sdh-int:P14 ;
+                sh:name "foresees the use of specific object";
+                sh:class crm-sup:C4 ;
+                
+                ];
+                    . 
+
+    sdh-shacl:sdh-int_C6_Shape a sh:NodeShape ;
+        sh:targetClass sdh-int:C6 ;
+        sh:name "Component of a Recipe" ;
+
+        sh:property [
+            sh:path rdfs:label ;
+            sh:name "Label";
+            sh:datatype xsd:string;
+            sh:order 1;
+            sh:minCount 1;
+            sh:maxCount 1;
+            ];
+
+        sh:property [
+            sh:path rdfs:comment ;
+            sh:name "Description";
+            sh:datatype rdf:HTML;
+            sh:order 2;
+            sh:minCount 1;
+            ];   
+        
+           
+                
+        sh:property [
+                sh:path sdh-int:P7 ;
+                sh:name "has material";
+                sh:class crm:E57 ;
+                sh:maxCount 1 ;
+                ];
+                        
+        sh:property [
+                sh:path sdh-int:P8 ;
+                sh:name "has volume";
+                sh:class crm-sup:C20 ;
+                sh:maxCount 1 ;
+                ];
+                        
+        sh:property [
+                sh:path sdh-int:P10 ;
+                sh:name "has weight";
+                sh:class crm-sup:C15 ;
+                sh:maxCount 1 ;
+                ];
+                    . 
+
+    sdh-shacl:sdh-int_C7_Shape a sh:NodeShape ;
+        sh:targetClass sdh-int:C7 ;
+        sh:name "Procedure Type" ;
+
+        sh:property [
+            sh:path rdfs:label ;
+            sh:name "Label";
+            sh:datatype xsd:string;
+            sh:order 1;
+            sh:minCount 1;
+            sh:maxCount 1;
+            ];
+
+        sh:property [
+            sh:path rdfs:comment ;
+            sh:name "Description";
+            sh:datatype rdf:HTML;
+            sh:order 2;
+            sh:minCount 1;
+            ];   
+        
+           
+            . 
+
+    sdh-shacl:sdh-int_C8_Shape a sh:NodeShape ;
+        sh:targetClass sdh-int:C8 ;
+        sh:name "Step Type" ;
+
+        sh:property [
+            sh:path rdfs:label ;
+            sh:name "Label";
+            sh:datatype xsd:string;
+            sh:order 1;
+            sh:minCount 1;
+            sh:maxCount 1;
+            ];
+
+        sh:property [
+            sh:path rdfs:comment ;
+            sh:name "Description";
+            sh:datatype rdf:HTML;
+            sh:order 2;
+            sh:minCount 1;
+            ];   
+        
+           
+            . 
+
+    sdh-shacl:sdh_C53_Shape a sh:NodeShape ;
+        sh:targetClass sdh:C53 ;
+        sh:name "General Technique" ;
+
+        sh:property [
+            sh:path rdfs:label ;
+            sh:name "Label";
+            sh:datatype xsd:string;
+            sh:order 1;
+            sh:minCount 1;
+            sh:maxCount 1;
+            ];
+
+        sh:property [
+            sh:path rdfs:comment ;
+            sh:name "Description";
+            sh:datatype rdf:HTML;
+            sh:order 2;
+            sh:minCount 1;
+            ];   
+        
+           
+            . 
+
+    sdh-shacl:sdh-int_C18_Shape a sh:NodeShape ;
+        sh:targetClass sdh-int:C18 ;
+        sh:name "Expression Portion Classification" ;
+
+        sh:property [
+            sh:path rdfs:label ;
+            sh:name "Label";
+            sh:datatype xsd:string;
+            sh:order 1;
+            
+            sh:maxCount 1;
+            ];
+
+        sh:property [
+            sh:path rdfs:comment ;
+            sh:name "Description";
+            sh:datatype rdf:HTML;
+            sh:order 2;
+            
+            ];   
+        
+        
+        sh:property [
+            sh:path sdh-short:P1 ;
+            sh:name "at some time within";
+            sh:datatype xsd:string;
+            sh:order 3;
+            sh:maxCount 1;
+            ];
+                
+        sh:property [
+            sh:path sdh-short:P4 ;
+            sh:name "begins on";
+            sh:datatype xsd:string;
+            sh:order 4;
+            sh:maxCount 1;
+            ];
+            
+        sh:property [
+            sh:path sdh-short:P7 ;
+            sh:name "ends on";
+            sh:datatype xsd:string;
+            sh:order 5;
+            sh:maxCount 1;
+            ];
+            
+        sh:property [
+            sh:path sdh-short:P3 ;
+            sh:name "begins after";
+            sh:datatype xsd:string;
+            sh:order 6;
+            sh:maxCount 1;
+            ];
+            
+        sh:property [
+            sh:path sdh-short:P5 ;
+            sh:name "begins before";
+            sh:datatype xsd:string;
+            sh:order 7;
+            sh:maxCount 1;
+            ];
+            
+        sh:property [
+            sh:path sdh-short:P6 ;
+            sh:name "ends after";
+            sh:datatype xsd:string;
+            sh:order 8;
+            sh:maxCount 1;
+            ];
+            
+        sh:property [
+            sh:path sdh-short:P8 ;
+            sh:name "ends before";
+            sh:datatype xsd:string;
+            sh:order 9;
+            sh:maxCount 1;
+            ];
+               
+                
+        sh:property [
+                sh:path sdh:P39 ;
+                sh:name "is connotation of";
+                sh:class sdh-int:C2 ;
+                sh:maxCount 1 ;
+                ];
+                        
+        sh:property [
+                sh:path sdh-int:P34 ;
+                sh:name "classifies with";
+                sh:class sdh-int:C3 ;
+                sh:maxCount 1 ;
+                ];
+                    . 
+
+    sdh-shacl:sdh-int_C19_Shape a sh:NodeShape ;
+        sh:targetClass sdh-int:C19 ;
+        sh:name "Subject" ;
+
+        sh:property [
+            sh:path rdfs:label ;
+            sh:name "Label";
+            sh:datatype xsd:string;
+            sh:order 1;
+            sh:minCount 1;
+            sh:maxCount 1;
+            ];
+
+        sh:property [
+            sh:path rdfs:comment ;
+            sh:name "Description";
+            sh:datatype rdf:HTML;
+            sh:order 2;
+            sh:minCount 1;
+            ];   
+        
+           
+            .

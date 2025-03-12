@@ -1,0 +1,272 @@
+### SHACL OntoME Profile 204 
+
+
+
+@prefix sdh-shacl: <https://sdhss.org/shacl/profiles/>. 
+@prefix sh: <http://www.w3.org/ns/shacl#> .  
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: 	<http://www.w3.org/2000/01/rdf-schema#> .  
+@prefix sdh-short: <https://sdhss.org/ontology/shortcuts/>.
+        @prefix crm: <http://www.cidoc-crm.org/cidoc-crm/>.
+@prefix sdh-so: <https://ontome.net/ns/social-legal-economic-life/>. 
+
+    sdh-shacl:crm_E21_Shape a sh:NodeShape ;
+        sh:targetClass crm:E21 ;
+        sh:name "Person" ;
+
+        sh:property [
+            sh:path rdfs:label ;
+            sh:name "Label";
+            sh:datatype xsd:string;
+            sh:order 1;
+            sh:minCount 1;
+            sh:maxCount 1;
+            ];
+
+        sh:property [
+            sh:path rdfs:comment ;
+            sh:name "Description";
+            sh:datatype rdf:HTML;
+            sh:order 2;
+            sh:minCount 1;
+            ];  
+         
+            
+            sh:property [
+                sh:path sdh-short:P2 ;
+                sh:name "has birth date";
+                sh:datatype xsd:string;
+                sh:maxCount 1;
+                sh:order 3;
+                ];
+                           
+            . 
+
+    sdh-shacl:crm_E67_Shape a sh:NodeShape ;
+        sh:targetClass crm:E67 ;
+        sh:name "Birth" ;
+
+        sh:property [
+            sh:path rdfs:label ;
+            sh:name "Label";
+            sh:datatype xsd:string;
+            sh:order 1;
+            
+            sh:maxCount 1;
+            ];
+
+        sh:property [
+            sh:path rdfs:comment ;
+            sh:name "Description";
+            sh:datatype rdf:HTML;
+            sh:order 2;
+            
+            ];  
+            
+        sh:property [
+                sh:path crm:P98 ;
+                sh:name "brought into life";
+                sh:class crm:E21 ;
+                
+                ];
+                        
+        sh:property [
+                sh:path sdh-so:P22 ;
+                sh:name "stemmed from";
+                sh:class sdh-so:C9 ;
+                sh:maxCount 1 ;
+                ];
+                     
+            
+        sh:property [
+            sh:path sdh-short:P1 ;
+            sh:name "at some time within";
+            sh:datatype xsd:string;
+            sh:order 3;
+            sh:maxCount 1;
+            ];
+
+        sh:property [
+            sh:path sdh-short:P4 ;
+            sh:name "begins on";
+            sh:datatype xsd:string;
+            sh:order 4;
+            sh:maxCount 1;
+            ];
+
+        sh:property [
+            sh:path sdh-short:P7 ;
+            sh:name "ends on";
+            sh:datatype xsd:string;
+            sh:order 5;
+            sh:maxCount 1;
+            ];
+
+        sh:property [
+            sh:path sdh-short:P3 ;
+            sh:name "begins after";
+            sh:datatype xsd:string;
+            sh:order 6;
+            sh:maxCount 1;
+            ];
+
+        sh:property [
+            sh:path sdh-short:P5 ;
+            sh:name "begins before";
+            sh:datatype xsd:string;
+            sh:order 7;
+            sh:maxCount 1;
+            ];
+
+        sh:property [
+            sh:path sdh-short:P6 ;
+            sh:name "ends after";
+            sh:datatype xsd:string;
+            sh:order 8;
+            sh:maxCount 1;
+            ];
+
+        sh:property [
+            sh:path sdh-short:P8 ;
+            sh:name "ends before";
+            sh:datatype xsd:string;
+            sh:order 9;
+            sh:maxCount 1;
+            ];
+            
+            sh:property [
+                sh:path sdh-short:P2 ;
+                sh:name "has birth date";
+                sh:datatype xsd:string;
+                sh:maxCount 1;
+                sh:order 3;
+                ];
+                           
+            . 
+
+    sdh-shacl:sdh-so_C9_Shape a sh:NodeShape ;
+        sh:targetClass sdh-so:C9 ;
+        sh:name "Relationship" ;
+
+        sh:property [
+            sh:path rdfs:label ;
+            sh:name "Label";
+            sh:datatype xsd:string;
+            sh:order 1;
+            
+            sh:maxCount 1;
+            ];
+
+        sh:property [
+            sh:path rdfs:comment ;
+            sh:name "Description";
+            sh:datatype rdf:HTML;
+            sh:order 2;
+            
+            ];  
+            
+        sh:property [
+                sh:path sdh-so:P20 ;
+                sh:name "had partner";
+                sh:class crm:E21 ;
+                
+                ];
+                        
+        sh:property [
+                sh:path sdh-so:P21 ;
+                sh:name "has type of interaction";
+                sh:class sdh-so:C10 ;
+                sh:maxCount 1 ;
+                ];
+                     
+            
+        sh:property [
+            sh:path sdh-short:P1 ;
+            sh:name "at some time within";
+            sh:datatype xsd:string;
+            sh:order 3;
+            sh:maxCount 1;
+            ];
+
+        sh:property [
+            sh:path sdh-short:P4 ;
+            sh:name "begins on";
+            sh:datatype xsd:string;
+            sh:order 4;
+            sh:maxCount 1;
+            ];
+
+        sh:property [
+            sh:path sdh-short:P7 ;
+            sh:name "ends on";
+            sh:datatype xsd:string;
+            sh:order 5;
+            sh:maxCount 1;
+            ];
+
+        sh:property [
+            sh:path sdh-short:P3 ;
+            sh:name "begins after";
+            sh:datatype xsd:string;
+            sh:order 6;
+            sh:maxCount 1;
+            ];
+
+        sh:property [
+            sh:path sdh-short:P5 ;
+            sh:name "begins before";
+            sh:datatype xsd:string;
+            sh:order 7;
+            sh:maxCount 1;
+            ];
+
+        sh:property [
+            sh:path sdh-short:P6 ;
+            sh:name "ends after";
+            sh:datatype xsd:string;
+            sh:order 8;
+            sh:maxCount 1;
+            ];
+
+        sh:property [
+            sh:path sdh-short:P8 ;
+            sh:name "ends before";
+            sh:datatype xsd:string;
+            sh:order 9;
+            sh:maxCount 1;
+            ];
+            
+            sh:property [
+                sh:path sdh-short:P2 ;
+                sh:name "has birth date";
+                sh:datatype xsd:string;
+                sh:maxCount 1;
+                sh:order 3;
+                ];
+                           
+            . 
+
+    sdh-shacl:sdh-so_C10_Shape a sh:NodeShape ;
+        sh:targetClass sdh-so:C10 ;
+        sh:name "Type of Persons' Interaction" ;
+
+        sh:property [
+            sh:path rdfs:label ;
+            sh:name "Label";
+            sh:datatype xsd:string;
+            sh:order 1;
+            sh:minCount 1;
+            sh:maxCount 1;
+            ];
+
+        sh:property [
+            sh:path rdfs:comment ;
+            sh:name "Description";
+            sh:datatype rdf:HTML;
+            sh:order 2;
+            sh:minCount 1;
+            ];  
+         
+               
+            .
