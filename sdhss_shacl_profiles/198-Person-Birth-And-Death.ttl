@@ -8,8 +8,8 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: 	<http://www.w3.org/2000/01/rdf-schema#> .  
 @prefix sdh-short: <https://sdhss.org/ontology/shortcuts/>.
-        @prefix crm: <http://www.cidoc-crm.org/cidoc-crm/>.
-@prefix sdh: <https://sdhss.org/ontology/core/>. 
+        @prefix sdh: <https://sdhss.org/ontology/core/>.
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/>. 
 
     sdh-shacl:crm_E21_Shape a sh:NodeShape ;
         sh:targetClass crm:E21 ;
@@ -33,14 +33,14 @@
             ];  
          
             
-            sh:property [
-                sh:path sdh-short:P2 ;
-                sh:name "has birth date";
-                sh:datatype xsd:string;
-                sh:maxCount 1;
-                sh:order 3;
-                ];
-                           
+        sh:property [
+            sh:path sdh-short:P2 ;
+            sh:name "has birth date";
+            sh:datatype xsd:string;
+            sh:maxCount 1;
+            sh:order 3; # verify what happens if new properties
+            ];
+                               
             . 
 
     sdh-shacl:crm_E67_Shape a sh:NodeShape ;
@@ -68,21 +68,21 @@
                 sh:path crm:P8 ;
                 sh:name "took place on or within";
                 sh:class sdh:C17 ;
-                
+                sh:order 3;
                 ];
                         
         sh:property [
                 sh:path crm:P98 ;
                 sh:name "brought into life";
                 sh:class crm:E21 ;
-                
+                sh:order 4;
                 ];
                         
         sh:property [
                 sh:path sdh:P6 ;
                 sh:name "took place at";
                 sh:class sdh:C13 ;
-                
+                sh:order 5;
                 ];
                      
             
@@ -90,7 +90,7 @@
             sh:path sdh-short:P1 ;
             sh:name "at some time within";
             sh:datatype xsd:string;
-            sh:order 3;
+            sh:order 6;
             sh:maxCount 1;
             ];
 
@@ -98,7 +98,7 @@
             sh:path sdh-short:P4 ;
             sh:name "begins on";
             sh:datatype xsd:string;
-            sh:order 4;
+            sh:order 7;
             sh:maxCount 1;
             ];
 
@@ -106,7 +106,7 @@
             sh:path sdh-short:P7 ;
             sh:name "ends on";
             sh:datatype xsd:string;
-            sh:order 5;
+            sh:order 8;
             sh:maxCount 1;
             ];
 
@@ -114,7 +114,7 @@
             sh:path sdh-short:P3 ;
             sh:name "begins after";
             sh:datatype xsd:string;
-            sh:order 6;
+            sh:order 9;
             sh:maxCount 1;
             ];
 
@@ -122,7 +122,7 @@
             sh:path sdh-short:P5 ;
             sh:name "begins before";
             sh:datatype xsd:string;
-            sh:order 7;
+            sh:order 10;
             sh:maxCount 1;
             ];
 
@@ -130,7 +130,7 @@
             sh:path sdh-short:P6 ;
             sh:name "ends after";
             sh:datatype xsd:string;
-            sh:order 8;
+            sh:order 11;
             sh:maxCount 1;
             ];
 
@@ -138,18 +138,10 @@
             sh:path sdh-short:P8 ;
             sh:name "ends before";
             sh:datatype xsd:string;
-            sh:order 9;
+            sh:order 12;
             sh:maxCount 1;
             ];
-            
-            sh:property [
-                sh:path sdh-short:P2 ;
-                sh:name "has birth date";
-                sh:datatype xsd:string;
-                sh:maxCount 1;
-                sh:order 3;
-                ];
-                           
+                   
             . 
 
     sdh-shacl:crm_E69_Shape a sh:NodeShape ;
@@ -177,21 +169,21 @@
                 sh:path crm:P8 ;
                 sh:name "took place on or within";
                 sh:class sdh:C17 ;
-                
+                sh:order 3;
                 ];
                         
         sh:property [
                 sh:path crm:P100 ;
                 sh:name "was death of";
                 sh:class crm:E21 ;
-                
+                sh:order 4;
                 ];
                         
         sh:property [
                 sh:path sdh:P6 ;
                 sh:name "took place at";
                 sh:class sdh:C13 ;
-                
+                sh:order 5;
                 ];
                      
             
@@ -199,7 +191,7 @@
             sh:path sdh-short:P1 ;
             sh:name "at some time within";
             sh:datatype xsd:string;
-            sh:order 3;
+            sh:order 6;
             sh:maxCount 1;
             ];
 
@@ -207,7 +199,7 @@
             sh:path sdh-short:P4 ;
             sh:name "begins on";
             sh:datatype xsd:string;
-            sh:order 4;
+            sh:order 7;
             sh:maxCount 1;
             ];
 
@@ -215,7 +207,7 @@
             sh:path sdh-short:P7 ;
             sh:name "ends on";
             sh:datatype xsd:string;
-            sh:order 5;
+            sh:order 8;
             sh:maxCount 1;
             ];
 
@@ -223,7 +215,7 @@
             sh:path sdh-short:P3 ;
             sh:name "begins after";
             sh:datatype xsd:string;
-            sh:order 6;
+            sh:order 9;
             sh:maxCount 1;
             ];
 
@@ -231,7 +223,7 @@
             sh:path sdh-short:P5 ;
             sh:name "begins before";
             sh:datatype xsd:string;
-            sh:order 7;
+            sh:order 10;
             sh:maxCount 1;
             ];
 
@@ -239,7 +231,7 @@
             sh:path sdh-short:P6 ;
             sh:name "ends after";
             sh:datatype xsd:string;
-            sh:order 8;
+            sh:order 11;
             sh:maxCount 1;
             ];
 
@@ -247,18 +239,10 @@
             sh:path sdh-short:P8 ;
             sh:name "ends before";
             sh:datatype xsd:string;
-            sh:order 9;
+            sh:order 12;
             sh:maxCount 1;
             ];
-            
-            sh:property [
-                sh:path sdh-short:P2 ;
-                sh:name "has birth date";
-                sh:datatype xsd:string;
-                sh:maxCount 1;
-                sh:order 3;
-                ];
-                           
+                   
             . 
 
     sdh-shacl:sdh_C13_Shape a sh:NodeShape ;

@@ -8,8 +8,8 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: 	<http://www.w3.org/2000/01/rdf-schema#> .  
 @prefix sdh-short: <https://sdhss.org/ontology/shortcuts/>.
-        @prefix crm: <http://www.cidoc-crm.org/cidoc-crm/>.
-@prefix sdh-so: <https://ontome.net/ns/social-legal-economic-life/>. 
+        @prefix sdh-so: <https://ontome.net/ns/social-legal-economic-life/>.
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/>. 
 
     sdh-shacl:crm_E21_Shape a sh:NodeShape ;
         sh:targetClass crm:E21 ;
@@ -36,18 +36,18 @@
                 sh:path sdh-so:P23 ;
                 sh:name "has gender";
                 sh:class sdh-so:C11 ;
-                
+                sh:order 3;
                 ];
                      
             
-            sh:property [
-                sh:path sdh-short:P2 ;
-                sh:name "has birth date";
-                sh:datatype xsd:string;
-                sh:maxCount 1;
-                sh:order 3;
-                ];
-                           
+        sh:property [
+            sh:path sdh-short:P2 ;
+            sh:name "has birth date";
+            sh:datatype xsd:string;
+            sh:maxCount 1;
+            sh:order 3; # verify what happens if new properties
+            ];
+                               
             . 
 
     sdh-shacl:sdh-so_C11_Shape a sh:NodeShape ;

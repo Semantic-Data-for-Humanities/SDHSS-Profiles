@@ -8,10 +8,10 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: 	<http://www.w3.org/2000/01/rdf-schema#> .  
 @prefix sdh-short: <https://sdhss.org/ontology/shortcuts/>.
-        @prefix crm: <http://www.cidoc-crm.org/cidoc-crm/>.
-@prefix sdh-so: <https://ontome.net/ns/social-legal-economic-life/>.
-@prefix crm-sup: <https://sdhss.org/ontology/crm-supplement/>.
-@prefix sdh: <https://sdhss.org/ontology/core/>. 
+        @prefix crm-sup: <https://sdhss.org/ontology/crm-supplement/>.
+@prefix sdh: <https://sdhss.org/ontology/core/>.
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/>.
+@prefix sdh-so: <https://ontome.net/ns/social-legal-economic-life/>. 
 
     sdh-shacl:crm_E21_Shape a sh:NodeShape ;
         sh:targetClass crm:E21 ;
@@ -35,14 +35,14 @@
             ];  
          
             
-            sh:property [
-                sh:path sdh-short:P2 ;
-                sh:name "has birth date";
-                sh:datatype xsd:string;
-                sh:maxCount 1;
-                sh:order 3;
-                ];
-                           
+        sh:property [
+            sh:path sdh-short:P2 ;
+            sh:name "has birth date";
+            sh:datatype xsd:string;
+            sh:maxCount 1;
+            sh:order 3; # verify what happens if new properties
+            ];
+                               
             . 
 
     sdh-shacl:crm_E74_Shape a sh:NodeShape ;
@@ -70,7 +70,7 @@
                 sh:path crm-sup:P7 ;
                 sh:name "has group type";
                 sh:class crm-sup:C9 ;
-                sh:maxCount 1 ;
+                sh:order 3;sh:maxCount 1 ;
                 ];
                      
                
@@ -101,21 +101,21 @@
                 sh:path crm:P143 ;
                 sh:name "joined";
                 sh:class crm:E21 ;
-                
+                sh:order 3;
                 ];
                         
         sh:property [
                 sh:path crm:P144 ;
                 sh:name "joined with";
                 sh:class crm:E74 ;
-                
+                sh:order 4;
                 ];
                         
         sh:property [
                 sh:path sdh:P3 ;
                 sh:name "effects";
                 sh:class sdh-so:C5 ;
-                
+                sh:order 5;
                 ];
                      
             
@@ -123,7 +123,7 @@
             sh:path sdh-short:P1 ;
             sh:name "at some time within";
             sh:datatype xsd:string;
-            sh:order 3;
+            sh:order 6;
             sh:maxCount 1;
             ];
 
@@ -131,7 +131,7 @@
             sh:path sdh-short:P4 ;
             sh:name "begins on";
             sh:datatype xsd:string;
-            sh:order 4;
+            sh:order 7;
             sh:maxCount 1;
             ];
 
@@ -139,7 +139,7 @@
             sh:path sdh-short:P7 ;
             sh:name "ends on";
             sh:datatype xsd:string;
-            sh:order 5;
+            sh:order 8;
             sh:maxCount 1;
             ];
 
@@ -147,7 +147,7 @@
             sh:path sdh-short:P3 ;
             sh:name "begins after";
             sh:datatype xsd:string;
-            sh:order 6;
+            sh:order 9;
             sh:maxCount 1;
             ];
 
@@ -155,7 +155,7 @@
             sh:path sdh-short:P5 ;
             sh:name "begins before";
             sh:datatype xsd:string;
-            sh:order 7;
+            sh:order 10;
             sh:maxCount 1;
             ];
 
@@ -163,7 +163,7 @@
             sh:path sdh-short:P6 ;
             sh:name "ends after";
             sh:datatype xsd:string;
-            sh:order 8;
+            sh:order 11;
             sh:maxCount 1;
             ];
 
@@ -171,10 +171,10 @@
             sh:path sdh-short:P8 ;
             sh:name "ends before";
             sh:datatype xsd:string;
-            sh:order 9;
+            sh:order 12;
             sh:maxCount 1;
             ];
-               
+                   
             . 
 
     sdh-shacl:crm_E86_Shape a sh:NodeShape ;
@@ -202,21 +202,21 @@
                 sh:path crm:P145 ;
                 sh:name "separated";
                 sh:class crm:E21 ;
-                
+                sh:order 3;
                 ];
                         
         sh:property [
                 sh:path crm:P146 ;
                 sh:name "separated from";
                 sh:class crm:E74 ;
-                
+                sh:order 4;
                 ];
                         
         sh:property [
                 sh:path sdh:P4 ;
                 sh:name "ends";
                 sh:class sdh-so:C5 ;
-                
+                sh:order 5;
                 ];
                      
             
@@ -224,7 +224,7 @@
             sh:path sdh-short:P1 ;
             sh:name "at some time within";
             sh:datatype xsd:string;
-            sh:order 3;
+            sh:order 6;
             sh:maxCount 1;
             ];
 
@@ -232,7 +232,7 @@
             sh:path sdh-short:P4 ;
             sh:name "begins on";
             sh:datatype xsd:string;
-            sh:order 4;
+            sh:order 7;
             sh:maxCount 1;
             ];
 
@@ -240,7 +240,7 @@
             sh:path sdh-short:P7 ;
             sh:name "ends on";
             sh:datatype xsd:string;
-            sh:order 5;
+            sh:order 8;
             sh:maxCount 1;
             ];
 
@@ -248,7 +248,7 @@
             sh:path sdh-short:P3 ;
             sh:name "begins after";
             sh:datatype xsd:string;
-            sh:order 6;
+            sh:order 9;
             sh:maxCount 1;
             ];
 
@@ -256,7 +256,7 @@
             sh:path sdh-short:P5 ;
             sh:name "begins before";
             sh:datatype xsd:string;
-            sh:order 7;
+            sh:order 10;
             sh:maxCount 1;
             ];
 
@@ -264,7 +264,7 @@
             sh:path sdh-short:P6 ;
             sh:name "ends after";
             sh:datatype xsd:string;
-            sh:order 8;
+            sh:order 11;
             sh:maxCount 1;
             ];
 
@@ -272,10 +272,10 @@
             sh:path sdh-short:P8 ;
             sh:name "ends before";
             sh:datatype xsd:string;
-            sh:order 9;
+            sh:order 12;
             sh:maxCount 1;
             ];
-               
+                   
             . 
 
     sdh-shacl:sdh-so_C3_Shape a sh:NodeShape ;
@@ -303,28 +303,28 @@
                 sh:path sdh-so:P15 ;
                 sh:name "involves partner";
                 sh:class crm:E21 ;
-                
+                sh:order 3;
                 ];
                         
         sh:property [
                 sh:path sdh-so:P16 ;
                 sh:name "has relationship type";
                 sh:class sdh-so:C4 ;
-                sh:maxCount 1 ;
+                sh:order 4;sh:maxCount 1 ;
                 ];
                         
         sh:property [
                 sh:path sdh-so:P17 ;
                 sh:name "has relationship source";
                 sh:class crm:E21 ;
-                
+                sh:order 5;
                 ];
                         
         sh:property [
                 sh:path sdh-so:P18 ;
                 sh:name "has relationship target";
                 sh:class crm:E21 ;
-                
+                sh:order 6;
                 ];
                      
             
@@ -332,7 +332,7 @@
             sh:path sdh-short:P1 ;
             sh:name "at some time within";
             sh:datatype xsd:string;
-            sh:order 3;
+            sh:order 7;
             sh:maxCount 1;
             ];
 
@@ -340,7 +340,7 @@
             sh:path sdh-short:P4 ;
             sh:name "begins on";
             sh:datatype xsd:string;
-            sh:order 4;
+            sh:order 8;
             sh:maxCount 1;
             ];
 
@@ -348,7 +348,7 @@
             sh:path sdh-short:P7 ;
             sh:name "ends on";
             sh:datatype xsd:string;
-            sh:order 5;
+            sh:order 9;
             sh:maxCount 1;
             ];
 
@@ -356,7 +356,7 @@
             sh:path sdh-short:P3 ;
             sh:name "begins after";
             sh:datatype xsd:string;
-            sh:order 6;
+            sh:order 10;
             sh:maxCount 1;
             ];
 
@@ -364,7 +364,7 @@
             sh:path sdh-short:P5 ;
             sh:name "begins before";
             sh:datatype xsd:string;
-            sh:order 7;
+            sh:order 11;
             sh:maxCount 1;
             ];
 
@@ -372,7 +372,7 @@
             sh:path sdh-short:P6 ;
             sh:name "ends after";
             sh:datatype xsd:string;
-            sh:order 8;
+            sh:order 12;
             sh:maxCount 1;
             ];
 
@@ -380,10 +380,10 @@
             sh:path sdh-short:P8 ;
             sh:name "ends before";
             sh:datatype xsd:string;
-            sh:order 9;
+            sh:order 13;
             sh:maxCount 1;
             ];
-               
+                   
             . 
 
     sdh-shacl:sdh_C13_Shape a sh:NodeShape ;
@@ -435,42 +435,42 @@
                 sh:path sdh-so:P1 ;
                 sh:name "was a membership of";
                 sh:class crm:E21 ;
-                sh:maxCount 1 ;
+                sh:order 3;sh:maxCount 1 ;
                 ];
                         
         sh:property [
                 sh:path sdh-so:P1 ;
                 sh:name "was a membership of";
                 sh:class crm:E74 ;
-                sh:maxCount 1 ;
+                sh:order 4;sh:maxCount 1 ;
                 ];
                         
         sh:property [
                 sh:path sdh-so:P2 ;
                 sh:name "was membership in";
                 sh:class crm:E74 ;
-                sh:maxCount 1 ;
+                sh:order 5;sh:maxCount 1 ;
                 ];
                         
         sh:property [
                 sh:path sdh-so:P3 ;
                 sh:name "has membership type";
                 sh:class sdh-so:C6 ;
-                sh:maxCount 1 ;
+                sh:order 6;sh:maxCount 1 ;
                 ];
                         
         sh:property [
                 sh:path sdh-so:P63 ;
                 sh:name "has quality during membership";
                 sh:class sdh-so:C2 ;
-                
+                sh:order 7;
                 ];
                         
         sh:property [
                 sh:path sdh-so:P63 ;
                 sh:name "has quality during membership";
                 sh:class sdh-so:C12 ;
-                
+                sh:order 8;
                 ];
                      
             
@@ -478,7 +478,7 @@
             sh:path sdh-short:P1 ;
             sh:name "at some time within";
             sh:datatype xsd:string;
-            sh:order 3;
+            sh:order 9;
             sh:maxCount 1;
             ];
 
@@ -486,7 +486,7 @@
             sh:path sdh-short:P4 ;
             sh:name "begins on";
             sh:datatype xsd:string;
-            sh:order 4;
+            sh:order 10;
             sh:maxCount 1;
             ];
 
@@ -494,7 +494,7 @@
             sh:path sdh-short:P7 ;
             sh:name "ends on";
             sh:datatype xsd:string;
-            sh:order 5;
+            sh:order 11;
             sh:maxCount 1;
             ];
 
@@ -502,7 +502,7 @@
             sh:path sdh-short:P3 ;
             sh:name "begins after";
             sh:datatype xsd:string;
-            sh:order 6;
+            sh:order 12;
             sh:maxCount 1;
             ];
 
@@ -510,7 +510,7 @@
             sh:path sdh-short:P5 ;
             sh:name "begins before";
             sh:datatype xsd:string;
-            sh:order 7;
+            sh:order 13;
             sh:maxCount 1;
             ];
 
@@ -518,7 +518,7 @@
             sh:path sdh-short:P6 ;
             sh:name "ends after";
             sh:datatype xsd:string;
-            sh:order 8;
+            sh:order 14;
             sh:maxCount 1;
             ];
 
@@ -526,10 +526,10 @@
             sh:path sdh-short:P8 ;
             sh:name "ends before";
             sh:datatype xsd:string;
-            sh:order 9;
+            sh:order 15;
             sh:maxCount 1;
             ];
-               
+                   
             . 
 
     sdh-shacl:sdh-so_C2_Shape a sh:NodeShape ;
@@ -605,14 +605,14 @@
                 sh:path sdh-so:P10 ;
                 sh:name "is participation of";
                 sh:class crm:E21 ;
-                sh:maxCount 1 ;
+                sh:order 3;sh:maxCount 1 ;
                 ];
                         
         sh:property [
                 sh:path sdh-so:P12 ;
                 sh:name "is participation in the quality of";
                 sh:class sdh-so:C2 ;
-                
+                sh:order 4;
                 ];
                      
             
@@ -620,7 +620,7 @@
             sh:path sdh-short:P1 ;
             sh:name "at some time within";
             sh:datatype xsd:string;
-            sh:order 3;
+            sh:order 5;
             sh:maxCount 1;
             ];
 
@@ -628,7 +628,7 @@
             sh:path sdh-short:P4 ;
             sh:name "begins on";
             sh:datatype xsd:string;
-            sh:order 4;
+            sh:order 6;
             sh:maxCount 1;
             ];
 
@@ -636,7 +636,7 @@
             sh:path sdh-short:P7 ;
             sh:name "ends on";
             sh:datatype xsd:string;
-            sh:order 5;
+            sh:order 7;
             sh:maxCount 1;
             ];
 
@@ -644,7 +644,7 @@
             sh:path sdh-short:P3 ;
             sh:name "begins after";
             sh:datatype xsd:string;
-            sh:order 6;
+            sh:order 8;
             sh:maxCount 1;
             ];
 
@@ -652,7 +652,7 @@
             sh:path sdh-short:P5 ;
             sh:name "begins before";
             sh:datatype xsd:string;
-            sh:order 7;
+            sh:order 9;
             sh:maxCount 1;
             ];
 
@@ -660,7 +660,7 @@
             sh:path sdh-short:P6 ;
             sh:name "ends after";
             sh:datatype xsd:string;
-            sh:order 8;
+            sh:order 10;
             sh:maxCount 1;
             ];
 
@@ -668,10 +668,10 @@
             sh:path sdh-short:P8 ;
             sh:name "ends before";
             sh:datatype xsd:string;
-            sh:order 9;
+            sh:order 11;
             sh:maxCount 1;
             ];
-               
+                   
             . 
 
     sdh-shacl:sdh-so_C6_Shape a sh:NodeShape ;
@@ -747,7 +747,7 @@
                 sh:path sdh-so:P20 ;
                 sh:name "had partner";
                 sh:class crm:E21 ;
-                
+                sh:order 3;
                 ];
                      
             
@@ -755,7 +755,7 @@
             sh:path sdh-short:P1 ;
             sh:name "at some time within";
             sh:datatype xsd:string;
-            sh:order 3;
+            sh:order 4;
             sh:maxCount 1;
             ];
 
@@ -763,7 +763,7 @@
             sh:path sdh-short:P4 ;
             sh:name "begins on";
             sh:datatype xsd:string;
-            sh:order 4;
+            sh:order 5;
             sh:maxCount 1;
             ];
 
@@ -771,7 +771,7 @@
             sh:path sdh-short:P7 ;
             sh:name "ends on";
             sh:datatype xsd:string;
-            sh:order 5;
+            sh:order 6;
             sh:maxCount 1;
             ];
 
@@ -779,7 +779,7 @@
             sh:path sdh-short:P3 ;
             sh:name "begins after";
             sh:datatype xsd:string;
-            sh:order 6;
+            sh:order 7;
             sh:maxCount 1;
             ];
 
@@ -787,7 +787,7 @@
             sh:path sdh-short:P5 ;
             sh:name "begins before";
             sh:datatype xsd:string;
-            sh:order 7;
+            sh:order 8;
             sh:maxCount 1;
             ];
 
@@ -795,7 +795,7 @@
             sh:path sdh-short:P6 ;
             sh:name "ends after";
             sh:datatype xsd:string;
-            sh:order 8;
+            sh:order 9;
             sh:maxCount 1;
             ];
 
@@ -803,10 +803,10 @@
             sh:path sdh-short:P8 ;
             sh:name "ends before";
             sh:datatype xsd:string;
-            sh:order 9;
+            sh:order 10;
             sh:maxCount 1;
             ];
-               
+                   
             . 
 
     sdh-shacl:sdh-so_C10_Shape a sh:NodeShape ;
@@ -882,21 +882,21 @@
                 sh:path sdh-so:P21 ;
                 sh:name "has type of interaction";
                 sh:class sdh-so:C10 ;
-                sh:maxCount 1 ;
+                sh:order 3;sh:maxCount 1 ;
                 ];
                         
         sh:property [
                 sh:path sdh:P6 ;
                 sh:name "took place at";
                 sh:class sdh:C13 ;
-                
+                sh:order 4;
                 ];
                         
         sh:property [
                 sh:path sdh-so:P41 ;
                 sh:name "is interaction of";
                 sh:class crm:E21 ;
-                
+                sh:order 5;
                 ];
                      
             
@@ -904,7 +904,7 @@
             sh:path sdh-short:P1 ;
             sh:name "at some time within";
             sh:datatype xsd:string;
-            sh:order 3;
+            sh:order 6;
             sh:maxCount 1;
             ];
 
@@ -912,7 +912,7 @@
             sh:path sdh-short:P4 ;
             sh:name "begins on";
             sh:datatype xsd:string;
-            sh:order 4;
+            sh:order 7;
             sh:maxCount 1;
             ];
 
@@ -920,7 +920,7 @@
             sh:path sdh-short:P7 ;
             sh:name "ends on";
             sh:datatype xsd:string;
-            sh:order 5;
+            sh:order 8;
             sh:maxCount 1;
             ];
 
@@ -928,7 +928,7 @@
             sh:path sdh-short:P3 ;
             sh:name "begins after";
             sh:datatype xsd:string;
-            sh:order 6;
+            sh:order 9;
             sh:maxCount 1;
             ];
 
@@ -936,7 +936,7 @@
             sh:path sdh-short:P5 ;
             sh:name "begins before";
             sh:datatype xsd:string;
-            sh:order 7;
+            sh:order 10;
             sh:maxCount 1;
             ];
 
@@ -944,7 +944,7 @@
             sh:path sdh-short:P6 ;
             sh:name "ends after";
             sh:datatype xsd:string;
-            sh:order 8;
+            sh:order 11;
             sh:maxCount 1;
             ];
 
@@ -952,10 +952,10 @@
             sh:path sdh-short:P8 ;
             sh:name "ends before";
             sh:datatype xsd:string;
-            sh:order 9;
+            sh:order 12;
             sh:maxCount 1;
             ];
-               
+                   
             . 
 
     sdh-shacl:sdh-so_C43_Shape a sh:NodeShape ;
@@ -983,28 +983,28 @@
                 sh:path sdh-so:P72 ;
                 sh:name "has role quality";
                 sh:class sdh-so:C2 ;
-                sh:maxCount 1 ;
+                sh:order 3;sh:maxCount 1 ;
                 ];
                         
         sh:property [
                 sh:path sdh-so:P73 ;
                 sh:name "is social relationship role of";
                 sh:class crm:E21 ;
-                sh:maxCount 1 ;
+                sh:order 4;sh:maxCount 1 ;
                 ];
                         
         sh:property [
                 sh:path sdh-so:P73 ;
                 sh:name "is social relationship role of";
                 sh:class crm:E74 ;
-                sh:maxCount 1 ;
+                sh:order 5;sh:maxCount 1 ;
                 ];
                         
         sh:property [
                 sh:path sdh-so:P74 ;
                 sh:name "is role within";
                 sh:class sdh-so:C3 ;
-                sh:maxCount 1 ;
+                sh:order 6;sh:maxCount 1 ;
                 ];
                      
                
